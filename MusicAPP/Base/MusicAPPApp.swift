@@ -10,14 +10,11 @@ import SwiftUI
 @main
 struct MusicAPPApp: App {
     
-    @State private var isLogin: Bool = false
+    @State private var isLogin: Bool = true
     
     var body: some Scene {
         WindowGroup {
-            if isLogin {
-                MusicRootView()
-            }
-            else {
+            NavigationStack {
                 SignInView()
             }
         }

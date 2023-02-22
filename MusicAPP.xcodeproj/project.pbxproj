@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70047C5429A6269F00D567B4 /* GStructuer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70047C5329A6269F00D567B4 /* GStructuer.swift */; };
+		70047C5629A626B300D567B4 /* GVaribles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70047C5529A626B300D567B4 /* GVaribles.swift */; };
+		701E464029A63D6B005511E6 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E463F29A63D6B005511E6 /* SignInViewModel.swift */; };
 		70748A0229A5EDA600682178 /* MusicAPPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70748A0129A5EDA600682178 /* MusicAPPApp.swift */; };
 		70748A0629A5EDA800682178 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0529A5EDA800682178 /* ColorAssets.xcassets */; };
 		70748A0929A5EDA800682178 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0829A5EDA800682178 /* Preview Assets.xcassets */; };
@@ -34,9 +37,13 @@
 		70D2EB9429A5F6C100795D96 /* Fester_Trial-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8429A5F6C100795D96 /* Fester_Trial-BookItalic.otf */; };
 		70D2EB9529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf */; };
 		70D2EB9629A5F6C100795D96 /* Fester_Trial-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */; };
+		70D2EB9929A60EF900795D96 /* Font+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70047C5329A6269F00D567B4 /* GStructuer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GStructuer.swift; sourceTree = "<group>"; };
+		70047C5529A626B300D567B4 /* GVaribles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GVaribles.swift; sourceTree = "<group>"; };
+		701E463F29A63D6B005511E6 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		707489FE29A5EDA600682178 /* MusicAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70748A0129A5EDA600682178 /* MusicAPPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAPPApp.swift; sourceTree = "<group>"; };
 		70748A0529A5EDA800682178 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +72,8 @@
 		70D2EB8429A5F6C100795D96 /* Fester_Trial-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-BookItalic.otf"; sourceTree = "<group>"; };
 		70D2EB8529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-ThinItalic.otf"; sourceTree = "<group>"; };
 		70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-SemiBold.otf"; sourceTree = "<group>"; };
+		70D2EB9729A60B7100795D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extenstion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		701E463E29A63D5D005511E6 /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				701E463F29A63D6B005511E6 /* SignInViewModel.swift */,
+			);
+			path = Viewmodel;
+			sourceTree = "<group>";
+		};
 		707489F529A5EDA600682178 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +114,7 @@
 		70748A0029A5EDA600682178 /* MusicAPP */ = {
 			isa = PBXGroup;
 			children = (
+				70D2EB9729A60B7100795D96 /* Info.plist */,
 				70D2EB5329A5EE2D00795D96 /* Base */,
 				70D2EB5229A5EE2700795D96 /* Resorces */,
 				70D2EB5129A5EE2000795D96 /* Utility */,
@@ -135,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				70D2EB5729A5EE8E00795D96 /* Extenstion */,
+				70047C5329A6269F00D567B4 /* GStructuer.swift */,
+				70047C5529A626B300D567B4 /* GVaribles.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -168,6 +188,7 @@
 		70D2EB5729A5EE8E00795D96 /* Extenstion */ = {
 			isa = PBXGroup;
 			children = (
+				70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */,
 			);
 			path = Extenstion;
 			sourceTree = "<group>";
@@ -260,6 +281,7 @@
 		70D2EB6D29A5EFC400795D96 /* SignIN */ = {
 			isa = PBXGroup;
 			children = (
+				701E463E29A63D5D005511E6 /* Viewmodel */,
 				70D2EB7229A5F2F400795D96 /* SignInView.swift */,
 			);
 			path = SignIN;
@@ -387,8 +409,12 @@
 				70D2EB7329A5F2F400795D96 /* SignInView.swift in Sources */,
 				70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */,
 				70D2EB5B29A5EED700795D96 /* MusicRootView.swift in Sources */,
+				70047C5629A626B300D567B4 /* GVaribles.swift in Sources */,
 				70D2EB7529A5F2FD00795D96 /* SignUpView.swift in Sources */,
 				70D2EB6629A5EF5100795D96 /* LibraryView.swift in Sources */,
+				70D2EB9929A60EF900795D96 /* Font+Extenstion.swift in Sources */,
+				701E464029A63D6B005511E6 /* SignInViewModel.swift in Sources */,
+				70047C5429A6269F00D567B4 /* GStructuer.swift in Sources */,
 				70D2EB6A29A5EF6B00795D96 /* ProfileView.swift in Sources */,
 				70748A0229A5EDA600682178 /* MusicAPPApp.swift in Sources */,
 			);
@@ -521,6 +547,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MusicAPP/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicAPP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -549,6 +576,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MusicAPP/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicAPP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
