@@ -16,6 +16,24 @@
 		70D2EB6229A5EF2A00795D96 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB6129A5EF2A00795D96 /* SearchView.swift */; };
 		70D2EB6629A5EF5100795D96 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB6529A5EF5100795D96 /* LibraryView.swift */; };
 		70D2EB6A29A5EF6B00795D96 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB6929A5EF6B00795D96 /* ProfileView.swift */; };
+		70D2EB7329A5F2F400795D96 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB7229A5F2F400795D96 /* SignInView.swift */; };
+		70D2EB7529A5F2FD00795D96 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB7429A5F2FD00795D96 /* SignUpView.swift */; };
+		70D2EB8729A5F6C100795D96 /* Fester_Trial-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB7729A5F6C100795D96 /* Fester_Trial-Bold.otf */; };
+		70D2EB8829A5F6C100795D96 /* Fester_Trial-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB7829A5F6C100795D96 /* Fester_Trial-RegularItalic.otf */; };
+		70D2EB8929A5F6C100795D96 /* Fester_Trial-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB7929A5F6C100795D96 /* Fester_Trial-HeavyItalic.otf */; };
+		70D2EB8A29A5F6C100795D96 /* Fester_Trial-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB7A29A5F6C100795D96 /* Fester_Trial-SemiBoldItalic.otf */; };
+		70D2EB8B29A5F6C100795D96 /* Fester_Trial-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB7B29A5F6C100795D96 /* Fester_Trial-ExtraLightItalic.otf */; };
+		70D2EB8C29A5F6C100795D96 /* Fester_Trial-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB7C29A5F6C100795D96 /* Fester_Trial-Heavy.otf */; };
+		70D2EB8D29A5F6C100795D96 /* Fester_Trial-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB7D29A5F6C100795D96 /* Fester_Trial-Thin.otf */; };
+		70D2EB8E29A5F6C100795D96 /* Fester_Trial-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB7E29A5F6C100795D96 /* Fester_Trial-BoldItalic.otf */; };
+		70D2EB8F29A5F6C100795D96 /* Fester_Trial-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB7F29A5F6C100795D96 /* Fester_Trial-LightItalic.otf */; };
+		70D2EB9029A5F6C100795D96 /* Fester_Trial-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8029A5F6C100795D96 /* Fester_Trial-Book.otf */; };
+		70D2EB9129A5F6C100795D96 /* Fester_Trial-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8129A5F6C100795D96 /* Fester_Trial-ExtraLight.otf */; };
+		70D2EB9229A5F6C100795D96 /* Fester_Trial-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8229A5F6C100795D96 /* Fester_Trial-Light.otf */; };
+		70D2EB9329A5F6C100795D96 /* Fester_Trial-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8329A5F6C100795D96 /* Fester_Trial-Regular.otf */; };
+		70D2EB9429A5F6C100795D96 /* Fester_Trial-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8429A5F6C100795D96 /* Fester_Trial-BookItalic.otf */; };
+		70D2EB9529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf */; };
+		70D2EB9629A5F6C100795D96 /* Fester_Trial-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +47,24 @@
 		70D2EB6129A5EF2A00795D96 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		70D2EB6529A5EF5100795D96 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		70D2EB6929A5EF6B00795D96 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		70D2EB7229A5F2F400795D96 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		70D2EB7429A5F2FD00795D96 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		70D2EB7729A5F6C100795D96 /* Fester_Trial-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-Bold.otf"; sourceTree = "<group>"; };
+		70D2EB7829A5F6C100795D96 /* Fester_Trial-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-RegularItalic.otf"; sourceTree = "<group>"; };
+		70D2EB7929A5F6C100795D96 /* Fester_Trial-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-HeavyItalic.otf"; sourceTree = "<group>"; };
+		70D2EB7A29A5F6C100795D96 /* Fester_Trial-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		70D2EB7B29A5F6C100795D96 /* Fester_Trial-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		70D2EB7C29A5F6C100795D96 /* Fester_Trial-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-Heavy.otf"; sourceTree = "<group>"; };
+		70D2EB7D29A5F6C100795D96 /* Fester_Trial-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-Thin.otf"; sourceTree = "<group>"; };
+		70D2EB7E29A5F6C100795D96 /* Fester_Trial-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-BoldItalic.otf"; sourceTree = "<group>"; };
+		70D2EB7F29A5F6C100795D96 /* Fester_Trial-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-LightItalic.otf"; sourceTree = "<group>"; };
+		70D2EB8029A5F6C100795D96 /* Fester_Trial-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-Book.otf"; sourceTree = "<group>"; };
+		70D2EB8129A5F6C100795D96 /* Fester_Trial-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-ExtraLight.otf"; sourceTree = "<group>"; };
+		70D2EB8229A5F6C100795D96 /* Fester_Trial-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-Light.otf"; sourceTree = "<group>"; };
+		70D2EB8329A5F6C100795D96 /* Fester_Trial-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-Regular.otf"; sourceTree = "<group>"; };
+		70D2EB8429A5F6C100795D96 /* Fester_Trial-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-BookItalic.otf"; sourceTree = "<group>"; };
+		70D2EB8529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-ThinItalic.otf"; sourceTree = "<group>"; };
+		70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-SemiBold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +142,7 @@
 		70D2EB5229A5EE2700795D96 /* Resorces */ = {
 			isa = PBXGroup;
 			children = (
+				70D2EB7629A5F67900795D96 /* Fonts */,
 				70D2EB5429A5EE3400795D96 /* Assets */,
 			);
 			path = Resorces;
@@ -150,7 +187,6 @@
 		70D2EB5929A5EEB200795D96 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				70D2EB6F29A5EFE200795D96 /* Walkthrough */,
 				70D2EB6D29A5EFC400795D96 /* SignIN */,
 				70D2EB6E29A5EFD000795D96 /* SignUp */,
 			);
@@ -224,6 +260,7 @@
 		70D2EB6D29A5EFC400795D96 /* SignIN */ = {
 			isa = PBXGroup;
 			children = (
+				70D2EB7229A5F2F400795D96 /* SignInView.swift */,
 			);
 			path = SignIN;
 			sourceTree = "<group>";
@@ -231,15 +268,32 @@
 		70D2EB6E29A5EFD000795D96 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				70D2EB7429A5F2FD00795D96 /* SignUpView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
 		};
-		70D2EB6F29A5EFE200795D96 /* Walkthrough */ = {
+		70D2EB7629A5F67900795D96 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				70D2EB7729A5F6C100795D96 /* Fester_Trial-Bold.otf */,
+				70D2EB7E29A5F6C100795D96 /* Fester_Trial-BoldItalic.otf */,
+				70D2EB8029A5F6C100795D96 /* Fester_Trial-Book.otf */,
+				70D2EB8429A5F6C100795D96 /* Fester_Trial-BookItalic.otf */,
+				70D2EB8129A5F6C100795D96 /* Fester_Trial-ExtraLight.otf */,
+				70D2EB7B29A5F6C100795D96 /* Fester_Trial-ExtraLightItalic.otf */,
+				70D2EB7C29A5F6C100795D96 /* Fester_Trial-Heavy.otf */,
+				70D2EB7929A5F6C100795D96 /* Fester_Trial-HeavyItalic.otf */,
+				70D2EB8229A5F6C100795D96 /* Fester_Trial-Light.otf */,
+				70D2EB7F29A5F6C100795D96 /* Fester_Trial-LightItalic.otf */,
+				70D2EB8329A5F6C100795D96 /* Fester_Trial-Regular.otf */,
+				70D2EB7829A5F6C100795D96 /* Fester_Trial-RegularItalic.otf */,
+				70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */,
+				70D2EB7A29A5F6C100795D96 /* Fester_Trial-SemiBoldItalic.otf */,
+				70D2EB7D29A5F6C100795D96 /* Fester_Trial-Thin.otf */,
+				70D2EB8529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf */,
 			);
-			path = Walkthrough;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,8 +355,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				70748A0929A5EDA800682178 /* Preview Assets.xcassets in Resources */,
+				70D2EB8B29A5F6C100795D96 /* Fester_Trial-ExtraLightItalic.otf in Resources */,
+				70D2EB9329A5F6C100795D96 /* Fester_Trial-Regular.otf in Resources */,
+				70D2EB8929A5F6C100795D96 /* Fester_Trial-HeavyItalic.otf in Resources */,
+				70D2EB9529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf in Resources */,
+				70D2EB8829A5F6C100795D96 /* Fester_Trial-RegularItalic.otf in Resources */,
+				70D2EB8E29A5F6C100795D96 /* Fester_Trial-BoldItalic.otf in Resources */,
+				70D2EB9129A5F6C100795D96 /* Fester_Trial-ExtraLight.otf in Resources */,
+				70D2EB8D29A5F6C100795D96 /* Fester_Trial-Thin.otf in Resources */,
+				70D2EB8F29A5F6C100795D96 /* Fester_Trial-LightItalic.otf in Resources */,
 				70748A0629A5EDA800682178 /* ColorAssets.xcassets in Resources */,
+				70D2EB8A29A5F6C100795D96 /* Fester_Trial-SemiBoldItalic.otf in Resources */,
+				70D2EB8729A5F6C100795D96 /* Fester_Trial-Bold.otf in Resources */,
+				70D2EB9029A5F6C100795D96 /* Fester_Trial-Book.otf in Resources */,
+				70D2EB9229A5F6C100795D96 /* Fester_Trial-Light.otf in Resources */,
+				70D2EB8C29A5F6C100795D96 /* Fester_Trial-Heavy.otf in Resources */,
 				70D2EB5629A5EE4A00795D96 /* ImageAssets.xcassets in Resources */,
+				70D2EB9429A5F6C100795D96 /* Fester_Trial-BookItalic.otf in Resources */,
+				70D2EB9629A5F6C100795D96 /* Fester_Trial-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,8 +384,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				70D2EB6229A5EF2A00795D96 /* SearchView.swift in Sources */,
+				70D2EB7329A5F2F400795D96 /* SignInView.swift in Sources */,
 				70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */,
 				70D2EB5B29A5EED700795D96 /* MusicRootView.swift in Sources */,
+				70D2EB7529A5F2FD00795D96 /* SignUpView.swift in Sources */,
 				70D2EB6629A5EF5100795D96 /* LibraryView.swift in Sources */,
 				70D2EB6A29A5EF6B00795D96 /* ProfileView.swift in Sources */,
 				70748A0229A5EDA600682178 /* MusicAPPApp.swift in Sources */,

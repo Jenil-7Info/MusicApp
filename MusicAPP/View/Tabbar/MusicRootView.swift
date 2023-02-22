@@ -9,8 +9,9 @@ import SwiftUI
 
 struct MusicRootView: View {
     var body: some View {
-        Text("Root View")
-            .font(.largeTitle)
+        VStack {
+            
+        }
     }
 }
 
