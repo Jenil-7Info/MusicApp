@@ -17,21 +17,25 @@ struct MusicRootView: View {
                         Image(systemName: "house.fill")
                         Text("Home")
                     }
+                    .clipped()
                 SearchView()
                     .tabItem {
                         Image(systemName: "magnifyingglass")
                         Text("Search")
                     }
+                    .clipped()
                 LibraryView()
                     .tabItem {
                         Image(systemName: "text.book.closed.fill")
                         Text("Library")
                     }
+                    .clipped()
                 ProfileView()
                     .tabItem {
                         Image(systemName: "person.fill")
                         Text("Profile")
                     }
+                    .clipped()
             }
         }
     }
