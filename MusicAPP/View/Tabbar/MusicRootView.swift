@@ -10,19 +10,31 @@ import SwiftUI
 struct MusicRootView: View {
     
     var body: some View {
-        VStack {
-            
+        NavigationStack {
+            TabView {
+                HomeView()
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("Home")
+                    }
+                SearchView()
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
+                LibraryView()
+                    .tabItem {
+                        Image(systemName: "text.book.closed.fill")
+                        Text("Library")
+                    }
+                ProfileView()
+                    .tabItem {
+                        Image(systemName: "person.fill")
+                        Text("Profile")
+                    }
+            }
         }
     }
-    
-    //MARK: - Font add Testing...
-//    init() {
-//        for fontfamily in UIFont.familyNames {
-//            for i in UIFont.fontNames(forFamilyName: fontfamily) {
-//                print("-- \(i)")
-//            }
-//        }
-//    }
 }
 
 struct MusicRootView_Previews: PreviewProvider {

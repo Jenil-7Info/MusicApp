@@ -15,8 +15,9 @@ struct MusicAPPApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                SignInView()
+                MusicRootView()
             }
+            .preferredColorScheme(.dark)
         }
     }
 }

@@ -45,7 +45,7 @@ struct SignInView: View {
                             }
                     }
                     .padding(.bottom, 30)
-                    
+                
                 
                 //UserName
                 TextField("Username", text: $userName)
@@ -105,12 +105,7 @@ struct SignInView: View {
                 }
                 
                 Button {
-                    //validation()
-                    if userName.isEmpty || password.isEmpty {
-                        isPresentSignUp = false
-                    } else {
-                        isPresentSignUp = true
-                    }
+                    validation()
                 } label: {
                     Text("Sign IN")
                         .font(.festerFont(customFontName: .FesterCondensedExtraBold, fontSize: 22))
@@ -118,16 +113,17 @@ struct SignInView: View {
                         .padding()
                         .background {
                             Capsule()
-                                .fill(isPresentSignUp ? GradientColors.orangeGradient : GradientColors.grayGradient)
+                                .fill(userName.isEmpty || password.isEmpty ? GradientColors.grayGradient : GradientColors.orangeGradient)
                                 .frame(width: dynamicWidth-40)
                         }
                 }
                 .navigationDestination(isPresented: $isPresentSignUp, destination: {
                     MusicRootView()
+                        .navigationBarBackButtonHidden(true)
                 })
-                .disabled(!isPresentSignUp)
+                .disabled(userName.isEmpty || password.isEmpty)
                 .padding(.bottom, 30)
-
+                
                 //MARK: -  Social Media Login...
                 Text("Login With")
                     .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
@@ -185,6 +181,7 @@ struct SignInView: View {
                         .foregroundColor(.white)
                     
                     Button {
+                        
                     } label: {
                         Text("Sign Up")
                             .font(.festerFont(customFontName: .FesterBold, fontSize: 20))
@@ -202,10 +199,12 @@ struct SignInView: View {
     }
     
     func validation() {
-        if userName.isEmpty || password.isEmpty {
-            isPresentSignUp = false
-        } else {
-            isPresentSignUp = false
+        withAnimation {
+            if userName.isEmpty || password.isEmpty {
+                isPresentSignUp = false
+            } else {
+                isPresentSignUp = true
+            }
         }
     }
 }
