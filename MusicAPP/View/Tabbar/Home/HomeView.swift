@@ -14,6 +14,9 @@ struct HomeView: View {
     @State private var isSetting: Bool = false
     @StateObject var lastPlayCollectionVM = LastPlayCollectionViewModel()
     @StateObject var favArtitsImgVM = YourFavArtitsCollectionViewModel()
+    @StateObject var madePlayListVM = MadeForYouCollectionViewModel()
+    @StateObject var tipsViewModel = TipsViewModel()
+    @StateObject var discoverVM = DiscoverViewModel()
     
     //MARK: - Header view...
     var header: some View {
@@ -109,17 +112,53 @@ struct HomeView: View {
                 }
                 .padding(EdgeInsets(top: 30, leading: 20, bottom: 12, trailing: 20))
                 
-                //MARK: - Baki....
                 ScrollView(.horizontal) {
                     HStack {
-                        ForEach(lastPlayCollectionVM.LastPlayCollectionManger) { collection in
-                            LastPlaycollectionView(img: collection.img, title: collection.name, des: collection.des)
+                        ForEach(madePlayListVM.YourPlayListcollectionManger) { collection in
+                            MadeForYoucollectionPlayListRectangle(img1: collection.img1, img2: collection.img2, img3: collection.img3, img4: collection.img4, title: collection.title, totalSong: collection.totalSong)
                         }
                     }
                 }
                 .scrollIndicators(.never)
-                .padding(.leading)
+                .padding([.leading, .bottom])
                 
+                //NOTE: - Tips to get started...
+                HStack {
+                    Text("Tips to get started")
+                        .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
+                    
+                    Spacer()
+                }
+                .padding(EdgeInsets(top: 20, leading: 20, bottom: 12, trailing: 20))
+                
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(tipsViewModel.TipsDisplayManger) { manger in
+                            TipsRectangleView(color: manger.color, systemImg: manger.systemImg, textTitle: manger.title, description: manger.description, width: manger.width)
+                        }
+                    }
+                }
+                .scrollIndicators(.never)
+                .padding([.leading, .bottom])
+                
+                //NOTE: - Discover...
+                HStack {
+                    Text("Discover")
+                        .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
+                    
+                    Spacer()
+                }
+                .padding(EdgeInsets(top: 10, leading: 20, bottom: 12, trailing: 20))
+                
+                ScrollView(.vertical) {
+                    VStack {
+                        ForEach(discoverVM.discoverCollectionManger) { discover in
+                            DiscoverView(img: discover.image, title: discover.title, subTitle: discover.subTitle, timimg: discover.timingSong)
+                        }
+                    }
+                }
+                .scrollIndicators(.never)
+                .padding(.bottom)
             }
             .scrollIndicators(.never)
         }
@@ -129,50 +168,5 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-        YourcollectionPlayListRectangle(img: "", title: "", totalSong: "")
-    }
-}
-
-struct YourcollectionPlayListRectangle: View {
-    
-    @State var img: String
-    @State var title: String
-    @State var totalSong: String
-    
-    var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .fill(.gray.opacity(0.5))
-            .frame(width: dynamicWidth/2.2, height: dynamicHeight/2.9)
-            .overlay {
-                    Image("pop")
-                        .resizable()
-                        .aspectRatio(1.2,contentMode: .fill)
-                        .frame(width: dynamicWidth/2.2, height: dynamicHeight/6)
-                
-                VStack(spacing: 10) {
-                    
-                    Spacer()
-                    
-                    Text("title")
-                        .foregroundColor(.white)
-                        .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 20))
-                    
-                    HStack(spacing: 3) {
-                        Image(systemName: "music.note")
-                            .resizable()
-                            .renderingMode(.template)
-                            .foregroundColor(.white)
-                            .frame(width: 12, height: 18)
-                        Text("3002")
-                            .lineLimit(2)
-                            .foregroundColor(.white)
-                        Text("Tracker")
-                            .lineLimit(2)
-                            .foregroundColor(.white)
-                    }
-                    .padding(.horizontal)
-                    .padding(.bottom, 20)
-                }
-            }
     }
 }
