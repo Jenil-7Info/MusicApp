@@ -25,6 +25,10 @@
 		70AD850729A8896100EF8851 /* TipsRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD850629A8896100EF8851 /* TipsRectangleView.swift */; };
 		70AD850929A88E6F00EF8851 /* DiscoverViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD850829A88E6F00EF8851 /* DiscoverViewmodel.swift */; };
 		70AD850B29A8BEBB00EF8851 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD850A29A8BEBB00EF8851 /* DiscoverView.swift */; };
+		70AD850F29A8CC8500EF8851 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70AD850E29A8CC8500EF8851 /* GoogleService-Info.plist */; };
+		70AD851229A8CD8E00EF8851 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851129A8CD8E00EF8851 /* FirebaseAuth */; };
+		70AD851529A8CDD500EF8851 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851429A8CDD500EF8851 /* GoogleSignIn */; };
+		70AD851729A8CDD500EF8851 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851629A8CDD500EF8851 /* GoogleSignInSwift */; };
 		70D2EB5629A5EE4A00795D96 /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */; };
 		70D2EB5B29A5EED700795D96 /* MusicRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5A29A5EED700795D96 /* MusicRootView.swift */; };
 		70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5D29A5EEF000795D96 /* HomeView.swift */; };
@@ -72,6 +76,7 @@
 		70AD850629A8896100EF8851 /* TipsRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsRectangleView.swift; sourceTree = "<group>"; };
 		70AD850829A88E6F00EF8851 /* DiscoverViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewmodel.swift; sourceTree = "<group>"; };
 		70AD850A29A8BEBB00EF8851 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		70AD850E29A8CC8500EF8851 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
 		70D2EB5A29A5EED700795D96 /* MusicRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRootView.swift; sourceTree = "<group>"; };
 		70D2EB5D29A5EEF000795D96 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -96,7 +101,7 @@
 		70D2EB8429A5F6C100795D96 /* Fester_Trial-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-BookItalic.otf"; sourceTree = "<group>"; };
 		70D2EB8529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-ThinItalic.otf"; sourceTree = "<group>"; };
 		70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-SemiBold.otf"; sourceTree = "<group>"; };
-		70D2EB9729A60B7100795D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		70D2EB9729A60B7100795D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extenstion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70AD851729A8CDD500EF8851 /* GoogleSignInSwift in Frameworks */,
+				70AD851229A8CD8E00EF8851 /* FirebaseAuth in Frameworks */,
+				70AD851529A8CDD500EF8851 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +146,6 @@
 		70748A0029A5EDA600682178 /* MusicAPP */ = {
 			isa = PBXGroup;
 			children = (
-				70D2EB9729A60B7100795D96 /* Info.plist */,
 				70D2EB5329A5EE2D00795D96 /* Base */,
 				70D2EB5229A5EE2700795D96 /* Resorces */,
 				70D2EB5129A5EE2000795D96 /* Utility */,
@@ -206,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				70748A0129A5EDA600682178 /* MusicAPPApp.swift */,
+				70D2EB9729A60B7100795D96 /* Info.plist */,
+				70AD850E29A8CC8500EF8851 /* GoogleService-Info.plist */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -378,6 +387,11 @@
 			dependencies = (
 			);
 			name = MusicAPP;
+			packageProductDependencies = (
+				70AD851129A8CD8E00EF8851 /* FirebaseAuth */,
+				70AD851429A8CDD500EF8851 /* GoogleSignIn */,
+				70AD851629A8CDD500EF8851 /* GoogleSignInSwift */,
+			);
 			productName = MusicAPP;
 			productReference = 707489FE29A5EDA600682178 /* MusicAPP.app */;
 			productType = "com.apple.product-type.application";
@@ -406,6 +420,10 @@
 				Base,
 			);
 			mainGroup = 707489F529A5EDA600682178;
+			packageReferences = (
+				70AD851029A8CD8E00EF8851 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				70AD851329A8CDD400EF8851 /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */,
+			);
 			productRefGroup = 707489FF29A5EDA600682178 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -437,6 +455,7 @@
 				70D2EB9229A5F6C100795D96 /* Fester_Trial-Light.otf in Resources */,
 				70D2EB8C29A5F6C100795D96 /* Fester_Trial-Heavy.otf in Resources */,
 				70D2EB5629A5EE4A00795D96 /* ImageAssets.xcassets in Resources */,
+				70AD850F29A8CC8500EF8851 /* GoogleService-Info.plist in Resources */,
 				70D2EB9429A5F6C100795D96 /* Fester_Trial-BookItalic.otf in Resources */,
 				70D2EB9629A5F6C100795D96 /* Fester_Trial-SemiBold.otf in Resources */,
 			);
@@ -673,6 +692,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70AD851029A8CD8E00EF8851 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		70AD851329A8CDD400EF8851 /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignin-iOS/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70AD851129A8CD8E00EF8851 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70AD851029A8CD8E00EF8851 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		70AD851429A8CDD500EF8851 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70AD851329A8CDD400EF8851 /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */;
+			productName = GoogleSignIn;
+		};
+		70AD851629A8CDD500EF8851 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70AD851329A8CDD400EF8851 /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 707489F629A5EDA600682178 /* Project object */;
 }

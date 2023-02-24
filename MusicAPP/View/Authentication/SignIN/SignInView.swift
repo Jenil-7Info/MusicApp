@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import GoogleSignIn
+import FirebaseAuth
 
 struct SignInView: View {
     
@@ -14,6 +17,7 @@ struct SignInView: View {
     @State private var isShowPass: Bool = false
     @State private var bgColorFloat: CGFloat = 0.8
     @State private var isPresentSignUp: Bool = false
+    @State private var isGoogleVerification: Bool = false
     
     var body: some View {
         ZStack {
@@ -105,7 +109,7 @@ struct SignInView: View {
                 }
                 
                 Button {
-                    validation()
+                    validationHandling()
                 } label: {
                     Text("Sign IN")
                         .font(.festerFont(customFontName: .FesterCondensedExtraBold, fontSize: 22))
@@ -122,7 +126,7 @@ struct SignInView: View {
                         .navigationBarBackButtonHidden(true)
                 })
                 .disabled(userName.isEmpty || password.isEmpty)
-                .padding(.bottom, 30)
+                .padding(.bottom)
                 
                 //MARK: -  Social Media Login...
                 Text("Login With")
@@ -146,7 +150,7 @@ struct SignInView: View {
                     
                     
                     Button {
-                        
+                        self.isGoogleVerification.toggle()
                     } label: {
                         Image("google")
                             .resizable()
@@ -198,7 +202,8 @@ struct SignInView: View {
         .edgesIgnoringSafeArea(.all)
     }
     
-    func validation() {
+    //MARK: - Validation Handling...
+    func validationHandling() {
         withAnimation {
             if userName.isEmpty || password.isEmpty {
                 isPresentSignUp = false
@@ -207,10 +212,62 @@ struct SignInView: View {
             }
         }
     }
+    
+    //MARK: - Handle Google Login...
+    func googleSignIn() {
+      
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { user, error in
+
+          if let error = error {
+            return
+          }
+
+          guard
+            let authentication = user?.authentication,
+            let idToken = authentication.idToken
+          else {
+            return
+          }
+
+          let credential =
+            GoogleAuthProvider.credential(
+            withIDToken: idToken,
+            accessToken: authentication.accessToken)
+        }
+            
+            Auth.auth().signIn(with: credential) { result, err in
+                if let error = error {
+                    debugPrint(error.localizedDescription)
+                    return
+                }
+                
+                guard let userName = result.user else {
+                    return
+                }
+                
+                print(userName.displayName ?? "")
+            }
+        }
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         SignInView()
+    }
+}
+
+
+extension View {
+    func getRootViewController() -> UIViewController {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return .init() }
+        guard let rootViewController = windowScene.windows.first?.rootViewController else { return .init() }
+        
+        return rootViewController
     }
 }
