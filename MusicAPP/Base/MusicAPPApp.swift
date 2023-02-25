@@ -14,13 +14,15 @@ struct MusicAPPApp: App {
     
     @State private var isLogin: Bool = true
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var googleAuthVM = GoogleAutheticationViewModel()
     
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                MusicRootView()
+                SignInView()
             }
             .preferredColorScheme(.dark)
+            .environmentObject(googleAuthVM)
         }
     }
 }

@@ -18,6 +18,7 @@ struct SignInView: View {
     @State private var bgColorFloat: CGFloat = 0.8
     @State private var isPresentSignUp: Bool = false
     @State private var isGoogleVerification: Bool = false
+    @EnvironmentObject var googleVM : GoogleAutheticationViewModel
     
     var body: some View {
         ZStack {
@@ -150,7 +151,7 @@ struct SignInView: View {
                     
                     
                     Button {
-                        self.isGoogleVerification.toggle()
+                        googleVM.signIn()
                     } label: {
                         Image("google")
                             .resizable()
@@ -160,6 +161,10 @@ struct SignInView: View {
                                 Circle()
                                     .fill(.white.opacity(bgColorFloat))
                             }
+                    }
+                    .navigationDestination(isPresented: $googleVM.isLoggedIn) {
+                        MusicRootView()
+                            .navigationBarBackButtonHidden(true)
                     }
                     
                     Button {
@@ -203,7 +208,7 @@ struct SignInView: View {
     }
     
     //MARK: - Validation Handling...
-    func validationHandling() {
+    fileprivate func validationHandling() {
         withAnimation {
             if userName.isEmpty || password.isEmpty {
                 isPresentSignUp = false
@@ -212,62 +217,10 @@ struct SignInView: View {
             }
         }
     }
-    
-    //MARK: - Handle Google Login...
-    func googleSignIn() {
-      
-        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-
-        // Create Google Sign In configuration object.
-        let config = GIDConfiguration(clientID: clientID)
-
-        // Start the sign in flow!
-        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { user, error in
-
-          if let error = error {
-            return
-          }
-
-          guard
-            let authentication = user?.authentication,
-            let idToken = authentication.idToken
-          else {
-            return
-          }
-
-          let credential =
-            GoogleAuthProvider.credential(
-            withIDToken: idToken,
-            accessToken: authentication.accessToken)
-        }
-            
-            Auth.auth().signIn(with: credential) { result, err in
-                if let error = error {
-                    debugPrint(error.localizedDescription)
-                    return
-                }
-                
-                guard let userName = result.user else {
-                    return
-                }
-                
-                print(userName.displayName ?? "")
-            }
-        }
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         SignInView()
-    }
-}
-
-
-extension View {
-    func getRootViewController() -> UIViewController {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return .init() }
-        guard let rootViewController = windowScene.windows.first?.rootViewController else { return .init() }
-        
-        return rootViewController
     }
 }
