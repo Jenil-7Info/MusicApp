@@ -16,8 +16,6 @@ class GoogleAutheticationViewModel: ObservableObject {
     @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = ""
     
-    let user = GIDSignIn.sharedInstance.currentUser
-    
     init() {
         self.check()
     }
@@ -35,13 +33,13 @@ class GoogleAutheticationViewModel: ObservableObject {
             let givenName = user.profile?.givenName
             
             //Fetch the Profile URL
-            let profilePicUrl = user.profile!.imageURL(withDimension: 100)!.absoluteString
+            let profilePicUrl = user.profile?.imageURL(withDimension: 100)?.absoluteString
             
             //store the name in Published var
             self.givenName = givenName ?? ""
             
             //store the ProfileURL in Published var
-            self.profilePicUrl = profilePicUrl
+            self.profilePicUrl = profilePicUrl ?? ""
             
             //Apply Logic Login And Logout
             self.isLoggedIn = true
@@ -86,11 +84,9 @@ class GoogleAutheticationViewModel: ObservableObject {
         
         //login process...
         GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController) { result, error in
-            
             if let error = error {
                 debugPrint(error.localizedDescription)
             }
-            
             self.checkStatus()
         }
     }

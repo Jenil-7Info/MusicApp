@@ -12,14 +12,13 @@ import GoogleSignIn
 @main
 struct MusicAPPApp: App {
     
-    @State private var isLogin: Bool = true
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var googleAuthVM = GoogleAutheticationViewModel()
     
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                SignInView()
+               SignInView()
             }
             .preferredColorScheme(.dark)
             .environmentObject(googleAuthVM)
@@ -28,6 +27,7 @@ struct MusicAPPApp: App {
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()

@@ -40,12 +40,8 @@ struct ProfileView: View {
 }
 
 struct ProfileView_Previews: PreviewProvider {
-    
-    @EnvironmentObject var googleVM : GoogleAutheticationViewModel
-    
     static var previews: some View {
         ProfileView()
-           // .environmentObject(googleVM)
     }
 }
 
