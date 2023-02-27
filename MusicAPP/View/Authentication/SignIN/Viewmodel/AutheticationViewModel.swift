@@ -139,11 +139,14 @@ class EmailAuthenticationViewModel: ObservableObject {
     @Published var verification: String = ""
     @Published var firstName: String = ""
     @Published var lastName: String = ""
+    @Published var email: String = ""
     @Published var image: String = ""
+    @Published var errMessage: String = ""
     
     func signIn(email: String, pass: String, verification: LoginVerification) {
         auth.signIn(withEmail: email, password: pass) { result, error in
             guard result != nil , error == nil else {
+                self.errMessage = error!.localizedDescription
                 debugPrint(error?.localizedDescription ?? "ERROR")
                 return
             }
@@ -154,6 +157,7 @@ class EmailAuthenticationViewModel: ObservableObject {
                     self.isLoggIN = true
                     self.verification = verification.rawValue
                 } else {
+                    self.errMessage = error?.localizedDescription ?? "ERROR: Login Failed!"
                     self.isLoggIN = false
                 }
             }
@@ -171,20 +175,14 @@ class EmailAuthenticationViewModel: ObservableObject {
                     self.image = image
                     self.firstName = fName
                     self.lastName = lName
+                    self.email = email
                     self.isLoggIN = true
                     self.verification = verification.rawValue
                 } else {
+                    self.errMessage = error?.localizedDescription ?? "ERROR: Login Failed!"
                     self.isLoggIN = false
                 }
             }
-        }
-    }
-    
-    func signOut() {
-        do {
-            try auth.signOut()
-        } catch {
-            debugPrint(error.localizedDescription)
         }
     }
 }

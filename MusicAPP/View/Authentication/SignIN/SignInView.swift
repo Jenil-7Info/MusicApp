@@ -12,10 +12,10 @@ import FirebaseAuth
 
 struct SignInView: View {
     
-    @State private var email: String = ""
+    @AppStorage("email") var email: String = ""
     @State private var password: String = ""
     @State private var isShowPass: Bool = false
-    @State private var bgColorFloat: CGFloat = 0.8
+    @State private var bgColorFloat: CGFloat = 0.5
     @State private var isPresentSignUp: Bool = false
     @State private var isGoogleVerification: Bool = false
     @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
@@ -55,13 +55,14 @@ struct SignInView: View {
                 //UserName
                 TextField("Email Address", text: $email)
                     .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                    .foregroundColor(.black)
                     .autocorrectionDisabled(true)
                     .textInputAutocapitalization(.never)
                     .padding()
                     .background {
                         ZStack {
                             Capsule()
-                                .fill(.white.opacity(0.8))
+                                .fill(.white.opacity(bgColorFloat))
                         }
                     }
                     .padding(.horizontal, 20)
@@ -72,6 +73,7 @@ struct SignInView: View {
                         TextField("Password", text: $password)
                             .padding()
                             .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                            .foregroundColor(.black)
                             .autocorrectionDisabled(true)
                             .textInputAutocapitalization(.never)
                         Image(systemName: isShowPass ? "eye.slash" : "eye")
@@ -94,6 +96,7 @@ struct SignInView: View {
                         SecureField("Password", text: $password)
                             .padding()
                             .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                            .foregroundColor(.black)
                             .autocorrectionDisabled(true)
                             .textInputAutocapitalization(.never)
                         Image(systemName: isShowPass ? "eye.slash" : "eye")

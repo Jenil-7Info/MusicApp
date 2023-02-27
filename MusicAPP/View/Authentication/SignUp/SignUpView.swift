@@ -11,7 +11,7 @@ struct SignUpView: View {
     
     @State private var fName: String = ""
     @State private var lName: String = ""
-    @State private var email: String = ""
+    @AppStorage("email") var email: String = ""
     @State private var password: String = ""
     @State private var isShowPass: Bool = false
     @State private var bgColorFloat: CGFloat = 0.5
@@ -50,6 +50,7 @@ struct SignUpView: View {
                     //Firstnaem
                     TextField("First Name", text: $fName)
                         .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                        .foregroundColor(.black)
                         .autocorrectionDisabled(true)
                         .textInputAutocapitalization(.words)
                         .padding()
@@ -64,6 +65,7 @@ struct SignUpView: View {
                     //LastName
                     TextField("LastName", text: $lName)
                         .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                        .foregroundColor(.black)
                         .autocorrectionDisabled(true)
                         .textInputAutocapitalization(.words)
                         .padding()
@@ -78,6 +80,7 @@ struct SignUpView: View {
                     //Email Address
                     TextField("Email", text: $email)
                         .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                        .foregroundColor(.black)
                         .autocorrectionDisabled(true)
                         .textInputAutocapitalization(.never)
                         .padding()
@@ -95,6 +98,7 @@ struct SignUpView: View {
                             TextField("Password", text: $password)
                                 .padding()
                                 .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                                .foregroundColor(.black)
                                 .autocorrectionDisabled(true)
                                 .textInputAutocapitalization(.never)
                             Image(systemName: isShowPass ? "eye.slash" : "eye")
@@ -117,6 +121,7 @@ struct SignUpView: View {
                             SecureField("Password", text: $password)
                                 .padding()
                                 .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                                .foregroundColor(.black)
                                 .autocorrectionDisabled(true)
                                 .textInputAutocapitalization(.never)
                             Image(systemName: isShowPass ? "eye.slash" : "eye")
@@ -150,7 +155,7 @@ struct SignUpView: View {
                                     .frame(width: dynamicWidth-40)
                             }
                     }
-                    .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
+                    .navigationDestination(isPresented: $isPresentSignIN, destination: {
                         SignInView()
                             .navigationBarBackButtonHidden(true)
                     })

@@ -13,55 +13,12 @@ struct ProfileView: View {
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     
     var body: some View {
-       
+        
+        //NOTE: - check the which use login method
         if emailAuthVM.verification == LoginVerification.EmailAndPassAuth.rawValue {
-            VStack {
-                Image(systemName: "person.fill")
-                    .resizable()
-                    .frame(width: 150, height: 150)
-                
-                Text(emailAuthVM.firstName)
-                    .font(.largeTitle)
-                    .bold()
-                    .padding(.bottom, 20)
-                
-                Button {
-                    self.emailAuthVM.signOut()
-                } label: {
-                    Text("Sign Out")
-                        .foregroundColor(.red)
-                        .bold()
-                }
-                .padding()
-                .background {
-                        Capsule()
-                        .fill(.red.opacity(0.15))
-                }
-            }
+            EmailAndPassLoginProfileView()
         } else {
-            VStack {
-                AsyncImage(url: URL(string: googleAuthVM.profilePicUrl))
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(radius: 20, corners: .allCorners)
-                
-                Text(googleAuthVM.givenName)
-                    .font(.largeTitle)
-                    .bold()
-                    .padding(.bottom, 20)
-                
-                Button {
-                    self.googleAuthVM.signOut()
-                } label: {
-                    Text("Sign Out")
-                        .foregroundColor(.red)
-                        .bold()
-                }
-                .padding()
-                .background {
-                        Capsule()
-                        .fill(.red.opacity(0.15))
-                }
-            }
+            GoogleOrOtherLoginProfileView()
         }
     }
 }
@@ -71,5 +28,83 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView()
             .environmentObject(GoogleAutheticationViewModel())
             .environmentObject(EmailAuthenticationViewModel())
+    }
+}
+
+//MARK: - If User Email Authentication Login then this struct is Called...
+struct EmailAndPassLoginProfileView: View {
+    
+    @State private var isPresentSignIN: Bool = false
+    @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
+    
+    var body: some View {
+        VStack {
+            Image(systemName: "person.fill")
+                .resizable()
+                .frame(width: 150, height: 150)
+            
+            Text(emailAuthVM.firstName)
+                .font(.largeTitle)
+                .bold()
+                .padding(.bottom, 20)
+            
+            Text(emailAuthVM.email)
+                .font(.title3)
+                .bold()
+                .padding(.bottom, 20)
+            
+            Button {
+                withAnimation(.spring()) {
+                    self.isPresentSignIN.toggle()
+                }
+            } label: {
+                Text("Sign Out")
+                    .foregroundColor(.red)
+                    .bold()
+            }
+            .padding()
+            .background {
+                    Capsule()
+                    .fill(.red.opacity(0.15))
+            }
+            .navigationDestination(isPresented: $isPresentSignIN) {
+                withAnimation(.spring()) {
+                    SignInView()
+                        .navigationBarBackButtonHidden(true)
+                }
+            }
+        }
+    }
+}
+
+//MARK: - If User Google Or Other PlatForm Use And Login the This Struct is Called...
+struct GoogleOrOtherLoginProfileView: View {
+    
+    @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
+    
+    var body: some View {
+        VStack {
+            AsyncImage(url: URL(string: googleAuthVM.profilePicUrl))
+                .frame(width: 100, height: 100)
+                .cornerRadius(radius: 20, corners: .allCorners)
+            
+            Text(googleAuthVM.givenName)
+                .font(.largeTitle)
+                .bold()
+                .padding(.bottom, 20)
+            
+            Button {
+                self.googleAuthVM.signOut()
+            } label: {
+                Text("Sign Out")
+                    .foregroundColor(.red)
+                    .bold()
+            }
+            .padding()
+            .background {
+                    Capsule()
+                    .fill(.red.opacity(0.15))
+            }
+        }
     }
 }
