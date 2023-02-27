@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1042759169923-tr3rbvqdbo7jebs5nb601u5amsv381od.apps.googleusercontent.com</string>
+	<string>666912208148-r3vfoivimuuu69i1vsho0lbonaldr2kg.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1042759169923-tr3rbvqdbo7jebs5nb601u5amsv381od</string>
+	<string>com.googleusercontent.apps.666912208148-r3vfoivimuuu69i1vsho0lbonaldr2kg</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDehEleLc7pJzYTxZKrtPEUstqecXcQEPg</string>
+	<string>AIzaSyBCCWrdIIwuVytC52qLfbFV-9wmVFNZiNY</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1042759169923</string>
+	<string>666912208148</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>viewconroller.MusicAPP</string>
 	<key>PROJECT_ID</key>
-	<string>testing-project-ee3da</string>
+	<string>musicapp-cc25f</string>
 	<key>STORAGE_BUCKET</key>
-	<string>testing-project-ee3da.appspot.com</string>
+	<string>musicapp-cc25f.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1042759169923:ios:10d7b513df6ec08bc1a8b6</string>
-	<key>DATABASE_URL</key>
-	<string>https://testing-project-ee3da-default-rtdb.firebaseio.com</string>
+	<string>1:666912208148:ios:6a1448e644c5df0ab67e01</string>
 </dict>
 </plist>

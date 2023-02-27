@@ -7,6 +7,8 @@
 
 import Foundation
 import GoogleSignIn
+import FirebaseAuth
+import FirebaseCore
 
 //MARK: - Google Authentication View Model...
 class GoogleAutheticationViewModel: ObservableObject {
@@ -77,7 +79,8 @@ class GoogleAutheticationViewModel: ObservableObject {
         
         //Create the Configration ClientID...
         //this ClientID Store the Project > target > info > custom IOs target properties > + > GIDClientID : String : "This ClientID Store"
-        let signInConfig = GIDConfiguration.init(clientID: "1042759169923-tr3rbvqdbo7jebs5nb601u5amsv381od.apps.googleusercontent.com")
+        
+        let signInConfig = GIDConfiguration.init(clientID: "666912208148-r3vfoivimuuu69i1vsho0lbonaldr2kg.apps.googleusercontent.com")
         
         //also store the...
         GIDSignIn.sharedInstance.configuration = signInConfig

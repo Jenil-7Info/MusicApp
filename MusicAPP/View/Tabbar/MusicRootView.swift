@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MusicRootView: View {
     
+    @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
+    
     var body: some View {
         NavigationStack {
             TabView {

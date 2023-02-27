@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		70047C5429A6269F00D567B4 /* GStructuer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70047C5329A6269F00D567B4 /* GStructuer.swift */; };
 		70047C5629A626B300D567B4 /* GVaribles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70047C5529A626B300D567B4 /* GVaribles.swift */; };
+		70689D9E29AC8B0E0036FE12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70689D9D29AC8B0E0036FE12 /* GoogleService-Info.plist */; };
 		70748A0229A5EDA600682178 /* MusicAPPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70748A0129A5EDA600682178 /* MusicAPPApp.swift */; };
 		70748A0629A5EDA800682178 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0529A5EDA800682178 /* ColorAssets.xcassets */; };
 		70748A0929A5EDA800682178 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0829A5EDA800682178 /* Preview Assets.xcassets */; };
@@ -25,10 +26,10 @@
 		70AD850729A8896100EF8851 /* TipsRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD850629A8896100EF8851 /* TipsRectangleView.swift */; };
 		70AD850929A88E6F00EF8851 /* DiscoverViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD850829A88E6F00EF8851 /* DiscoverViewmodel.swift */; };
 		70AD850B29A8BEBB00EF8851 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD850A29A8BEBB00EF8851 /* DiscoverView.swift */; };
-		70AD850F29A8CC8500EF8851 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70AD850E29A8CC8500EF8851 /* GoogleService-Info.plist */; };
 		70AD851229A8CD8E00EF8851 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851129A8CD8E00EF8851 /* FirebaseAuth */; };
 		70AD851529A8CDD500EF8851 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851429A8CDD500EF8851 /* GoogleSignIn */; };
 		70AD851729A8CDD500EF8851 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851629A8CDD500EF8851 /* GoogleSignInSwift */; };
+		70BCFA6029AC860700D88702 /* EmailAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCFA5F29AC860700D88702 /* EmailAuthenticationViewModel.swift */; };
 		70D2EB5629A5EE4A00795D96 /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */; };
 		70D2EB5B29A5EED700795D96 /* MusicRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5A29A5EED700795D96 /* MusicRootView.swift */; };
 		70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5D29A5EEF000795D96 /* HomeView.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		70047C5329A6269F00D567B4 /* GStructuer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GStructuer.swift; sourceTree = "<group>"; };
 		70047C5529A626B300D567B4 /* GVaribles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GVaribles.swift; sourceTree = "<group>"; };
+		70689D9D29AC8B0E0036FE12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		707489FE29A5EDA600682178 /* MusicAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70748A0129A5EDA600682178 /* MusicAPPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAPPApp.swift; sourceTree = "<group>"; };
 		70748A0529A5EDA800682178 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 		70AD850629A8896100EF8851 /* TipsRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsRectangleView.swift; sourceTree = "<group>"; };
 		70AD850829A88E6F00EF8851 /* DiscoverViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewmodel.swift; sourceTree = "<group>"; };
 		70AD850A29A8BEBB00EF8851 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
-		70AD850E29A8CC8500EF8851 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70BCFA5F29AC860700D88702 /* EmailAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
 		70D2EB5A29A5EED700795D96 /* MusicRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRootView.swift; sourceTree = "<group>"; };
 		70D2EB5D29A5EEF000795D96 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				709FC32E29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift */,
+				70BCFA5F29AC860700D88702 /* EmailAuthenticationViewModel.swift */,
 			);
 			path = Viewmodel;
 			sourceTree = "<group>";
@@ -213,8 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				70748A0129A5EDA600682178 /* MusicAPPApp.swift */,
+				70689D9D29AC8B0E0036FE12 /* GoogleService-Info.plist */,
 				70D2EB9729A60B7100795D96 /* Info.plist */,
-				70AD850E29A8CC8500EF8851 /* GoogleService-Info.plist */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -455,7 +458,7 @@
 				70D2EB9229A5F6C100795D96 /* Fester_Trial-Light.otf in Resources */,
 				70D2EB8C29A5F6C100795D96 /* Fester_Trial-Heavy.otf in Resources */,
 				70D2EB5629A5EE4A00795D96 /* ImageAssets.xcassets in Resources */,
-				70AD850F29A8CC8500EF8851 /* GoogleService-Info.plist in Resources */,
+				70689D9E29AC8B0E0036FE12 /* GoogleService-Info.plist in Resources */,
 				70D2EB9429A5F6C100795D96 /* Fester_Trial-BookItalic.otf in Resources */,
 				70D2EB9629A5F6C100795D96 /* Fester_Trial-SemiBold.otf in Resources */,
 			);
@@ -472,6 +475,7 @@
 				70D2EB6229A5EF2A00795D96 /* SearchView.swift in Sources */,
 				70AD850929A88E6F00EF8851 /* DiscoverViewmodel.swift in Sources */,
 				70D2EB7329A5F2F400795D96 /* SignInView.swift in Sources */,
+				70BCFA6029AC860700D88702 /* EmailAuthenticationViewModel.swift in Sources */,
 				70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */,
 				708A359829A7871A0076D539 /* YouFavArtistViewModel.swift in Sources */,
 				708A359E29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift in Sources */,

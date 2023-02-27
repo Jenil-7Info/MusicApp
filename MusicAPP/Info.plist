@@ -9,12 +9,20 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.1042759169923-tr3rbvqdbo7jebs5nb601u5amsv381od</string>
+				<string>com.googleusercontent.apps.666912208148-r3vfoivimuuu69i1vsho0lbonaldr2kg</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.666912208148-r3vfoivimuuu69i1vsho0lbonaldr2kg</string>
 			</array>
 		</dict>
 	</array>
 	<key>GIDClientID</key>
-	<string>1042759169923-tr3rbvqdbo7jebs5nb601u5amsv381od.apps.googleusercontent.com</string>
+	<string>666912208148-r3vfoivimuuu69i1vsho0lbonaldr2kg.apps.googleusercontent.com</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fester_Trial-Bold.otf</string>

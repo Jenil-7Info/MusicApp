@@ -17,6 +17,7 @@ struct ProfileView: View {
             
             AsyncImage(url: URL(string: googleAuthVM.profilePicUrl))
                 .frame(width: 100, height: 100)
+                .cornerRadius(radius: 20, corners: .allCorners)
             
             Text(googleAuthVM.givenName)
                 .font(.largeTitle)
@@ -42,6 +43,7 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(GoogleAutheticationViewModel())
     }
 }
 
