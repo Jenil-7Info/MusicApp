@@ -12,13 +12,14 @@ import FirebaseAuth
 
 struct SignInView: View {
     
-    @State private var userName: String = ""
+    @State private var email: String = ""
     @State private var password: String = ""
     @State private var isShowPass: Bool = false
     @State private var bgColorFloat: CGFloat = 0.8
     @State private var isPresentSignUp: Bool = false
     @State private var isGoogleVerification: Bool = false
-    @EnvironmentObject var googleVM : GoogleAutheticationViewModel
+    @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
+    @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     
     var body: some View {
         ZStack {
@@ -51,11 +52,11 @@ struct SignInView: View {
                     }
                     .padding(.bottom, 30)
                 
-                
                 //UserName
-                TextField("Username", text: $userName)
+                TextField("Email Address", text: $email)
                     .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
                     .autocorrectionDisabled(true)
+                    .textInputAutocapitalization(.never)
                     .padding()
                     .background {
                         ZStack {
@@ -72,6 +73,7 @@ struct SignInView: View {
                             .padding()
                             .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
                             .autocorrectionDisabled(true)
+                            .textInputAutocapitalization(.never)
                         Image(systemName: isShowPass ? "eye.slash" : "eye")
                             .resizable()
                             .frame(width: 23, height: 16)
@@ -93,6 +95,7 @@ struct SignInView: View {
                             .padding()
                             .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
                             .autocorrectionDisabled(true)
+                            .textInputAutocapitalization(.never)
                         Image(systemName: isShowPass ? "eye.slash" : "eye")
                             .resizable()
                             .frame(width: 23, height: 16)
@@ -110,7 +113,10 @@ struct SignInView: View {
                 }
                 
                 Button {
-                    validationHandling()
+                    //validationHandling()    
+                    guard !email.isEmpty || !password.isEmpty else { return }
+
+                    emailAuthVM.signIn(email: email, pass: password, verification: .EmailAndPassAuth)
                 } label: {
                     Text("Sign IN")
                         .font(.festerFont(customFontName: .FesterCondensedExtraBold, fontSize: 22))
@@ -118,15 +124,15 @@ struct SignInView: View {
                         .padding()
                         .background {
                             Capsule()
-                                .fill(userName.isEmpty || password.isEmpty ? GradientColors.grayGradient : GradientColors.orangeGradient)
+                                .fill(email.isEmpty || password.isEmpty ? GradientColors.grayGradient : GradientColors.orangeGradient)
                                 .frame(width: dynamicWidth-40)
                         }
                 }
-                .navigationDestination(isPresented: $isPresentSignUp, destination: {
+                .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
                     MusicRootView()
                         .navigationBarBackButtonHidden(true)
                 })
-                .disabled(userName.isEmpty || password.isEmpty)
+                .disabled(email.isEmpty || password.isEmpty)
                 .padding(.bottom)
                 
                 //MARK: -  Social Media Login...
@@ -151,7 +157,7 @@ struct SignInView: View {
                     
                     
                     Button {
-                        googleVM.signIn()
+                        googleAuthVM.signIn()
                     } label: {
                         Image("google")
                             .resizable()
@@ -162,7 +168,7 @@ struct SignInView: View {
                                     .fill(.white.opacity(bgColorFloat))
                             }
                     }
-                    .navigationDestination(isPresented: $googleVM.isLoggedIn) {
+                    .navigationDestination(isPresented: $googleAuthVM.isLoggedIn) {
                         MusicRootView()
                             .navigationBarBackButtonHidden(true)
                     }
@@ -190,7 +196,7 @@ struct SignInView: View {
                         .foregroundColor(.white)
                     
                     Button {
-                        
+                        self.isPresentSignUp.toggle()
                     } label: {
                         Text("Sign Up")
                             .font(.festerFont(customFontName: .FesterBold, fontSize: 20))
@@ -206,22 +212,12 @@ struct SignInView: View {
         }
         .edgesIgnoringSafeArea(.all)
     }
-    
-    //MARK: - Validation Handling...
-    fileprivate func validationHandling() {
-        withAnimation {
-            if userName.isEmpty || password.isEmpty {
-                isPresentSignUp = false
-            } else {
-                isPresentSignUp = true
-            }
-        }
-    }
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         SignInView()
             .environmentObject(GoogleAutheticationViewModel())
+            .environmentObject(EmailAuthenticationViewModel())
     }
 }

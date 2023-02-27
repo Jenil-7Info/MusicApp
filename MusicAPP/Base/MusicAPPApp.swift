@@ -14,6 +14,7 @@ struct MusicAPPApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var googleAuthVM = GoogleAutheticationViewModel()
+    @StateObject var emailAuthVM = EmailAuthenticationViewModel()
     
     var body: some Scene {
         WindowGroup {
@@ -22,6 +23,7 @@ struct MusicAPPApp: App {
             }
             .preferredColorScheme(.dark)
             .environmentObject(googleAuthVM)
+            .environmentObject(emailAuthVM)
         }
     }
 }

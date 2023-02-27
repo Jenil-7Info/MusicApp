@@ -10,6 +10,7 @@
 		70047C5429A6269F00D567B4 /* GStructuer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70047C5329A6269F00D567B4 /* GStructuer.swift */; };
 		70047C5629A626B300D567B4 /* GVaribles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70047C5529A626B300D567B4 /* GVaribles.swift */; };
 		70689D9E29AC8B0E0036FE12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70689D9D29AC8B0E0036FE12 /* GoogleService-Info.plist */; };
+		70689DA029ACAB110036FE12 /* GEnumration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70689D9F29ACAB110036FE12 /* GEnumration.swift */; };
 		70748A0229A5EDA600682178 /* MusicAPPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70748A0129A5EDA600682178 /* MusicAPPApp.swift */; };
 		70748A0629A5EDA800682178 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0529A5EDA800682178 /* ColorAssets.xcassets */; };
 		70748A0929A5EDA800682178 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0829A5EDA800682178 /* Preview Assets.xcassets */; };
@@ -20,7 +21,7 @@
 		708A359A29A789F80076D539 /* LastPlaycollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A359929A789F80076D539 /* LastPlaycollectionView.swift */; };
 		708A359C29A78A120076D539 /* FavArtistsCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A359B29A78A120076D539 /* FavArtistsCircleView.swift */; };
 		708A359E29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A359D29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift */; };
-		709FC32F29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709FC32E29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift */; };
+		709FC32F29A9C2510038A8C3 /* AutheticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709FC32E29A9C2510038A8C3 /* AutheticationViewModel.swift */; };
 		70AD850329A87A3900EF8851 /* MadeForYoucollectionPlayListRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD850229A87A3900EF8851 /* MadeForYoucollectionPlayListRectangle.swift */; };
 		70AD850529A87EE900EF8851 /* TipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD850429A87EE900EF8851 /* TipsViewModel.swift */; };
 		70AD850729A8896100EF8851 /* TipsRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD850629A8896100EF8851 /* TipsRectangleView.swift */; };
@@ -29,7 +30,6 @@
 		70AD851229A8CD8E00EF8851 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851129A8CD8E00EF8851 /* FirebaseAuth */; };
 		70AD851529A8CDD500EF8851 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851429A8CDD500EF8851 /* GoogleSignIn */; };
 		70AD851729A8CDD500EF8851 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851629A8CDD500EF8851 /* GoogleSignInSwift */; };
-		70BCFA6029AC860700D88702 /* EmailAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCFA5F29AC860700D88702 /* EmailAuthenticationViewModel.swift */; };
 		70D2EB5629A5EE4A00795D96 /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */; };
 		70D2EB5B29A5EED700795D96 /* MusicRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5A29A5EED700795D96 /* MusicRootView.swift */; };
 		70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5D29A5EEF000795D96 /* HomeView.swift */; };
@@ -61,6 +61,7 @@
 		70047C5329A6269F00D567B4 /* GStructuer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GStructuer.swift; sourceTree = "<group>"; };
 		70047C5529A626B300D567B4 /* GVaribles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GVaribles.swift; sourceTree = "<group>"; };
 		70689D9D29AC8B0E0036FE12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70689D9F29ACAB110036FE12 /* GEnumration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEnumration.swift; sourceTree = "<group>"; };
 		707489FE29A5EDA600682178 /* MusicAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70748A0129A5EDA600682178 /* MusicAPPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAPPApp.swift; sourceTree = "<group>"; };
 		70748A0529A5EDA800682178 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -72,13 +73,12 @@
 		708A359929A789F80076D539 /* LastPlaycollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPlaycollectionView.swift; sourceTree = "<group>"; };
 		708A359B29A78A120076D539 /* FavArtistsCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavArtistsCircleView.swift; sourceTree = "<group>"; };
 		708A359D29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadeForYouCollectionViewModel.swift; sourceTree = "<group>"; };
-		709FC32E29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAutheticationViewModel.swift; sourceTree = "<group>"; };
+		709FC32E29A9C2510038A8C3 /* AutheticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutheticationViewModel.swift; sourceTree = "<group>"; };
 		70AD850229A87A3900EF8851 /* MadeForYoucollectionPlayListRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadeForYoucollectionPlayListRectangle.swift; sourceTree = "<group>"; };
 		70AD850429A87EE900EF8851 /* TipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewModel.swift; sourceTree = "<group>"; };
 		70AD850629A8896100EF8851 /* TipsRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsRectangleView.swift; sourceTree = "<group>"; };
 		70AD850829A88E6F00EF8851 /* DiscoverViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewmodel.swift; sourceTree = "<group>"; };
 		70AD850A29A8BEBB00EF8851 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
-		70BCFA5F29AC860700D88702 /* EmailAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
 		70D2EB5A29A5EED700795D96 /* MusicRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRootView.swift; sourceTree = "<group>"; };
 		70D2EB5D29A5EEF000795D96 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -124,8 +124,7 @@
 		701E463E29A63D5D005511E6 /* Viewmodel */ = {
 			isa = PBXGroup;
 			children = (
-				709FC32E29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift */,
-				70BCFA5F29AC860700D88702 /* EmailAuthenticationViewModel.swift */,
+				709FC32E29A9C2510038A8C3 /* AutheticationViewModel.swift */,
 			);
 			path = Viewmodel;
 			sourceTree = "<group>";
@@ -199,6 +198,7 @@
 				70047C5329A6269F00D567B4 /* GStructuer.swift */,
 				70047C5529A626B300D567B4 /* GVaribles.swift */,
 				708A359029A778D00076D539 /* CornerRadiusShap.swift */,
+				70689D9F29ACAB110036FE12 /* GEnumration.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -475,14 +475,13 @@
 				70D2EB6229A5EF2A00795D96 /* SearchView.swift in Sources */,
 				70AD850929A88E6F00EF8851 /* DiscoverViewmodel.swift in Sources */,
 				70D2EB7329A5F2F400795D96 /* SignInView.swift in Sources */,
-				70BCFA6029AC860700D88702 /* EmailAuthenticationViewModel.swift in Sources */,
 				70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */,
 				708A359829A7871A0076D539 /* YouFavArtistViewModel.swift in Sources */,
 				708A359E29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift in Sources */,
 				70D2EB5B29A5EED700795D96 /* MusicRootView.swift in Sources */,
 				70AD850529A87EE900EF8851 /* TipsViewModel.swift in Sources */,
 				708A359329A779680076D539 /* LastPlayViewModel.swift in Sources */,
-				709FC32F29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift in Sources */,
+				709FC32F29A9C2510038A8C3 /* AutheticationViewModel.swift in Sources */,
 				70AD850329A87A3900EF8851 /* MadeForYoucollectionPlayListRectangle.swift in Sources */,
 				70047C5629A626B300D567B4 /* GVaribles.swift in Sources */,
 				708A359129A778D00076D539 /* CornerRadiusShap.swift in Sources */,
@@ -495,6 +494,7 @@
 				70D2EB6A29A5EF6B00795D96 /* ProfileView.swift in Sources */,
 				70AD850729A8896100EF8851 /* TipsRectangleView.swift in Sources */,
 				70748A0229A5EDA600682178 /* MusicAPPApp.swift in Sources */,
+				70689DA029ACAB110036FE12 /* GEnumration.swift in Sources */,
 				70AD850B29A8BEBB00EF8851 /* DiscoverView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
