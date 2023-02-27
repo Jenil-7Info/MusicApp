@@ -150,8 +150,12 @@ class EmailAuthenticationViewModel: ObservableObject {
             
             //Success
             DispatchQueue.main.async {
-                self.isLoggIN = true
-                self.verification = verification.rawValue
+                if self.auth.currentUser != nil {
+                    self.isLoggIN = true
+                    self.verification = verification.rawValue
+                } else {
+                    self.isLoggIN = false
+                }
             }
         }
     }
@@ -162,11 +166,16 @@ class EmailAuthenticationViewModel: ObservableObject {
             
             //Success
             DispatchQueue.main.async {
-                self.image = image
-                self.firstName = fName
-                self.lastName = lName
-                self.isLoggIN = true
-                self.verification = verification.rawValue
+                
+                if self.auth.currentUser != nil {
+                    self.image = image
+                    self.firstName = fName
+                    self.lastName = lName
+                    self.isLoggIN = true
+                    self.verification = verification.rawValue
+                } else {
+                    self.isLoggIN = false
+                }
             }
         }
     }

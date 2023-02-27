@@ -16,12 +16,11 @@ struct ProfileView: View {
        
         if emailAuthVM.verification == LoginVerification.EmailAndPassAuth.rawValue {
             VStack {
-                
                 Image(systemName: "person.fill")
                     .resizable()
                     .frame(width: 150, height: 150)
                 
-                Text("Demo")
+                Text(emailAuthVM.firstName)
                     .font(.largeTitle)
                     .bold()
                     .padding(.bottom, 20)
@@ -41,7 +40,6 @@ struct ProfileView: View {
             }
         } else {
             VStack {
-                
                 AsyncImage(url: URL(string: googleAuthVM.profilePicUrl))
                     .frame(width: 100, height: 100)
                     .cornerRadius(radius: 20, corners: .allCorners)
@@ -75,4 +73,3 @@ struct ProfileView_Previews: PreviewProvider {
             .environmentObject(EmailAuthenticationViewModel())
     }
 }
-

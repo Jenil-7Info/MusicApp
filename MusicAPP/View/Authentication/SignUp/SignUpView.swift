@@ -136,7 +136,8 @@ struct SignUpView: View {
                     }
                     
                     Button {
-                        guard !fName.isEmpty || !lName.isEmpty || !email.isEmpty || !password.isEmpty else { return }
+                        guard !fName.isEmpty || !lName.isEmpty || !email.isEmpty || !password.isEmpty || password.count >= 6 else { return }
+                        
                         emailAuthVM.signUp("person.fill", fName, lName, email: email, pass: password, verification: .EmailAndPassAuth)
                     } label: {
                         Text("Sign Up")
@@ -145,15 +146,15 @@ struct SignUpView: View {
                             .padding()
                             .background {
                                 Capsule()
-                                    .fill(email.isEmpty || password.isEmpty ? GradientColors.grayGradient : GradientColors.orangeGradient)
+                                    .fill(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty || password.count != 6 ? GradientColors.grayGradient : GradientColors.orangeGradient)
                                     .frame(width: dynamicWidth-40)
                             }
                     }
                     .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
-                        MusicRootView()
+                        SignInView()
                             .navigationBarBackButtonHidden(true)
                     })
-                    .disabled(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty)
+                    .disabled(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty || password.count != 6)
                     .padding(.bottom)
                     
                     HStack {
