@@ -127,7 +127,6 @@ struct SignInView: View {
                 //MARK: - Change Password
                 HStack {
                     Spacer()
-                    
                     Button {
                         DispatchQueue.main.async {
                             emailAuthVM.resetPassEmailVerification(emailAdd: email)
