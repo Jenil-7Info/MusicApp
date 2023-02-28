@@ -13,7 +13,6 @@ struct ProfileView: View {
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     
     var body: some View {
-        
         //NOTE: - check the which use login method
         if emailAuthVM.verification == LoginVerification.EmailAndPassAuth.rawValue {
             EmailAndPassLoginProfileView()
@@ -54,9 +53,8 @@ struct EmailAndPassLoginProfileView: View {
                 .padding(.bottom, 20)
             
             Button {
-                withAnimation(.spring()) {
-                    self.isPresentSignIN.toggle()
-                }
+                emailAuthVM.signOut()
+                //self.isPresentSignIN.toggle()
             } label: {
                 Text("Sign Out")
                     .foregroundColor(.red)
@@ -67,7 +65,7 @@ struct EmailAndPassLoginProfileView: View {
                     Capsule()
                     .fill(.red.opacity(0.15))
             }
-            .navigationDestination(isPresented: $isPresentSignIN) {
+            .navigationDestination(isPresented: $emailAuthVM.isLoggIN) {
                 withAnimation(.spring()) {
                     SignInView()
                         .navigationBarBackButtonHidden(true)

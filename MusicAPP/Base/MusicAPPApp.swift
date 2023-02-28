@@ -19,7 +19,7 @@ struct MusicAPPApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-               SignInView()
+                SignInView()
             }
             .preferredColorScheme(.dark)
             .environmentObject(googleAuthVM)
@@ -39,7 +39,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL,
                      options: [UIApplication.OpenURLOptionsKey: Any])
-      -> Bool {
-      return GIDSignIn.sharedInstance.handle(url)
+    -> Bool {
+        return GIDSignIn.sharedInstance.handle(url)
     }
 }

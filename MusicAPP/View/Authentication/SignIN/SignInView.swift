@@ -12,7 +12,7 @@ import FirebaseAuth
 
 struct SignInView: View {
     
-    @AppStorage("email") var email: String = ""
+    @State private var email: String = ""
     @State private var password: String = ""
     @State private var isShowPass: Bool = false
     @State private var bgColorFloat: CGFloat = 0.5
@@ -20,10 +20,10 @@ struct SignInView: View {
     @State private var isGoogleVerification: Bool = false
     @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
-            
             //MARK: - backGround Image and Colors...
             Image("Mount3")
                 .resizable()
@@ -34,12 +34,11 @@ struct SignInView: View {
             Color.black.opacity(0.25)
             
             VStack {
-                
                 //MARK: - Heading Title...
                 Text("Welcome Again!")
                     .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
                     .foregroundColor(.white)
-                    .padding(EdgeInsets(top: dynamicHeight/11, leading: 20, bottom: 30, trailing: 20))
+                    .padding(EdgeInsets(top: 30, leading: 20, bottom: 8, trailing: 20))
                 
                 Text("Music App")
                     .font(.festerFont(customFontName: .FesterBold, fontSize: 50))
@@ -52,18 +51,20 @@ struct SignInView: View {
                     }
                     .padding(.bottom, 30)
                 
-                //UserName
+                //Email Address
                 TextField("Email Address", text: $email)
                     .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
                     .foregroundColor(.black)
                     .autocorrectionDisabled(true)
                     .textInputAutocapitalization(.never)
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
                     .padding()
                     .background {
-                        ZStack {
-                            Capsule()
-                                .fill(.white.opacity(bgColorFloat))
-                        }
+                        Capsule()
+                            .stroke(!email.isEmpty ? .orange : .clear , lineWidth:!email.isEmpty || !password.isEmpty ?  3 : 0)
+                        Capsule()
+                            .fill(.white.opacity(bgColorFloat))
                     }
                     .padding(.horizontal, 20)
                 
@@ -75,6 +76,8 @@ struct SignInView: View {
                             .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
                             .foregroundColor(.black)
                             .autocorrectionDisabled(true)
+                            .textContentType(.password)
+                            .keyboardType(.numbersAndPunctuation)
                             .textInputAutocapitalization(.never)
                         Image(systemName: isShowPass ? "eye.slash" : "eye")
                             .resizable()
@@ -85,6 +88,8 @@ struct SignInView: View {
                             }
                     }
                     .background {
+                        Capsule()
+                            .stroke(!password.isEmpty ? .orange : .clear , lineWidth:!email.isEmpty || !password.isEmpty ?  3 : 0)
                         Capsule()
                             .fill(.white.opacity(bgColorFloat))
                     }
@@ -98,6 +103,8 @@ struct SignInView: View {
                             .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
                             .foregroundColor(.black)
                             .autocorrectionDisabled(true)
+                            .textContentType(.password)
+                            .keyboardType(.numbersAndPunctuation)
                             .textInputAutocapitalization(.never)
                         Image(systemName: isShowPass ? "eye.slash" : "eye")
                             .resizable()
@@ -109,17 +116,37 @@ struct SignInView: View {
                     }
                     .background {
                         Capsule()
+                            .stroke(!password.isEmpty ? .orange : .clear , lineWidth:!email.isEmpty || !password.isEmpty ?  3 : 0)
+                        Capsule()
                             .fill(.white.opacity(bgColorFloat))
                     }
                     .padding(.horizontal, 20)
                     .padding(.bottom)
                 }
                 
+                //MARK: - Change Password
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        DispatchQueue.main.async {
+                            emailAuthVM.resetPassEmailVerification(emailAdd: email)
+                        }
+                    } label: {
+                        Text("Change Password")
+                            .font(.festerFont(customFontName: .FesterBold, fontSize: 15))
+                            .foregroundColor(.white)
+                    }
+                }
+                .padding(EdgeInsets(top: 0, leading: 22, bottom: 20, trailing: 22))
+                
                 Button {
-                    //validationHandling()    
                     guard !email.isEmpty || !password.isEmpty else { return }
-
+                    
                     emailAuthVM.signIn(email: email, pass: password, verification: .EmailAndPassAuth)
+                    
+                    email = ""
+                    password = ""
                 } label: {
                     Text("Sign IN")
                         .font(.festerFont(customFontName: .FesterCondensedExtraBold, fontSize: 22))
@@ -136,6 +163,15 @@ struct SignInView: View {
                         .navigationBarBackButtonHidden(true)
                 })
                 .disabled(email.isEmpty || password.isEmpty)
+                .alert("Alert", isPresented: $emailAuthVM.isAlert, actions: {
+                    Button {
+                        dismiss.callAsFunction()
+                    } label: {
+                        Text("OK")
+                    }
+                }, message: {
+                    Text(emailAuthVM.errMessage)
+                })
                 .padding(.bottom)
                 
                 //MARK: -  Social Media Login...
@@ -199,14 +235,15 @@ struct SignInView: View {
                         .foregroundColor(.white)
                     
                     Button {
-                        self.isPresentSignUp.toggle()
+                        self.isPresentSignUp = true
                     } label: {
                         Text("Sign Up")
-                            .font(.festerFont(customFontName: .FesterBold, fontSize: 20))
+                            .font(.festerFont(customFontName: .FesterBold, fontSize: 21))
                             .foregroundColor(.white)
                     }
                     .navigationDestination(isPresented: $isPresentSignUp) {
                         SignUpView()
+                            .navigationBarBackButtonHidden(true)
                     }
                 }
                 .padding(.bottom)

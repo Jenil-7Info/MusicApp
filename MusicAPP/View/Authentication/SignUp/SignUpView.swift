@@ -11,181 +11,208 @@ struct SignUpView: View {
     
     @State private var fName: String = ""
     @State private var lName: String = ""
-    @AppStorage("email") var email: String = ""
+    @State private var email: String = ""
     @State private var password: String = ""
     @State private var isShowPass: Bool = false
     @State private var bgColorFloat: CGFloat = 0.5
     @State private var isPresentSignIN: Bool = false
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     
     
     var body: some View {
-        NavigationStack {
-            ZStack {
+        ZStack {
+            
+            //MARK: - backGround Image and Colors...
+            Image("Mountain")
+                .resizable()
+                .scaledToFill()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            
+            Color.white.opacity(0.1)
+            Color.black.opacity(0.25)
+            
+            VStack {
                 
-                //MARK: - backGround Image and Colors...
-                Image("Mountain")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                HStack {
+                    Button {
+                        dismiss.callAsFunction()
+                    } label: {
+                        Image(systemName: "arrow.left")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.white)
+                            .bold()
+                            .padding(.trailing, 6)
+                        
+                        Text("Sign In")
+                            .font(.festerFont(customFontName: .FesterBold, fontSize: 18))
+                            .foregroundColor(.white)
+                    }
+
+                    Spacer()
+                }
+                .padding(.horizontal)
                 
-                Color.white.opacity(0.1)
-                Color.black.opacity(0.25)
+                //MARK: - Heading Title...
+                Text("Music App")
+                    .font(.festerFont(customFontName: .FesterBold, fontSize: 50))
+                    .overlay {
+                        GradientColors.orangeGradient
+                            .mask {
+                                Text("Music App")
+                                    .font(.festerFont(customFontName: .FesterBold, fontSize: 50))
+                            }
+                    }
+                    .padding(EdgeInsets(top: dynamicHeight/11, leading: 20, bottom: 30, trailing: 20))
                 
-                VStack {
-                    
-                    //MARK: - Heading Title...
-                    Text("Music App")
-                        .font(.festerFont(customFontName: .FesterBold, fontSize: 50))
-                        .overlay {
-                            GradientColors.orangeGradient
-                                .mask {
-                                    Text("Music App")
-                                        .font(.festerFont(customFontName: .FesterBold, fontSize: 50))
-                                }
-                        }
-                        .padding(EdgeInsets(top: dynamicHeight/11, leading: 20, bottom: 30, trailing: 20))
-                    
-                    
-                    //Firstnaem
-                    TextField("First Name", text: $fName)
-                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
-                        .foregroundColor(.black)
-                        .autocorrectionDisabled(true)
-                        .textInputAutocapitalization(.words)
-                        .padding()
-                        .background {
-                            ZStack {
-                                Capsule()
-                                    .fill(.white.opacity(bgColorFloat))
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                    
-                    //LastName
-                    TextField("LastName", text: $lName)
-                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
-                        .foregroundColor(.black)
-                        .autocorrectionDisabled(true)
-                        .textInputAutocapitalization(.words)
-                        .padding()
-                        .background {
-                            ZStack {
-                                Capsule()
-                                    .fill(.white.opacity(bgColorFloat))
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                    
-                    //Email Address
-                    TextField("Email", text: $email)
-                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
-                        .foregroundColor(.black)
-                        .autocorrectionDisabled(true)
-                        .textInputAutocapitalization(.never)
-                        .padding()
-                        .background {
-                            ZStack {
-                                Capsule()
-                                    .fill(.white.opacity(bgColorFloat))
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                    
-                    //Password : Hide snd Show
-                    if isShowPass {
-                        HStack {
-                            TextField("Password", text: $password)
-                                .padding()
-                                .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
-                                .foregroundColor(.black)
-                                .autocorrectionDisabled(true)
-                                .textInputAutocapitalization(.never)
-                            Image(systemName: isShowPass ? "eye.slash" : "eye")
-                                .resizable()
-                                .frame(width: 23, height: 16)
-                                .padding(.trailing)
-                                .onTapGesture {
-                                    isShowPass.toggle()
-                                }
-                        }
-                        .background {
+                
+                //Firstnaem
+                TextField("First Name", text: $fName)
+                    .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                    .foregroundColor(.black)
+                    .autocorrectionDisabled(true)
+                    .textInputAutocapitalization(.words)
+                    .textContentType(.givenName)
+                    .keyboardType(.numbersAndPunctuation)
+                    .padding()
+                    .background {
+                        ZStack {
                             Capsule()
                                 .fill(.white.opacity(bgColorFloat))
                         }
-                        .padding(.horizontal, 20)
-                        .padding(.bottom)
                     }
-                    else {
-                        HStack {
-                            SecureField("Password", text: $password)
-                                .padding()
-                                .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
-                                .foregroundColor(.black)
-                                .autocorrectionDisabled(true)
-                                .textInputAutocapitalization(.never)
-                            Image(systemName: isShowPass ? "eye.slash" : "eye")
-                                .resizable()
-                                .frame(width: 23, height: 16)
-                                .padding(.trailing)
-                                .onTapGesture {
-                                    isShowPass.toggle()
-                                }
-                        }
-                        .background {
+                    .padding(.horizontal, 20)
+                
+                //LastName
+                TextField("LastName", text: $lName)
+                    .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                    .foregroundColor(.black)
+                    .textInputAutocapitalization(.words)
+                    .autocorrectionDisabled(true)
+                    .textContentType(.familyName)
+                    .keyboardType(.numbersAndPunctuation)
+                    .padding()
+                    .background {
+                        ZStack {
                             Capsule()
                                 .fill(.white.opacity(bgColorFloat))
                         }
-                        .padding(.horizontal, 20)
-                        .padding(.bottom)
                     }
+                    .padding(.horizontal, 20)
+                
+                //Email Address
+                TextField("Email", text: $email)
+                    .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                    .foregroundColor(.black)
+                    .textInputAutocapitalization(.never)
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+                    .autocorrectionDisabled(true)
+                    .padding()
+                    .background {
+                        ZStack {
+                            Capsule()
+                                .fill(.white.opacity(bgColorFloat))
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                
+                //Password : Hide snd Show
+                if isShowPass {
+                    HStack {
+                        TextField("Password", text: $password)
+                            .padding()
+                            .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                            .textInputAutocapitalization(.never)
+                            .foregroundColor(.black)
+                            .textContentType(.password)
+                            .keyboardType(.numbersAndPunctuation)
+                            .autocorrectionDisabled(true)
+                        Image(systemName: isShowPass ? "eye.slash" : "eye")
+                            .resizable()
+                            .frame(width: 23, height: 16)
+                            .padding(.trailing)
+                            .onTapGesture {
+                                isShowPass.toggle()
+                            }
+                    }
+                    .background {
+                        Capsule()
+                            .fill(.white.opacity(bgColorFloat))
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom)
+                }
+                else {
+                    HStack {
+                        SecureField("Password", text: $password)
+                            .padding()
+                            .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                            .textInputAutocapitalization(.never)
+                            .foregroundColor(.black)
+                            .autocorrectionDisabled(true)
+                            .textContentType(.password)
+                            .keyboardType(.numbersAndPunctuation)
+                        Image(systemName: isShowPass ? "eye.slash" : "eye")
+                            .resizable()
+                            .frame(width: 23, height: 16)
+                            .padding(.trailing)
+                            .onTapGesture {
+                                isShowPass.toggle()
+                            }
+                    }
+                    .background {
+                        Capsule()
+                            .fill(.white.opacity(bgColorFloat))
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom)
+                }
+                
+                Button {
+                    guard !fName.isEmpty || !lName.isEmpty || !email.isEmpty || !password.isEmpty else { return }
+                    
+                    emailAuthVM.signUp("person.fill", fName, lName, email: email, pass: password, verification: .EmailAndPassAuth)
+                } label: {
+                    Text("Sign Up")
+                        .font(.festerFont(customFontName: .FesterCondensedExtraBold, fontSize: 22))
+                        .foregroundColor(.white)
+                        .padding()
+                        .background {
+                            Capsule()
+                                .fill(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty || password.count != 6 ? GradientColors.grayGradient : GradientColors.orangeGradient)
+                                .frame(width: dynamicWidth-40)
+                        }
+                }
+                .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
+                    SignInView()
+                        .navigationBarBackButtonHidden(true)
+                })
+                .disabled(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty)
+                .padding(.bottom)
+                
+                HStack {
+                    Text("Alrady Account?")
+                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                        .foregroundColor(.white)
                     
                     Button {
-                        guard !fName.isEmpty || !lName.isEmpty || !email.isEmpty || !password.isEmpty || password.count >= 6 else { return }
-                        
-                        emailAuthVM.signUp("person.fill", fName, lName, email: email, pass: password, verification: .EmailAndPassAuth)
+                        self.isPresentSignIN.toggle()
                     } label: {
-                        Text("Sign Up")
-                            .font(.festerFont(customFontName: .FesterCondensedExtraBold, fontSize: 22))
+                        Text("Sign In")
+                            .font(.festerFont(customFontName: .FesterBold, fontSize: 20))
                             .foregroundColor(.white)
-                            .padding()
-                            .background {
-                                Capsule()
-                                    .fill(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty || password.count != 6 ? GradientColors.grayGradient : GradientColors.orangeGradient)
-                                    .frame(width: dynamicWidth-40)
-                            }
                     }
-                    .navigationDestination(isPresented: $isPresentSignIN, destination: {
+                    .navigationDestination(isPresented: $isPresentSignIN) {
                         SignInView()
                             .navigationBarBackButtonHidden(true)
-                    })
-                    .disabled(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty || password.count != 6)
-                    .padding(.bottom)
-                    
-                    HStack {
-                        Text("Alrady Account?")
-                            .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
-                            .foregroundColor(.white)
-                        
-                        Button {
-                            self.isPresentSignIN.toggle()
-                        } label: {
-                            Text("Sign In")
-                                .font(.festerFont(customFontName: .FesterBold, fontSize: 20))
-                                .foregroundColor(.white)
-                        }
-                        .navigationDestination(isPresented: $isPresentSignIN) {
-                            SignInView()
-                                .navigationBarBackButtonHidden(true)
-                        }
                     }
-                    .frame(maxHeight: .infinity ,alignment: .bottom)
-                    .padding(.bottom)
-                    
                 }
+                .padding(.top, 20)
             }
-            .edgesIgnoringSafeArea(.all)
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

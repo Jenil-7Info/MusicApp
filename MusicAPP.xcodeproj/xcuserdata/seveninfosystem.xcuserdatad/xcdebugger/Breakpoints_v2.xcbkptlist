@@ -3,4 +3,86 @@
    uuid = "5EFD488B-55AF-4BD7-BA8E-B79E6F56D499"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A92F4729-86B8-49D8-9D45-1C7A648F3CE6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicAPP/View/Authentication/EmailAuthenticationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "signIn(email:pass:verification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B52B103-183B-4622-852F-6A41B55DAE16"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicAPP/View/Authentication/EmailAuthenticationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "signIn(email:pass:verification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A71891E0-6D87-4EF7-94D7-D91635486716"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicAPP/View/Authentication/EmailAuthenticationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "signIn(email:pass:verification:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A71891E0-6D87-4EF7-94D7-D91635486716 - e3eb1f22b3c0888"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MusicAPP.EmailAuthenticationViewModel.signIn(email: Swift.String, pass: Swift.String, verification: MusicAPP.LoginVerification) -&gt; ()"
+                  moduleName = "MusicAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seveninfosystem/Documents/SWIFT%20UI/MusicApp/MusicAPP/View/Authentication/EmailAuthenticationViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "520">
+               </Location>
+               <Location
+                  uuid = "A71891E0-6D87-4EF7-94D7-D91635486716 - e716273eef348c5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MusicAPP.EmailAuthenticationViewModel.signIn(email: Swift.String, pass: Swift.String, verification: MusicAPP.LoginVerification) -&gt; ()"
+                  moduleName = "MusicAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seveninfosystem/Documents/SWIFT%20UI/MusicApp/MusicAPP/View/Authentication/EmailAuthenticationViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
