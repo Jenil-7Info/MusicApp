@@ -12,6 +12,7 @@ struct SignUpView: View {
     @State private var fName: String = ""
     @State private var lName: String = ""
     @State private var email: String = ""
+    @State private var phone: String = ""
     @State private var password: String = ""
     @State private var isShowPass: Bool = false
     @State private var bgColorFloat: CGFloat = 0.5
@@ -24,14 +25,16 @@ struct SignUpView: View {
     var body: some View {
         ZStack {
             
+            GeometryReader { GeometryProxy in
+                Image("Mountain")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: GeometryProxy.size.width, height: GeometryProxy.size.height)
+                
+                Color.white.opacity(0.1)
+                Color.black.opacity(0.25)
+            }
             //MARK: - backGround Image and Colors...
-            Image("Mountain")
-                .resizable()
-                .scaledToFill()
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            
-            Color.white.opacity(0.1)
-            Color.black.opacity(0.25)
             
             VStack {
                 
@@ -65,7 +68,7 @@ struct SignUpView: View {
                                     .font(.festerFont(customFontName: .FesterBold, fontSize: 50))
                             }
                     }
-                    .padding(EdgeInsets(top: dynamicHeight/11, leading: 20, bottom: 30, trailing: 20))
+                    .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
                 
                 
                 //Firstnaem
@@ -104,6 +107,23 @@ struct SignUpView: View {
                 
                 //Email Address
                 TextField("Email", text: $email)
+                    .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                    .foregroundColor(.black)
+                    .textInputAutocapitalization(.never)
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+                    .autocorrectionDisabled(true)
+                    .padding()
+                    .background {
+                        ZStack {
+                            Capsule()
+                                .fill(.white.opacity(bgColorFloat))
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                
+                //Email Address
+                TextField("Phone", text: $phone)
                     .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
                     .foregroundColor(.black)
                     .textInputAutocapitalization(.never)
@@ -174,11 +194,13 @@ struct SignUpView: View {
                 Button {
                     guard !fName.isEmpty || !lName.isEmpty || !email.isEmpty || !password.isEmpty else { return }
                     
+                    self.isPresentSignIN.toggle()
+                    
                     //user data store in coreData...
-                  //  insertData(fName, lName, email: email, pass: password)
+                    insertData(fName, lName, phone: phone, email: email, pass: password)
                     
                     //emailAuthentication fuction...
-                    emailAuthVM.signUp("person.fill", fName, lName, email: email, pass: password, verification: .EmailAndPassAuth)
+                  //  emailAuthVM.signUp("person.fill", fName, lName, email: email, pass: password, verification: .EmailAndPassAuth)
                 } label: {
                     Text("Sign Up")
                         .font(.festerFont(customFontName: .FesterCondensedExtraBold, fontSize: 22))
@@ -191,30 +213,31 @@ struct SignUpView: View {
                         }
                 }
                 .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
-                    SignInView()
+                    //SignInView()
+                    TestingCoreData()
                         .navigationBarBackButtonHidden(true)
                 })
                 .disabled(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty)
                 .padding(.bottom)
                 
-                HStack {
-                    Text("Alrady Account?")
-                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
-                        .foregroundColor(.white)
-                    
-                    Button {
-                        self.isPresentSignIN.toggle()
-                    } label: {
-                        Text("Sign In")
-                            .font(.festerFont(customFontName: .FesterBold, fontSize: 20))
-                            .foregroundColor(.white)
-                    }
-                    .navigationDestination(isPresented: $isPresentSignIN) {
-                        SignInView()
-                            .navigationBarBackButtonHidden(true)
-                    }
-                }
-                .padding(.top, 20)
+//                HStack {
+//                    Text("Alrady Account?")
+//                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+//                        .foregroundColor(.white)
+//
+//                    Button {
+//                        self.isPresentSignIN.toggle()
+//                    } label: {
+//                        Text("Sign In")
+//                            .font(.festerFont(customFontName: .FesterBold, fontSize: 20))
+//                            .foregroundColor(.white)
+//                    }
+//                    .navigationDestination(isPresented: $isPresentSignIN) {
+//                        SignInView()
+//                            .navigationBarBackButtonHidden(true)
+//                    }
+//                }
+//                .padding(.top, 20)
             }
         }
         .edgesIgnoringSafeArea(.all)

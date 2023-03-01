@@ -10,11 +10,12 @@ import Foundation
 //MARK: -  Insert and save in core data
 extension SignUpView {
     
-    func insertData(_ firstName: String, _ lastName: String, email: String, pass: String) {
+    func insertData(_ firstName: String, _ lastName: String, phone: String ,email: String, pass: String) {
         
         let newUser = UserDetail(context: context)
         newUser.givenName = firstName
         newUser.familyName = lastName
+        newUser.phone = phone
         newUser.image = "person.fill"
         newUser.email = email
         newUser.password = pass

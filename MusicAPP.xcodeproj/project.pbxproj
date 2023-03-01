@@ -30,7 +30,6 @@
 		70AD851229A8CD8E00EF8851 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851129A8CD8E00EF8851 /* FirebaseAuth */; };
 		70AD851529A8CDD500EF8851 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851429A8CDD500EF8851 /* GoogleSignIn */; };
 		70AD851729A8CDD500EF8851 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851629A8CDD500EF8851 /* GoogleSignInSwift */; };
-		70B0DAB929ADB29C00676891 /* MainMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B0DAB829ADB29C00676891 /* MainMusicView.swift */; };
 		70B0DABB29ADB4E500676891 /* EmailAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */; };
 		70CC626D29AF1AB200366026 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70CC626B29AF1AB200366026 /* DataModel.xcdatamodeld */; };
 		70CC626F29AF1BF700366026 /* DataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC626E29AF1BF700366026 /* DataModelController.swift */; };
@@ -60,6 +59,7 @@
 		70D2EB9529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf */; };
 		70D2EB9629A5F6C100795D96 /* Fester_Trial-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */; };
 		70D2EB9929A60EF900795D96 /* Font+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */; };
+		70EB267B29AF788F008A5656 /* TestingCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EB267A29AF788F008A5656 /* TestingCoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,7 +84,6 @@
 		70AD850629A8896100EF8851 /* TipsRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsRectangleView.swift; sourceTree = "<group>"; };
 		70AD850829A88E6F00EF8851 /* DiscoverViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewmodel.swift; sourceTree = "<group>"; };
 		70AD850A29A8BEBB00EF8851 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
-		70B0DAB829ADB29C00676891 /* MainMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMusicView.swift; sourceTree = "<group>"; };
 		70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		70CC626C29AF1AB200366026 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		70CC626E29AF1BF700366026 /* DataModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelController.swift; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-SemiBold.otf"; sourceTree = "<group>"; };
 		70D2EB9729A60B7100795D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extenstion.swift"; sourceTree = "<group>"; };
+		70EB267A29AF788F008A5656 /* TestingCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingCoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +195,7 @@
 		70D2EB4F29A5EE1500795D96 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				70B0DAB829ADB29C00676891 /* MainMusicView.swift */,
+				70EB267A29AF788F008A5656 /* TestingCoreData.swift */,
 				70D2EB5929A5EEB200795D96 /* Authentication */,
 				70D2EB5829A5EEA700795D96 /* Tabbar */,
 			);
@@ -496,12 +496,12 @@
 			files = (
 				708A359A29A789F80076D539 /* LastPlaycollectionView.swift in Sources */,
 				70CC626D29AF1AB200366026 /* DataModel.xcdatamodeld in Sources */,
-				70B0DAB929ADB29C00676891 /* MainMusicView.swift in Sources */,
 				70D2EB6229A5EF2A00795D96 /* SearchView.swift in Sources */,
 				70AD850929A88E6F00EF8851 /* DiscoverViewmodel.swift in Sources */,
 				70D2EB7329A5F2F400795D96 /* SignInView.swift in Sources */,
 				70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */,
 				708A359829A7871A0076D539 /* YouFavArtistViewModel.swift in Sources */,
+				70EB267B29AF788F008A5656 /* TestingCoreData.swift in Sources */,
 				708A359E29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift in Sources */,
 				70D2EB5B29A5EED700795D96 /* MusicRootView.swift in Sources */,
 				70AD850529A87EE900EF8851 /* TipsViewModel.swift in Sources */,

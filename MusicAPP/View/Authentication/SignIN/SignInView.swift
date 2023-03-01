@@ -236,7 +236,7 @@ struct SignInView: View {
                         .foregroundColor(.white)
                     
                     Button {
-                        self.isPresentSignUp = true
+                        self.isPresentSignUp.toggle()
                     } label: {
                         Text("Sign Up")
                             .font(.festerFont(customFontName: .FesterBold, fontSize: 21))
