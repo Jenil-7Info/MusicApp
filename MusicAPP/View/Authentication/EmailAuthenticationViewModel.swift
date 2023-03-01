@@ -30,9 +30,9 @@ class EmailAuthenticationViewModel: ObservableObject {
     }
     
     func listenToAuthState() {
-        auth.addStateDidChangeListener { [weak self] _ , user in
+        auth.addStateDidChangeListener { [weak self] _ , nUser in
             guard let self = self else { return }
-            self.user = user
+            self.user = nUser
         }
     }
     

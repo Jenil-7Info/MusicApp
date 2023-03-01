@@ -18,7 +18,8 @@ struct SignUpView: View {
     @State private var isPresentSignIN: Bool = false
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
-    
+    @Environment(\.managedObjectContext) var context
+    @FetchRequest(sortDescriptors: []) var userDetails: FetchedResults<UserDetail>
     
     var body: some View {
         ZStack {
@@ -173,6 +174,10 @@ struct SignUpView: View {
                 Button {
                     guard !fName.isEmpty || !lName.isEmpty || !email.isEmpty || !password.isEmpty else { return }
                     
+                    //user data store in coreData...
+                  //  insertData(fName, lName, email: email, pass: password)
+                    
+                    //emailAuthentication fuction...
                     emailAuthVM.signUp("person.fill", fName, lName, email: email, pass: password, verification: .EmailAndPassAuth)
                 } label: {
                     Text("Sign Up")
@@ -219,7 +224,6 @@ struct SignUpView: View {
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpView()
-            .environmentObject(GoogleAutheticationViewModel())
             .environmentObject(EmailAuthenticationViewModel())
     }
 }

@@ -21,6 +21,8 @@ struct SignInView: View {
     @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var userDetails: FetchedResults<UserDetail>
     
     var body: some View {
         ZStack {
