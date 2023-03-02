@@ -41,7 +41,7 @@ struct HomeView: View {
                     .resizable()
                     .renderingMode(.template)
                     .foregroundColor(.white)
-                    .frame(width: dynamicWidth/14, height: dynamicHeight/25)
+                    .frame(width: 25, height: 28)
                     .padding(.trailing)
             }
             
@@ -52,20 +52,22 @@ struct HomeView: View {
                     .resizable()
                     .renderingMode(.template)
                     .foregroundColor(.white)
-                    .frame(width: dynamicWidth/14, height: dynamicHeight/25)
+                    .frame(width: 30, height: 30)
             }
         }
     }
     
-    //MARK: - Body...
+    //MARK: - Body
     var body: some View {
         VStack {
+         
+        //MARK: - Headering
          header
             .padding(.horizontal, 20)
             
             ScrollView(.vertical) {
                 
-                //NOTE: - Last Play...
+                //MARK: - Last Play
                 HStack {
                     Text("Last Play")
                         .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
@@ -84,7 +86,7 @@ struct HomeView: View {
                 .scrollIndicators(.never)
                 .padding(.leading)
                 
-                //NOTE: - Your Favourit artits...
+                //MARK: - Your Favourit artits
                 HStack {
                     Text("Your Favourit artists")
                         .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
@@ -103,7 +105,7 @@ struct HomeView: View {
                 .scrollIndicators(.never)
                 .padding(.leading)
                 
-                //NOTE: - Made For You...
+                //MARK: - Made For You
                 HStack {
                     Text("Made For You")
                         .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
@@ -117,12 +119,13 @@ struct HomeView: View {
                         ForEach(madePlayListVM.YourPlayListcollectionManger) { collection in
                             MadeForYoucollectionPlayListRectangle(img1: collection.img1, img2: collection.img2, img3: collection.img3, img4: collection.img4, title: collection.title, totalSong: collection.totalSong)
                         }
+                        .padding(.horizontal, 5)
                     }
                 }
                 .scrollIndicators(.never)
                 .padding([.leading, .bottom])
                 
-                //NOTE: - Tips to get started...
+                //MARK: - Tips to get started
                 HStack {
                     Text("Tips to get started")
                         .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
@@ -141,7 +144,7 @@ struct HomeView: View {
                 .scrollIndicators(.never)
                 .padding([.leading, .bottom])
                 
-                //NOTE: - Discover...
+                //MARK: - Discover
                 HStack {
                     Text("Discover")
                         .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))

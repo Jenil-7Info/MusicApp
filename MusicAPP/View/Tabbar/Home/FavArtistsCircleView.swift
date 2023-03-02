@@ -22,6 +22,6 @@ struct FavArtistsCircleView: View {
 
 struct FavArtistsCircleView_Previews: PreviewProvider {
     static var previews: some View {
-        FavArtistsCircleView(img: "")
+        FavArtistsCircleView(img: "pop")
     }
 }

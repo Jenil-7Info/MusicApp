@@ -18,11 +18,10 @@ struct SignInView: View {
     @State private var bgColorFloat: CGFloat = 0.5
     @State private var isPresentSignUp: Bool = false
     @State private var isGoogleVerification: Bool = false
-    @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     @Environment(\.dismiss) var dismiss
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var userDetails: FetchedResults<UserDetail>
+    @State private var isOpenPhoneNoSheet: Bool = false
+
     
     var body: some View {
         ZStack {
@@ -42,15 +41,7 @@ struct SignInView: View {
                     .foregroundColor(.white)
                     .padding(EdgeInsets(top: 30, leading: 20, bottom: 8, trailing: 20))
                 
-                Text("Music App")
-                    .font(.festerFont(customFontName: .FesterBold, fontSize: 50))
-                    .overlay {
-                        GradientColors.orangeGradient
-                            .mask {
-                                Text("Music App")
-                                    .font(.festerFont(customFontName: .FesterBold, fontSize: 50))
-                            }
-                    }
+                ApplicationTitle()
                     .padding(.bottom, 30)
                 
                 //Email Address
@@ -128,6 +119,18 @@ struct SignInView: View {
                 
                 //MARK: - Change Password
                 HStack {
+                    
+                    Button {
+                        self.isOpenPhoneNoSheet.toggle()
+                    } label: {
+                        Text("Phone Number")
+                            .font(.festerFont(customFontName: .FesterBold, fontSize: 15))
+                            .foregroundColor(.white)
+                    }
+                    .sheet(isPresented: $isOpenPhoneNoSheet) {
+                        PhoneVerifyView()
+                    }
+                    
                     Spacer()
                     Button {
                         DispatchQueue.main.async {
@@ -148,6 +151,7 @@ struct SignInView: View {
                     
                     email = ""
                     password = ""
+                    
                 } label: {
                     Text("Sign IN")
                         .font(.festerFont(customFontName: .FesterCondensedExtraBold, fontSize: 22))
@@ -176,65 +180,13 @@ struct SignInView: View {
                 .padding(.bottom)
                 
                 //MARK: -  Social Media Login...
-                Text("Login With")
-                    .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
-                    .foregroundColor(.white)
-                
-                HStack(spacing: 40) {
-                    
-                    Button {
-                        
-                    } label: {
-                        Image("facebook")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding()
-                            .background {
-                                Circle()
-                                    .fill(.white.opacity(bgColorFloat))
-                            }
-                    }
-                    
-                    
-                    Button {
-                        googleAuthVM.signIn()
-                    } label: {
-                        Image("google")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding()
-                            .background {
-                                Circle()
-                                    .fill(.white.opacity(bgColorFloat))
-                            }
-                    }
-                    .navigationDestination(isPresented: $googleAuthVM.isLoggedIn) {
-                        MusicRootView()
-                            .navigationBarBackButtonHidden(true)
-                    }
-                    
-                    Button {
-                        
-                    } label: {
-                        Image("GitHub")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding()
-                            .background {
-                                Circle()
-                                    .fill(.white.opacity(bgColorFloat))
-                            }
-                    }
-                    
-                }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 30)
+                SocialMediaAuthentication()
                 
                 HStack {
                     Text("New User?")
                         .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
                         .foregroundColor(.white)
-                    
+
                     Button {
                         self.isPresentSignUp.toggle()
                     } label: {
@@ -260,5 +212,69 @@ struct SignInView_Previews: PreviewProvider {
         SignInView()
             .environmentObject(GoogleAutheticationViewModel())
             .environmentObject(EmailAuthenticationViewModel())
+    }
+}
+
+
+//MARK: - Social Medial Authentication
+struct SocialMediaAuthentication: View {
+    
+    @State private var bgColorFloat: CGFloat = 0.5
+    @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
+    
+    var body: some View {
+        Text("Login With")
+            .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
+            .foregroundColor(.white)
+        
+        HStack(spacing: 40) {
+            
+            Button {
+                
+            } label: {
+                Image("facebook")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .padding()
+                    .background {
+                        Circle()
+                            .fill(.white.opacity(bgColorFloat))
+                    }
+            }
+            
+            
+            Button {
+                googleAuthVM.signIn()
+            } label: {
+                Image("google")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .padding()
+                    .background {
+                        Circle()
+                            .fill(.white.opacity(bgColorFloat))
+                    }
+            }
+            .navigationDestination(isPresented: $googleAuthVM.isLoggedIn) {
+                MusicRootView()
+                    .navigationBarBackButtonHidden(true)
+            }
+            
+            Button {
+                
+            } label: {
+                Image("GitHub")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .padding()
+                    .background {
+                        Circle()
+                            .fill(.white.opacity(bgColorFloat))
+                    }
+            }
+            
+        }
+        .padding(.horizontal, 20)
+        .padding(.bottom, 30)
     }
 }

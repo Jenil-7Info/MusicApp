@@ -14,6 +14,8 @@
 		70748A0229A5EDA600682178 /* MusicAPPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70748A0129A5EDA600682178 /* MusicAPPApp.swift */; };
 		70748A0629A5EDA800682178 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0529A5EDA800682178 /* ColorAssets.xcassets */; };
 		70748A0929A5EDA800682178 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0829A5EDA800682178 /* Preview Assets.xcassets */; };
+		70877EF029B05EB500E6B6A0 /* ApplicationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */; };
+		70877EF229B061E000E6B6A0 /* SignUpMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70877EF129B061E000E6B6A0 /* SignUpMainView.swift */; };
 		708A359129A778D00076D539 /* CornerRadiusShap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A359029A778D00076D539 /* CornerRadiusShap.swift */; };
 		708A359329A779680076D539 /* LastPlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A359229A779680076D539 /* LastPlayViewModel.swift */; };
 		708A359629A7798F0076D539 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A359529A7798F0076D539 /* HomeModel.swift */; };
@@ -33,7 +35,6 @@
 		70B0DABB29ADB4E500676891 /* EmailAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */; };
 		70CC626D29AF1AB200366026 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70CC626B29AF1AB200366026 /* DataModel.xcdatamodeld */; };
 		70CC626F29AF1BF700366026 /* DataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC626E29AF1BF700366026 /* DataModelController.swift */; };
-		70CC627129AF2C4000366026 /* SignUp+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC627029AF2C4000366026 /* SignUp+Extenstion.swift */; };
 		70D2EB5629A5EE4A00795D96 /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */; };
 		70D2EB5B29A5EED700795D96 /* MusicRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5A29A5EED700795D96 /* MusicRootView.swift */; };
 		70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5D29A5EEF000795D96 /* HomeView.swift */; };
@@ -59,6 +60,8 @@
 		70D2EB9529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf */; };
 		70D2EB9629A5F6C100795D96 /* Fester_Trial-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */; };
 		70D2EB9929A60EF900795D96 /* Font+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */; };
+		70E757F429B0C4D800E7E81C /* PhoneVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */; };
+		70E757F629B0CB3600E7E81C /* PhoneVerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */; };
 		70EB267B29AF788F008A5656 /* TestingCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EB267A29AF788F008A5656 /* TestingCoreData.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +74,8 @@
 		70748A0129A5EDA600682178 /* MusicAPPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAPPApp.swift; sourceTree = "<group>"; };
 		70748A0529A5EDA800682178 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		70748A0829A5EDA800682178 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTitle.swift; sourceTree = "<group>"; };
+		70877EF129B061E000E6B6A0 /* SignUpMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMainView.swift; sourceTree = "<group>"; };
 		708A359029A778D00076D539 /* CornerRadiusShap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusShap.swift; sourceTree = "<group>"; };
 		708A359229A779680076D539 /* LastPlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPlayViewModel.swift; sourceTree = "<group>"; };
 		708A359529A7798F0076D539 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -87,7 +92,6 @@
 		70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		70CC626C29AF1AB200366026 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		70CC626E29AF1BF700366026 /* DataModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelController.swift; sourceTree = "<group>"; };
-		70CC627029AF2C4000366026 /* SignUp+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUp+Extenstion.swift"; sourceTree = "<group>"; };
 		70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
 		70D2EB5A29A5EED700795D96 /* MusicRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRootView.swift; sourceTree = "<group>"; };
 		70D2EB5D29A5EEF000795D96 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 		70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-SemiBold.otf"; sourceTree = "<group>"; };
 		70D2EB9729A60B7100795D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extenstion.swift"; sourceTree = "<group>"; };
+		70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationViewModel.swift; sourceTree = "<group>"; };
+		70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerifyView.swift; sourceTree = "<group>"; };
 		70EB267A29AF788F008A5656 /* TestingCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingCoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */,
-				70CC627029AF2C4000366026 /* SignUp+Extenstion.swift */,
 			);
 			path = Extenstion;
 			sourceTree = "<group>";
@@ -276,8 +281,10 @@
 			children = (
 				709FC32E29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift */,
 				70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */,
+				70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */,
 				70D2EB6D29A5EFC400795D96 /* SignIN */,
 				70D2EB6E29A5EFD000795D96 /* SignUp */,
+				70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -361,6 +368,7 @@
 			children = (
 				701E463E29A63D5D005511E6 /* Viewmodel */,
 				70D2EB7229A5F2F400795D96 /* SignInView.swift */,
+				70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */,
 			);
 			path = SignIN;
 			sourceTree = "<group>";
@@ -370,6 +378,7 @@
 			children = (
 				70B0DABD29ADB56700676891 /* ViewModel */,
 				70D2EB7429A5F2FD00795D96 /* SignUpView.swift */,
+				70877EF129B061E000E6B6A0 /* SignUpMainView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -495,21 +504,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				708A359A29A789F80076D539 /* LastPlaycollectionView.swift in Sources */,
+				70877EF029B05EB500E6B6A0 /* ApplicationTitle.swift in Sources */,
 				70CC626D29AF1AB200366026 /* DataModel.xcdatamodeld in Sources */,
 				70D2EB6229A5EF2A00795D96 /* SearchView.swift in Sources */,
 				70AD850929A88E6F00EF8851 /* DiscoverViewmodel.swift in Sources */,
+				70877EF229B061E000E6B6A0 /* SignUpMainView.swift in Sources */,
 				70D2EB7329A5F2F400795D96 /* SignInView.swift in Sources */,
 				70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */,
+				70E757F429B0C4D800E7E81C /* PhoneVerificationViewModel.swift in Sources */,
 				708A359829A7871A0076D539 /* YouFavArtistViewModel.swift in Sources */,
 				70EB267B29AF788F008A5656 /* TestingCoreData.swift in Sources */,
 				708A359E29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift in Sources */,
 				70D2EB5B29A5EED700795D96 /* MusicRootView.swift in Sources */,
 				70AD850529A87EE900EF8851 /* TipsViewModel.swift in Sources */,
 				70B0DABB29ADB4E500676891 /* EmailAuthenticationViewModel.swift in Sources */,
-				70CC627129AF2C4000366026 /* SignUp+Extenstion.swift in Sources */,
 				70CC626F29AF1BF700366026 /* DataModelController.swift in Sources */,
 				708A359329A779680076D539 /* LastPlayViewModel.swift in Sources */,
 				709FC32F29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift in Sources */,
+				70E757F629B0CB3600E7E81C /* PhoneVerifyView.swift in Sources */,
 				70AD850329A87A3900EF8851 /* MadeForYoucollectionPlayListRectangle.swift in Sources */,
 				70047C5629A626B300D567B4 /* GVaribles.swift in Sources */,
 				708A359129A778D00076D539 /* CornerRadiusShap.swift in Sources */,

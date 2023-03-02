@@ -14,25 +14,29 @@ struct LastPlaycollectionView: View {
     @State var des: String
     
     var body: some View {
+        
         RoundedRectangle(cornerRadius: 20)
             .fill(.gray.opacity(0.5))
-            .frame(width: dynamicWidth/2.3, height: dynamicHeight/2.9)
+            .frame(width: dynamicWidth/2.3, height: dynamicHeight/3.2)
             .overlay {
                 VStack(alignment: .leading) {
                     Image(img)
                         .resizable()
-                        .aspectRatio(1.2,contentMode: .fill)
-                        .frame(width: dynamicWidth/2.3, height: dynamicHeight/6)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: dynamicWidth/2.3, height: dynamicHeight/5.6)
                         .cornerRadius(radius: 20, corners: [.topLeft, .topRight])
-                        .padding(.bottom)
+                        .offset(y: -10)
+                        
                     Text(title)
                         .foregroundColor(.white)
                         .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 20))
-                        .padding(.leading, 5)
+                        .padding(.horizontal, 8)
+                        .padding(.bottom, 2)
+                       
                     Text(des)
                         .lineLimit(2)
                         .foregroundColor(.white)
-                        .padding(5)
+                        .padding(.horizontal, 8)
                 }
             }
     }
@@ -40,6 +44,7 @@ struct LastPlaycollectionView: View {
 
 struct LastPlaycollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        LastPlaycollectionView(img: "", title: "Jenil", des: "askdnksndfknsdfnisndfjnsufsdjnfiuhsdfndsfdf")
+        LastPlaycollectionView(img: "pop", title: "Jenil", des: "Marshel Songs")
+          //  .preferredColorScheme(.dark)
     }
 }

@@ -20,11 +20,9 @@ struct MusicAPPApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                //SignInView()
-                //TestingCoreData()
-                SignUpView()
+                SignInView()
             }
-           // .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
             .environmentObject(googleAuthVM) //use the all files GoogleAuthentication
             .environmentObject(emailAuthVM) //use the all files EmailAuthentication
             .environment(\.managedObjectContext, dataModel.contanier.viewContext)

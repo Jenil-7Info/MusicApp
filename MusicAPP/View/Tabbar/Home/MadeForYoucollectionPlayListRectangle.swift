@@ -21,22 +21,25 @@ struct MadeForYoucollectionPlayListRectangle: View {
             HStack(spacing: 0) {
                 Image(img1)
                     .resizable()
+                    .aspectRatio(1, contentMode: .fill)
                 Image(img2)
                     .resizable()
+                    .aspectRatio(1, contentMode: .fill)
             }
             HStack(spacing: 0) {
                 Image(img3)
                     .resizable()
+                    .aspectRatio(1, contentMode: .fill)
                 Image(img4)
                     .resizable()
+                    .aspectRatio(1, contentMode: .fill)
             }
         }
         .frame(width: dynamicWidth/2.5, height: dynamicHeight/4)
         .cornerRadius(radius: 15, corners: .allCorners)
         .overlay {
-            
             Color.black
-                .opacity(0.4)
+                .opacity(0.2)
                 .cornerRadius(radius: 15, corners: .allCorners)
             
             VStack(spacing: 5) {

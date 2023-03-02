@@ -15,10 +15,11 @@ class EmailAuthenticationViewModel: ObservableObject {
     
     @Published var isLoggIN: Bool = false
     @Published var verification: String = ""
-    @Published var firstName: String = ""
-    @Published var lastName: String = ""
-    @Published var email: String = ""
-    @Published var image: String = ""
+    @Published var firstName: String = "unkown Name"
+    @Published var lastName: String = "unkown Surname"
+    @Published var email: String = "unkown@gmail.com"
+    @Published var phone: String = "+0 1234567890"
+    @Published var image: String = "plus"
     @Published var isAlert: Bool = false
     @Published var errMessage: String = ""
     
@@ -54,6 +55,9 @@ class EmailAuthenticationViewModel: ObservableObject {
     //Sign In the User, when his register useing email or password...
     func signIn(email: String, pass: String, verification: LoginVerification) {
         
+        debugPrint("Email:- \(email)")
+        debugPrint("pass:- \(pass)")
+        
         auth.signIn(withEmail: email, password: pass) { result, err in
             
             guard result != nil, err == nil else {
@@ -68,26 +72,10 @@ class EmailAuthenticationViewModel: ObservableObject {
                 self.verification = verification.rawValue
             }
         }
-        
-//        auth.signIn(withEmail: email, password: pass) { result, error in
-//            guard result != nil , error == nil else {
-//                self.isAlert = true
-//                self.errMessage = error?.localizedDescription ?? "ERROR: Somethings Wrong!"
-//                debugPrint("PROMBLEM SETMENT:- SOMETHINGS WRONG! \(String(describing: error?.localizedDescription))")
-//                return
-//            }
-//
-//            //Success
-//            DispatchQueue.main.async {
-//                self.isLoggIN = true
-//                self.isAlert = false
-//                self.verification = verification.rawValue
-//            }
-//        }
     }
     
     //register the user
-    func signUp(_ image: String ,_ fName: String, _ lName: String ,email: String, pass: String, verification: LoginVerification) {
+    func signUp(_ image: String ,_ fName: String, _ lName: String ,email: String, pass: String, phone: String , verification: LoginVerification) {
         auth.createUser(withEmail: email, password: pass) { result, error in
             guard result != nil , error == nil else { return }
             
@@ -97,6 +85,7 @@ class EmailAuthenticationViewModel: ObservableObject {
                 self.firstName = fName
                 self.lastName = lName
                 self.email = email
+                self.phone = phone
                 self.isLoggIN = true
                 self.isAlert = false
                 self.verification = verification.rawValue

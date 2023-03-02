@@ -19,7 +19,7 @@ struct DiscoverView: View {
             Image(img)
                 .resizable()
                 .scaledToFill()
-                .frame(width: dynamicWidth/5, height: dynamicHeight/9)
+                .frame(width: dynamicWidth/5, height: dynamicHeight/11)
                 .cornerRadius(radius: 15, corners: .allCorners)
             
             VStack(alignment: .leading, spacing: 10) {

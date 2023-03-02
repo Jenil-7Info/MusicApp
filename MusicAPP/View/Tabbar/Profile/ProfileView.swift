@@ -34,16 +34,22 @@ struct ProfileView_Previews: PreviewProvider {
 struct EmailAndPassLoginProfileView: View {
     
     @State private var isPresentSignIN: Bool = false
+    @StateObject var coreDataVM = DataModelController()
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     
     var body: some View {
         VStack {
-            Image(systemName: "person.fill")
+            Image(systemName: emailAuthVM.image)
                 .resizable()
-                .frame(width: 150, height: 150)
+                .frame(width: 80, height: 80)
             
             Text(emailAuthVM.firstName)
                 .font(.largeTitle)
+                .bold()
+                .padding(.bottom, 20)
+            
+            Text(emailAuthVM.lastName)
+                .font(.title2)
                 .bold()
                 .padding(.bottom, 20)
             
@@ -52,9 +58,14 @@ struct EmailAndPassLoginProfileView: View {
                 .bold()
                 .padding(.bottom, 20)
             
+            Text(emailAuthVM.phone)
+                .font(.body)
+                .bold()
+                .padding(.bottom, 20)
+            
             Button {
-                emailAuthVM.signOut()
-                //self.isPresentSignIN.toggle()
+               // emailAuthVM.signOut()
+                self.isPresentSignIN.toggle()
             } label: {
                 Text("Sign Out")
                     .foregroundColor(.red)
@@ -65,7 +76,7 @@ struct EmailAndPassLoginProfileView: View {
                     Capsule()
                     .fill(.red.opacity(0.15))
             }
-            .navigationDestination(isPresented: $emailAuthVM.isLoggIN) {
+            .navigationDestination(isPresented: $isPresentSignIN) {
                 withAnimation(.spring()) {
                     SignInView()
                         .navigationBarBackButtonHidden(true)
