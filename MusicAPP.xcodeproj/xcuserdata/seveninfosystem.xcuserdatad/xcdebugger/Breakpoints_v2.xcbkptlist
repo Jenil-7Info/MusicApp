@@ -20,5 +20,101 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F86339C6-741B-42BF-9153-ABAE217EA8BC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicAPP/View/Authentication/SignIN/ChatGPTOTP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "F86339C6-741B-42BF-9153-ABAE217EA8BC - b2f76f92b2c3d66a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in MusicAPP.CircleTextField.body.getter : some"
+                  moduleName = "MusicAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seveninfosystem/Documents/SWIFT%20UI/MusicApp/MusicAPP/View/Authentication/SignIN/ChatGPTOTP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "F86339C6-741B-42BF-9153-ABAE217EA8BC - ef8b713fe0670126"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 () -&gt; () in MusicAPP.CircleTextField.body.getter : some"
+                  moduleName = "MusicAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seveninfosystem/Documents/SWIFT%20UI/MusicApp/MusicAPP/View/Authentication/SignIN/ChatGPTOTP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B64F8351-C86A-45D4-80B7-6BFF83B43C45"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicAPP/View/Authentication/SignIN/ChatGPTOTP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "B64F8351-C86A-45D4-80B7-6BFF83B43C45 - 33dc827e3dbbc48f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MusicAPP.CircleTextField.body.getter : some"
+                  moduleName = "MusicAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seveninfosystem/Documents/SWIFT%20UI/MusicApp/MusicAPP/View/Authentication/SignIN/ChatGPTOTP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "972">
+               </Location>
+               <Location
+                  uuid = "B64F8351-C86A-45D4-80B7-6BFF83B43C45 - b2f76f92b2c3d66a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in MusicAPP.CircleTextField.body.getter : some"
+                  moduleName = "MusicAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seveninfosystem/Documents/SWIFT%20UI/MusicApp/MusicAPP/View/Authentication/SignIN/ChatGPTOTP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "136">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

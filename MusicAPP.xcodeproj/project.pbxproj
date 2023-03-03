@@ -23,6 +23,7 @@
 		708A359A29A789F80076D539 /* LastPlaycollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A359929A789F80076D539 /* LastPlaycollectionView.swift */; };
 		708A359C29A78A120076D539 /* FavArtistsCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A359B29A78A120076D539 /* FavArtistsCircleView.swift */; };
 		708A359E29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A359D29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift */; };
+		709B3E9F29B20B36009C470C /* ChatGPTOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709B3E9E29B20B36009C470C /* ChatGPTOTP.swift */; };
 		709FC32F29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709FC32E29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift */; };
 		70AD850329A87A3900EF8851 /* MadeForYoucollectionPlayListRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD850229A87A3900EF8851 /* MadeForYoucollectionPlayListRectangle.swift */; };
 		70AD850529A87EE900EF8851 /* TipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD850429A87EE900EF8851 /* TipsViewModel.swift */; };
@@ -60,6 +61,9 @@
 		70D2EB9529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf */; };
 		70D2EB9629A5F6C100795D96 /* Fester_Trial-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */; };
 		70D2EB9929A60EF900795D96 /* Font+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */; };
+		70D4C3A929B1B213001CAFAB /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 70D4C3A829B1B213001CAFAB /* iPhoneNumberField */; };
+		70D4C3AB29B1C8F2001CAFAB /* CustomPhoneNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D4C3AA29B1C8F2001CAFAB /* CustomPhoneNumberPad.swift */; };
+		70D4C3B229B1F01B001CAFAB /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D4C3B129B1F01B001CAFAB /* OTPView.swift */; };
 		70E757F429B0C4D800E7E81C /* PhoneVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */; };
 		70E757F629B0CB3600E7E81C /* PhoneVerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */; };
 		70EB267B29AF788F008A5656 /* TestingCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EB267A29AF788F008A5656 /* TestingCoreData.swift */; };
@@ -83,6 +87,7 @@
 		708A359929A789F80076D539 /* LastPlaycollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPlaycollectionView.swift; sourceTree = "<group>"; };
 		708A359B29A78A120076D539 /* FavArtistsCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavArtistsCircleView.swift; sourceTree = "<group>"; };
 		708A359D29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadeForYouCollectionViewModel.swift; sourceTree = "<group>"; };
+		709B3E9E29B20B36009C470C /* ChatGPTOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGPTOTP.swift; sourceTree = "<group>"; };
 		709FC32E29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAutheticationViewModel.swift; sourceTree = "<group>"; };
 		70AD850229A87A3900EF8851 /* MadeForYoucollectionPlayListRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadeForYoucollectionPlayListRectangle.swift; sourceTree = "<group>"; };
 		70AD850429A87EE900EF8851 /* TipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewModel.swift; sourceTree = "<group>"; };
@@ -118,6 +123,8 @@
 		70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-SemiBold.otf"; sourceTree = "<group>"; };
 		70D2EB9729A60B7100795D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extenstion.swift"; sourceTree = "<group>"; };
+		70D4C3AA29B1C8F2001CAFAB /* CustomPhoneNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhoneNumberPad.swift; sourceTree = "<group>"; };
+		70D4C3B129B1F01B001CAFAB /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationViewModel.swift; sourceTree = "<group>"; };
 		70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerifyView.swift; sourceTree = "<group>"; };
 		70EB267A29AF788F008A5656 /* TestingCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingCoreData.swift; sourceTree = "<group>"; };
@@ -129,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70AD851729A8CDD500EF8851 /* GoogleSignInSwift in Frameworks */,
+				70D4C3A929B1B213001CAFAB /* iPhoneNumberField in Frameworks */,
 				70AD851229A8CD8E00EF8851 /* FirebaseAuth in Frameworks */,
 				70AD851529A8CDD500EF8851 /* GoogleSignIn in Frameworks */,
 			);
@@ -281,10 +289,10 @@
 			children = (
 				709FC32E29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift */,
 				70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */,
+				70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */,
 				70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */,
 				70D2EB6D29A5EFC400795D96 /* SignIN */,
 				70D2EB6E29A5EFD000795D96 /* SignUp */,
-				70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -369,6 +377,9 @@
 				701E463E29A63D5D005511E6 /* Viewmodel */,
 				70D2EB7229A5F2F400795D96 /* SignInView.swift */,
 				70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */,
+				70D4C3AA29B1C8F2001CAFAB /* CustomPhoneNumberPad.swift */,
+				709B3E9E29B20B36009C470C /* ChatGPTOTP.swift */,
+				70D4C3B129B1F01B001CAFAB /* OTPView.swift */,
 			);
 			path = SignIN;
 			sourceTree = "<group>";
@@ -426,6 +437,7 @@
 				70AD851129A8CD8E00EF8851 /* FirebaseAuth */,
 				70AD851429A8CDD500EF8851 /* GoogleSignIn */,
 				70AD851629A8CDD500EF8851 /* GoogleSignInSwift */,
+				70D4C3A829B1B213001CAFAB /* iPhoneNumberField */,
 			);
 			productName = MusicAPP;
 			productReference = 707489FE29A5EDA600682178 /* MusicAPP.app */;
@@ -458,6 +470,7 @@
 			packageReferences = (
 				70AD851029A8CD8E00EF8851 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				70AD851329A8CDD400EF8851 /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */,
+				70D4C3A729B1B213001CAFAB /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
 			);
 			productRefGroup = 707489FF29A5EDA600682178 /* Products */;
 			projectDirPath = "";
@@ -524,11 +537,14 @@
 				70E757F629B0CB3600E7E81C /* PhoneVerifyView.swift in Sources */,
 				70AD850329A87A3900EF8851 /* MadeForYoucollectionPlayListRectangle.swift in Sources */,
 				70047C5629A626B300D567B4 /* GVaribles.swift in Sources */,
+				709B3E9F29B20B36009C470C /* ChatGPTOTP.swift in Sources */,
+				70D4C3B229B1F01B001CAFAB /* OTPView.swift in Sources */,
 				708A359129A778D00076D539 /* CornerRadiusShap.swift in Sources */,
 				70D2EB7529A5F2FD00795D96 /* SignUpView.swift in Sources */,
 				708A359629A7798F0076D539 /* HomeModel.swift in Sources */,
 				708A359C29A78A120076D539 /* FavArtistsCircleView.swift in Sources */,
 				70D2EB6629A5EF5100795D96 /* LibraryView.swift in Sources */,
+				70D4C3AB29B1C8F2001CAFAB /* CustomPhoneNumberPad.swift in Sources */,
 				70D2EB9929A60EF900795D96 /* Font+Extenstion.swift in Sources */,
 				70047C5429A6269F00D567B4 /* GStructuer.swift in Sources */,
 				70D2EB6A29A5EF6B00795D96 /* ProfileView.swift in Sources */,
@@ -754,6 +770,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		70D4C3A729B1B213001CAFAB /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -771,6 +795,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70AD851329A8CDD400EF8851 /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		70D4C3A829B1B213001CAFAB /* iPhoneNumberField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70D4C3A729B1B213001CAFAB /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			productName = iPhoneNumberField;
 		};
 /* End XCSwiftPackageProductDependency section */
 

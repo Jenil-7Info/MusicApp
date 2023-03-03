@@ -20,7 +20,10 @@ struct MusicAPPApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                SignInView()
+                //SignInView()
+              //OTPView()
+                MyView()
+                //mainAfterView()
             }
             .preferredColorScheme(.dark)
             .environmentObject(googleAuthVM) //use the all files GoogleAuthentication
@@ -44,5 +47,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                      options: [UIApplication.OpenURLOptionsKey: Any])
     -> Bool {
         return GIDSignIn.sharedInstance.handle(url)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
     }
 }
