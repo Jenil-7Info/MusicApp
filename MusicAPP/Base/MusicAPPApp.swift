@@ -20,36 +20,12 @@ struct MusicAPPApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                //SignInView()
-              //OTPView()
-                MyView()
-                //mainAfterView()
+                SignInView()
             }
             .preferredColorScheme(.dark)
             .environmentObject(googleAuthVM) //use the all files GoogleAuthentication
             .environmentObject(emailAuthVM) //use the all files EmailAuthentication
             .environment(\.managedObjectContext, dataModel.contanier.viewContext)
-                    //use the all files CoreData...
         }
-    }
-}
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-    
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        FirebaseApp.configure()
-        return true
-    }
-    
-    @available(iOS 9.0, *)
-    func application(_ application: UIApplication, open url: URL,
-                     options: [UIApplication.OpenURLOptionsKey: Any])
-    -> Bool {
-        return GIDSignIn.sharedInstance.handle(url)
-    }
-    
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
     }
 }

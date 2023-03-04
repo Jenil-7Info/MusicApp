@@ -21,7 +21,7 @@ struct SignUpView: View {
                 Color.black.opacity(0.25)
             }
             //MARK: - backGround Image and Colors...
-            SignUpMainView()
+            MiddleSignUpView()
         }
         .edgesIgnoringSafeArea(.all)
     }
@@ -171,7 +171,6 @@ struct MiddleOfSignUP: View {
         
         //MARK: - EmailAuth && Coredata
         Button {
-            
             // add the userDetails in coreData
             self.coreDataVM.addUsers("person.fill", fName, lName, email: email, phone: phone, pass: password)
             
@@ -195,11 +194,11 @@ struct MiddleOfSignUP: View {
                         .frame(width: dynamicWidth-40)
                 }
         }
-        .disabled(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty || phone.isEmpty)
         .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
             MusicRootView()
+                .navigationBarBackButtonHidden(true)
         })
+        .disabled(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty || phone.isEmpty)
         .padding(.bottom)
-        
     }
 }

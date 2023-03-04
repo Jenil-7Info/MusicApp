@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignUpMainView : View {
+struct MiddleSignUpView : View {
     
     @State private var isPresentSignIN: Bool = false
     
@@ -45,6 +45,6 @@ struct SignUpMainView : View {
 
 struct SignUpMainView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpMainView()
+        MiddleSignUpView()
     }
 }
