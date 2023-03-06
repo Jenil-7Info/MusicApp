@@ -13,6 +13,8 @@
 		702E33CB29B3406800932433 /* SocialMediaAuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702E33CA29B3406800932433 /* SocialMediaAuthenticationView.swift */; };
 		70689D9E29AC8B0E0036FE12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70689D9D29AC8B0E0036FE12 /* GoogleService-Info.plist */; };
 		70689DA029ACAB110036FE12 /* GEnumration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70689D9F29ACAB110036FE12 /* GEnumration.swift */; };
+		7071A20529B5B27700172873 /* OTPTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7071A20429B5B27700172873 /* OTPTextFiled.swift */; };
+		7071A20729B5B29B00172873 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7071A20629B5B29B00172873 /* OTPViewModel.swift */; };
 		70748A0229A5EDA600682178 /* MusicAPPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70748A0129A5EDA600682178 /* MusicAPPApp.swift */; };
 		70748A0629A5EDA800682178 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0529A5EDA800682178 /* ColorAssets.xcassets */; };
 		70748A0929A5EDA800682178 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0829A5EDA800682178 /* Preview Assets.xcassets */; };
@@ -77,6 +79,8 @@
 		702E33CA29B3406800932433 /* SocialMediaAuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaAuthenticationView.swift; sourceTree = "<group>"; };
 		70689D9D29AC8B0E0036FE12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70689D9F29ACAB110036FE12 /* GEnumration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEnumration.swift; sourceTree = "<group>"; };
+		7071A20429B5B27700172873 /* OTPTextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextFiled.swift; sourceTree = "<group>"; };
+		7071A20629B5B29B00172873 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		707489FE29A5EDA600682178 /* MusicAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70748A0129A5EDA600682178 /* MusicAPPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAPPApp.swift; sourceTree = "<group>"; };
 		70748A0529A5EDA800682178 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		701E463E29A63D5D005511E6 /* Viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				7071A20629B5B29B00172873 /* OTPViewModel.swift */,
 			);
 			path = Viewmodel;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				70D4C3B129B1F01B001CAFAB /* OTPView.swift */,
 				702E33CA29B3406800932433 /* SocialMediaAuthenticationView.swift */,
 				70D4C3AA29B1C8F2001CAFAB /* CustomPhoneNumberPad.swift */,
+				7071A20429B5B27700172873 /* OTPTextFiled.swift */,
 			);
 			path = SignIN;
 			sourceTree = "<group>";
@@ -554,8 +560,10 @@
 				70D2EB6A29A5EF6B00795D96 /* ProfileView.swift in Sources */,
 				70AD850729A8896100EF8851 /* TipsRectangleView.swift in Sources */,
 				70748A0229A5EDA600682178 /* MusicAPPApp.swift in Sources */,
+				7071A20529B5B27700172873 /* OTPTextFiled.swift in Sources */,
 				70689DA029ACAB110036FE12 /* GEnumration.swift in Sources */,
 				70AD850B29A8BEBB00EF8851 /* DiscoverView.swift in Sources */,
+				7071A20729B5B29B00172873 /* OTPViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

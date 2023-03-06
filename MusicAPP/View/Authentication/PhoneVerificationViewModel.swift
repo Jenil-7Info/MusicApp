@@ -20,16 +20,20 @@ class PhoneVerificationViewModel: ObservableObject {
         
         let indianNumber = "+91\(phoneNumber)"
         self.phone = indianNumber
-        debugPrint(indianNumber)
+        debugPrint(phone)
         
         PhoneAuthProvider.provider().verifyPhoneNumber(indianNumber, uiDelegate: nil) { code, error in
             if let error = error {
                 self.isAlert = true
+                self.isVerifiy = false
                 self.errMessage = error.localizedDescription
                 debugPrint(error.localizedDescription)
             }
-            self.code = code ?? ""
-            self.isVerifiy = true
+            else {
+                self.isAlert = false
+                self.isVerifiy = true
+                self.code = code ?? "123456"
+            }
         }
     }
 }
