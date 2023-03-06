@@ -16,6 +16,7 @@ struct OTPView: View {
     
     var body: some View {
         VStack(alignment: .center) {
+          
             Spacer()
             
             //MARK: - Heading Of application
@@ -64,9 +65,10 @@ struct OTPView: View {
             .padding()
             .background {
                 Capsule()
-                    .fill(phoneVerifiyVM.code.count != 6 ? GradientColors.grayGradient : GradientColors.orangeGradient)
+                    //.fill(phoneVerifiyVM.code.count != 6 ? GradientColors.grayGradient : GradientColors.orangeGradient)
+                    .fill(GradientColors.orangeGradient)
             }
-            .disabled(phoneVerifiyVM.code.count != 6)
+            //.disabled(phoneVerifiyVM.code.count != 6)
             .navigationDestination(isPresented: $phoneVerifiyVM.isVerifiy) {
                 MusicRootView()
                     .navigationBarBackButtonHidden(true)
@@ -81,14 +83,6 @@ struct OTPView: View {
                 Text(phoneVerifiyVM.errMessage)
             }
             Spacer()
-        }
-    }
-    
-    func validationOTPTextfiled() -> Bool {
-        if otpVM.otp1.isEmpty || otpVM.otp2.isEmpty || otpVM.otp3.isEmpty || otpVM.otp4.isEmpty || otpVM.otp5.isEmpty || otpVM.otp6.isEmpty {
-            return true
-        } else {
-            return false
         }
     }
 }
