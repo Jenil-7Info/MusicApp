@@ -154,6 +154,9 @@
 		701E463E29A63D5D005511E6 /* Viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				709FC32E29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift */,
+				70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */,
+				70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */,
 				7071A20629B5B29B00172873 /* OTPViewModel.swift */,
 			);
 			path = Viewmodel;
@@ -295,10 +298,6 @@
 		70D2EB5929A5EEB200795D96 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				709FC32E29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift */,
-				70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */,
-				70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */,
-				70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */,
 				70D2EB6D29A5EFC400795D96 /* SignIN */,
 				70D2EB6E29A5EFD000795D96 /* SignUp */,
 			);
@@ -384,6 +383,7 @@
 			children = (
 				701E463E29A63D5D005511E6 /* Viewmodel */,
 				70D2EB7229A5F2F400795D96 /* SignInView.swift */,
+				70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */,
 				70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */,
 				70D4C3B129B1F01B001CAFAB /* OTPView.swift */,
 				702E33CA29B3406800932433 /* SocialMediaAuthenticationView.swift */,

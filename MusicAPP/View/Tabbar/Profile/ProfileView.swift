@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
     @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     
@@ -64,8 +63,7 @@ struct EmailAndPassLoginProfileView: View {
                 .padding(.bottom, 20)
             
             Button {
-               // emailAuthVM.signOut()
-                self.isPresentSignIN.toggle()
+                emailAuthVM.signOut()
             } label: {
                 Text("Sign Out")
                     .foregroundColor(.red)
@@ -76,7 +74,7 @@ struct EmailAndPassLoginProfileView: View {
                     Capsule()
                     .fill(.red.opacity(0.15))
             }
-            .navigationDestination(isPresented: $isPresentSignIN) {
+            .navigationDestination(isPresented: $emailAuthVM.isLoggOut) {
                 withAnimation(.spring()) {
                     SignInView()
                         .navigationBarBackButtonHidden(true)

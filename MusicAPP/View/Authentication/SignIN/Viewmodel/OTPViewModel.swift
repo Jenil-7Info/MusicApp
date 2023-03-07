@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 class OTPViewModel: ObservableObject {
-    
     @Published var otpField = "" {
         didSet {
             guard otpField.count <= 6,
@@ -89,14 +88,5 @@ class OTPViewModel: ObservableObject {
         set {
             self.otp6 = newValue
         }
-    }
-    
-    func isAllClearOtpVar(){
-        self.otp1 = ""
-        self.otp2 = ""
-        self.otp3 = ""
-        self.otp4 = ""
-        self.otp5 = ""
-        self.otp6 = ""
     }
 }

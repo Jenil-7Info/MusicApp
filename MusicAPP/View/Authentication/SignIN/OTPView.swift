@@ -55,7 +55,7 @@ struct OTPView: View {
             
             //MARK: - Submit button
             Button {
-               //Enter OTP verification code...
+                phoneVerifiyVM.otpVerification(getOTP: "123456")
             } label: {
                 Text("Submit")
                     .font(.festerFont(customFontName: .FesterBold, fontSize: 16))

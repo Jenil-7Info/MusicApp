@@ -14,6 +14,7 @@ class EmailAuthenticationViewModel: ObservableObject {
     let auth = Auth.auth()
     
     @Published var isLoggIN: Bool = false
+    @Published var isLoggOut: Bool = false
     @Published var verification: String = ""
     @Published var firstName: String = "unkown Name"
     @Published var lastName: String = "unkown Surname"
@@ -46,7 +47,7 @@ class EmailAuthenticationViewModel: ObservableObject {
                 else {
                     self.isAlert = true
                     self.errMessage = err!.localizedDescription
-                    debugPrint("RESET PASSWORD FAILED!!")
+                    debugPrint("RESET PASSWORD FAILED!!: \(String(describing: err?.localizedDescription))")
                 }
             }
         }
@@ -61,6 +62,7 @@ class EmailAuthenticationViewModel: ObservableObject {
         auth.signIn(withEmail: email, password: pass) { result, err in
             
             guard result != nil, err == nil else {
+                self.isAlert = true
                 self.errMessage = err?.localizedDescription ?? "Sign In Failed!!"
                 debugPrint("ERROR:- \(err!.localizedDescription)")
                 return
@@ -97,11 +99,14 @@ class EmailAuthenticationViewModel: ObservableObject {
     func signOut() {
         do {
             self.isLoggIN = false
+            self.isLoggOut = true
             self.isAlert = false
             try auth.signOut()
         } catch {
-            self.errMessage = error.localizedDescription
+            self.isLoggIN = false
             self.isAlert = true
+            self.isLoggOut = false
+            self.errMessage = error.localizedDescription
             debugPrint("PROMBLEM SETMENT:- SIGNOUT FAILED!! \(String(describing: error.localizedDescription))")
         }
     }
