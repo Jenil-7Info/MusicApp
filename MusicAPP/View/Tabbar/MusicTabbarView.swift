@@ -41,8 +41,11 @@ struct MusicTabbarView: View {
     }
 }
 
-//struct MusicRootView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MusicRootView()
-//    }
-//}
+struct MusicTabbarView_Previews: PreviewProvider {
+    static var previews: some View {
+        MusicTabbarView()
+            .environmentObject(GoogleAutheticationViewModel())
+            .environmentObject(EmailAuthenticationViewModel())
+            .environmentObject(PhoneVerificationViewModel())
+    }
+}

@@ -16,15 +16,13 @@ struct MusicRootView: View {
     
     var body: some View {
         Group {
-            Group {
-                if emailAuth.isLoggIN || phoneAuth.isLoggIN {
-                    MusicTabbarView()
-                } else {
-                    SignInView()
-                }
-            }.onAppear {
-                emailAuth.listenToAuthState()
+            if emailAuth.isLoggIN || phoneAuth.isLoggIN {
+                MusicTabbarView()
+            } else {
+                SignInView()
             }
+        }.onAppear {
+            emailAuth.listenToAuthState()
         }
     }
 }

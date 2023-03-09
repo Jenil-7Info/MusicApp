@@ -12,6 +12,7 @@ struct HomeView: View {
     //MARK: - Varibles..
     @State private var isNotifivation: Bool = false
     @State private var isSetting: Bool = false
+    @State private var isSelecteMusic: Bool = false
     @StateObject var lastPlayCollectionVM = LastPlayCollectionViewModel()
     @StateObject var favArtitsImgVM = YourFavArtitsCollectionViewModel()
     @StateObject var madePlayListVM = MadeForYouCollectionViewModel()
@@ -59,111 +60,122 @@ struct HomeView: View {
     
     //MARK: - Body
     var body: some View {
-        VStack {
-         
-        //MARK: - Headering
-         header
-            .padding(.horizontal, 20)
-            
-            ScrollView(.vertical) {
-                
-                //MARK: - Last Play
-                HStack {
-                    Text("Last Play")
-                        .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
-                    
-                    Spacer()
-                }
-                .padding(EdgeInsets(top: 30, leading: 20, bottom: 12, trailing: 20))
-                
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(lastPlayCollectionVM.LastPlayCollectionManger) { collection in
-                            LastPlaycollectionView(img: collection.img, title: collection.name, des: collection.des)
-                        }
-                    }
-                }
-                .scrollIndicators(.never)
-                .padding(.leading)
-                
-                //MARK: - Your Favourit artits
-                HStack {
-                    Text("Your Favourit artists")
-                        .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
-                    
-                    Spacer()
-                }
-                .padding(EdgeInsets(top: 30, leading: 20, bottom: 12, trailing: 20))
-                
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(favArtitsImgVM.ArtitsImageCollectionManger) { artist in
-                            FavArtistsCircleView(img: artist.img)
-                        }
-                    }
-                }
-                .scrollIndicators(.never)
-                .padding(.leading)
-                
-                //MARK: - Made For You
-                HStack {
-                    Text("Made For You")
-                        .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
-                    
-                    Spacer()
-                }
-                .padding(EdgeInsets(top: 30, leading: 20, bottom: 12, trailing: 20))
-                
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(madePlayListVM.YourPlayListcollectionManger) { collection in
-                            MadeForYoucollectionPlayListRectangle(img1: collection.img1, img2: collection.img2, img3: collection.img3, img4: collection.img4, title: collection.title, totalSong: collection.totalSong)
-                        }
-                        .padding(.horizontal, 5)
-                    }
-                }
-                .scrollIndicators(.never)
-                .padding([.leading, .bottom])
-                
-                //MARK: - Tips to get started
-                HStack {
-                    Text("Tips to get started")
-                        .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
-                    
-                    Spacer()
-                }
-                .padding(EdgeInsets(top: 20, leading: 20, bottom: 12, trailing: 20))
-                
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(tipsViewModel.TipsDisplayManger) { manger in
-                            TipsRectangleView(color: manger.color, systemImg: manger.systemImg, textTitle: manger.title, description: manger.description, width: manger.width)
-                        }
-                    }
-                }
-                .scrollIndicators(.never)
-                .padding([.leading, .bottom])
-                
-                //MARK: - Discover
-                HStack {
-                    Text("Discover")
-                        .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
-                    
-                    Spacer()
-                }
-                .padding(EdgeInsets(top: 10, leading: 20, bottom: 12, trailing: 20))
+        ZStack {
+            VStack {
+             
+            //MARK: - Headering
+             header
+                .padding(.horizontal, 20)
                 
                 ScrollView(.vertical) {
-                    VStack {
-                        ForEach(discoverVM.discoverCollectionManger) { discover in
-                            DiscoverView(img: discover.image, title: discover.title, subTitle: discover.subTitle, timimg: discover.timingSong)
+                    
+                    //MARK: - Last Play
+                    HStack {
+                        Text("Last Play")
+                            .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
+                        
+                        Spacer()
+                    }
+                    .padding(EdgeInsets(top: 30, leading: 20, bottom: 12, trailing: 20))
+                    
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(lastPlayCollectionVM.LastPlayCollectionManger) { collection in
+                                LastPlaycollectionView(img: collection.img, title: collection.name, des: collection.des)
+                            }
                         }
                     }
+                    .scrollIndicators(.never)
+                    .padding(.leading)
+                    
+                    //MARK: - Your Favourit artits
+                    HStack {
+                        Text("Your Favourit artists")
+                            .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
+                        
+                        Spacer()
+                    }
+                    .padding(EdgeInsets(top: 30, leading: 20, bottom: 12, trailing: 20))
+                    
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(favArtitsImgVM.ArtitsImageCollectionManger) { artist in
+                                FavArtistsCircleView(img: artist.img)
+                            }
+                        }
+                    }
+                    .scrollIndicators(.never)
+                    .padding(.leading)
+                    
+                    //MARK: - Made For You
+                    HStack {
+                        Text("Made For You")
+                            .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
+                        
+                        Spacer()
+                    }
+                    .padding(EdgeInsets(top: 30, leading: 20, bottom: 12, trailing: 20))
+                    
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(madePlayListVM.YourPlayListcollectionManger) { collection in
+                                MadeForYoucollectionPlayListRectangle(img1: collection.img1, img2: collection.img2, img3: collection.img3, img4: collection.img4, title: collection.title, totalSong: collection.totalSong)
+                            }
+                            .padding(.horizontal, 5)
+                        }
+                    }
+                    .scrollIndicators(.never)
+                    .padding([.leading, .bottom])
+                    
+                    //MARK: - Tips to get started
+                    HStack {
+                        Text("Tips to get started")
+                            .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
+                        
+                        Spacer()
+                    }
+                    .padding(EdgeInsets(top: 20, leading: 20, bottom: 12, trailing: 20))
+                    
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(tipsViewModel.TipsDisplayManger) { manger in
+                                TipsRectangleView(color: manger.color, systemImg: manger.systemImg, textTitle: manger.title, description: manger.description, width: manger.width)
+                            }
+                        }
+                    }
+                    .scrollIndicators(.never)
+                    .padding([.leading, .bottom])
+                    
+                    //MARK: - Discover
+                    HStack {
+                        Text("Discover")
+                            .font(.festerFont(customFontName: .FesterTrialSemiBold, fontSize: 24))
+                        
+                        Spacer()
+                    }
+                    .padding(EdgeInsets(top: 10, leading: 20, bottom: 12, trailing: 20))
+                    
+                    ScrollView(.vertical) {
+                        VStack {
+                            ForEach(discoverVM.discoverCollectionManger) { discover in
+                                DiscoverView(img: discover.image, title: discover.title, subTitle: discover.subTitle, timimg: discover.timingSong)
+                            }
+                            .onTapGesture {
+                                self.isSelecteMusic.toggle()
+                            }
+                        }
+                    }
+                    .scrollIndicators(.never)
+                    .padding(.bottom)
                 }
                 .scrollIndicators(.never)
-                .padding(.bottom)
             }
-            .scrollIndicators(.never)
+            VStack {
+                Spacer()
+                if isSelecteMusic {
+                    PlayView()
+                }
+            }
         }
     }
 }

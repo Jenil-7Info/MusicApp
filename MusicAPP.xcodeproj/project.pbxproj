@@ -71,6 +71,7 @@
 		70E757F629B0CB3600E7E81C /* PhoneVerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */; };
 		70EB267B29AF788F008A5656 /* TestingCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EB267A29AF788F008A5656 /* TestingCoreData.swift */; };
 		70ECA1FB29B98F71005E0097 /* MusicRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECA1FA29B98F71005E0097 /* MusicRootView.swift */; };
+		70FBFC9829B9F005008165C4 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBFC9729B9F005008165C4 /* PlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerifyView.swift; sourceTree = "<group>"; };
 		70EB267A29AF788F008A5656 /* TestingCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingCoreData.swift; sourceTree = "<group>"; };
 		70ECA1FA29B98F71005E0097 /* MusicRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRootView.swift; sourceTree = "<group>"; };
+		70FBFC9729B9F005008165C4 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +319,7 @@
 				70AD850229A87A3900EF8851 /* MadeForYoucollectionPlayListRectangle.swift */,
 				70AD850629A8896100EF8851 /* TipsRectangleView.swift */,
 				70AD850A29A8BEBB00EF8851 /* DiscoverView.swift */,
+				70FBFC9729B9F005008165C4 /* PlayView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				70AD850729A8896100EF8851 /* TipsRectangleView.swift in Sources */,
 				70748A0229A5EDA600682178 /* MusicAPPApp.swift in Sources */,
 				7071A20529B5B27700172873 /* OTPTextFiled.swift in Sources */,
+				70FBFC9829B9F005008165C4 /* PlayView.swift in Sources */,
 				70689DA029ACAB110036FE12 /* GEnumration.swift in Sources */,
 				70AD850B29A8BEBB00EF8851 /* DiscoverView.swift in Sources */,
 				70ECA1FB29B98F71005E0097 /* MusicRootView.swift in Sources */,
