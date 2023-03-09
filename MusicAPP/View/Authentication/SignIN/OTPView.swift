@@ -70,7 +70,7 @@ struct OTPView: View {
             }
             //.disabled(phoneVerifiyVM.code.count != 6)
             .navigationDestination(isPresented: $phoneVerifiyVM.isVerifiy) {
-                MusicRootView()
+                MusicTabbarView()
                     .navigationBarBackButtonHidden(true)
             }
             .alert("Alert", isPresented: $phoneVerifiyVM.isAlert) {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MusicRootView: View {
+struct MusicTabbarView: View {
     
     var body: some View {
         NavigationStack {
@@ -41,8 +41,8 @@ struct MusicRootView: View {
     }
 }
 
-struct MusicRootView_Previews: PreviewProvider {
-    static var previews: some View {
-        MusicRootView()
-    }
-}
+//struct MusicRootView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MusicRootView()
+//    }
+//}

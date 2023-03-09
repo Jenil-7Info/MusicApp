@@ -25,7 +25,7 @@ class GoogleAutheticationViewModel: ObservableObject {
     func checkStatus() {
         
         //Current User is not available...
-        if(GIDSignIn.sharedInstance.currentUser != nil){
+        if GIDSignIn.sharedInstance.currentUser != nil{
             
             //Create user instance
             let user = GIDSignIn.sharedInstance.currentUser

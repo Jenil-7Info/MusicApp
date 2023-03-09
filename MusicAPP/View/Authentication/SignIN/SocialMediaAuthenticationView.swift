@@ -48,7 +48,7 @@ struct SocialMediaAuthenticationView: View {
                         }
                 }
                 .navigationDestination(isPresented: $googleAuthVM.isLoggedIn) {
-                    MusicRootView()
+                    MusicTabbarView()
                         .navigationBarBackButtonHidden(true)
                 }
                 

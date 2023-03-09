@@ -164,7 +164,7 @@ struct SignInView: View {
                         }
                 }
                 .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
-                    MusicRootView()
+                    MusicTabbarView()
                         .navigationBarBackButtonHidden(true)
                 })
                 .disabled(email.isEmpty || password.isEmpty)

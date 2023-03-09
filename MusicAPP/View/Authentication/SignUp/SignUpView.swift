@@ -195,7 +195,7 @@ struct MiddleOfSignUP: View {
                 }
         }
         .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
-            MusicRootView()
+            MusicTabbarView()
                 .navigationBarBackButtonHidden(true)
         })
         .disabled(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty || phone.isEmpty)
