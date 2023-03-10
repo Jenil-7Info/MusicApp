@@ -26,7 +26,7 @@ struct SignInView: View {
     var body: some View {
         ZStack {
             //MARK: - backGround Image and Colors...
-            Image("Mount3")
+            Image("SignIn_Back")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .scaledToFill()
@@ -35,6 +35,9 @@ struct SignInView: View {
             Color.black.opacity(0.25)
             
             VStack {
+                
+                Spacer()
+                
                 //MARK: - Heading Title...
                 Text("Welcome Again!")
                     .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
@@ -45,21 +48,7 @@ struct SignInView: View {
                     .padding(.bottom, 30)
                 
                 //Email Address
-                TextField("Email Address", text: $email)
-                    .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
-                    .foregroundColor(.black)
-                    .autocorrectionDisabled(true)
-                    .textInputAutocapitalization(.never)
-                    .textContentType(.emailAddress)
-                    .keyboardType(.emailAddress)
-                    .padding()
-                    .background {
-                        Capsule()
-                            .stroke(!email.isEmpty ? .orange : .clear , lineWidth:!email.isEmpty || !password.isEmpty ?  3 : 0)
-                        Capsule()
-                            .fill(.white.opacity(bgColorFloat))
-                    }
-                    .padding(.horizontal, 20)
+                OrangeBorderTextFiledView(textString: "Email", text: $email)
                 
                 //Password : Hide snd Show
                 if isShowPass {
@@ -81,9 +70,9 @@ struct SignInView: View {
                             }
                     }
                     .background {
-                        Capsule()
+                        RoundedRectangle(cornerRadius: 15)
                             .stroke(!password.isEmpty ? .orange : .clear , lineWidth:!email.isEmpty || !password.isEmpty ?  3 : 0)
-                        Capsule()
+                        RoundedRectangle(cornerRadius: 15)
                             .fill(.white.opacity(bgColorFloat))
                     }
                     .padding(.horizontal, 20)
@@ -108,9 +97,9 @@ struct SignInView: View {
                             }
                     }
                     .background {
-                        Capsule()
+                        RoundedRectangle(cornerRadius: 15)
                             .stroke(!password.isEmpty ? .orange : .clear , lineWidth:!email.isEmpty || !password.isEmpty ?  3 : 0)
-                        Capsule()
+                        RoundedRectangle(cornerRadius: 15)
                             .fill(.white.opacity(bgColorFloat))
                     }
                     .padding(.horizontal, 20)
@@ -127,9 +116,7 @@ struct SignInView: View {
                             .font(.festerFont(customFontName: .FesterBold, fontSize: 15))
                             .foregroundColor(.white)
                     }
-                    .sheet(isPresented: $isOpenPhoneNoSheet) {
-                        PhoneVerifyView()
-                    }
+                    
                     
                     Spacer()
                     Button {
@@ -158,7 +145,7 @@ struct SignInView: View {
                         .foregroundColor(.white)
                         .padding()
                         .background {
-                            Capsule()
+                            RoundedRectangle(cornerRadius: 15)
                                 .fill(email.isEmpty || password.isEmpty ? GradientColors.grayGradient : GradientColors.orangeGradient)
                                 .frame(width: dynamicWidth-40)
                         }
@@ -178,10 +165,13 @@ struct SignInView: View {
                     Text(emailAuthVM.errMessage)
                 })
                 .padding(.bottom)
-                
+               
                 //MARK: -  Social Media Login...
                 SocialMediaAuthenticationView()
                     .padding(.vertical, 10)
+                
+                Spacer()
+                
                 
                 HStack {
                     Text("New User?")
@@ -200,10 +190,13 @@ struct SignInView: View {
                             .navigationBarBackButtonHidden(true)
                     }
                 }
-                .padding(.vertical)
-                
+                .padding(.bottom, 30)
             }
         }
+        .fullScreenCover(isPresented: $isOpenPhoneNoSheet, content: {
+            PhoneVerifyView()
+                .navigationBarBackButtonHidden(true)
+        })
         .edgesIgnoringSafeArea(.all)
     }
 }

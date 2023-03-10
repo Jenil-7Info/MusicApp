@@ -15,10 +15,11 @@ struct MiddleSignUpView : View {
         VStack {
             //MARK: - Heading Title...
             ApplicationTitle()
+                .shadow(color: .black.opacity(0.5), radius: 10)
                 .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
             
             //MARK: - MiddleView...
-            MiddleOfSignUP()
+            SignUpTextFiledView()
             
             //MARK: - BottomView...
             HStack {
@@ -45,6 +46,7 @@ struct MiddleSignUpView : View {
 
 struct SignUpMainView_Previews: PreviewProvider {
     static var previews: some View {
-        MiddleSignUpView()
+        SignUpView()
+            .environmentObject(EmailAuthenticationViewModel())
     }
 }

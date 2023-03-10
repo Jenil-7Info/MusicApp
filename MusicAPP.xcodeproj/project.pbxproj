@@ -18,6 +18,9 @@
 		70748A0229A5EDA600682178 /* MusicAPPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70748A0129A5EDA600682178 /* MusicAPPApp.swift */; };
 		70748A0629A5EDA800682178 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0529A5EDA800682178 /* ColorAssets.xcassets */; };
 		70748A0929A5EDA800682178 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70748A0829A5EDA800682178 /* Preview Assets.xcassets */; };
+		70782C1C29BB0D07007F1855 /* GFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70782C1B29BB0D07007F1855 /* GFunction.swift */; };
+		70782C1F29BB0E00007F1855 /* SignUpTextFiledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70782C1E29BB0E00007F1855 /* SignUpTextFiledView.swift */; };
+		70782C2129BB0E2B007F1855 /* OrangeBorderTextFiledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70782C2029BB0E2B007F1855 /* OrangeBorderTextFiledView.swift */; };
 		70877EF029B05EB500E6B6A0 /* ApplicationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */; };
 		70877EF229B061E000E6B6A0 /* MiddleSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70877EF129B061E000E6B6A0 /* MiddleSignUpView.swift */; };
 		708A359129A778D00076D539 /* CornerRadiusShap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A359029A778D00076D539 /* CornerRadiusShap.swift */; };
@@ -87,6 +90,9 @@
 		70748A0129A5EDA600682178 /* MusicAPPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAPPApp.swift; sourceTree = "<group>"; };
 		70748A0529A5EDA800682178 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		70748A0829A5EDA800682178 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70782C1B29BB0D07007F1855 /* GFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFunction.swift; sourceTree = "<group>"; };
+		70782C1E29BB0E00007F1855 /* SignUpTextFiledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextFiledView.swift; sourceTree = "<group>"; };
+		70782C2029BB0E2B007F1855 /* OrangeBorderTextFiledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeBorderTextFiledView.swift; sourceTree = "<group>"; };
 		70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTitle.swift; sourceTree = "<group>"; };
 		70877EF129B061E000E6B6A0 /* MiddleSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleSignUpView.swift; sourceTree = "<group>"; };
 		708A359029A778D00076D539 /* CornerRadiusShap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusShap.swift; sourceTree = "<group>"; };
@@ -204,6 +210,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		70782C1D29BB0DAA007F1855 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				70EB267A29AF788F008A5656 /* TestingCoreData.swift */,
+				70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */,
+				70782C2029BB0E2B007F1855 /* OrangeBorderTextFiledView.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		70B0DABD29ADB56700676891 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,10 +239,10 @@
 		70D2EB4F29A5EE1500795D96 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				70EB267A29AF788F008A5656 /* TestingCoreData.swift */,
 				70ECA1FA29B98F71005E0097 /* MusicRootView.swift */,
 				70D2EB5929A5EEB200795D96 /* Authentication */,
 				70D2EB5829A5EEA700795D96 /* Tabbar */,
+				70782C1D29BB0DAA007F1855 /* Others */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +263,7 @@
 				70047C5529A626B300D567B4 /* GVaribles.swift */,
 				708A359029A778D00076D539 /* CornerRadiusShap.swift */,
 				70689D9F29ACAB110036FE12 /* GEnumration.swift */,
+				70782C1B29BB0D07007F1855 /* GFunction.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -389,7 +406,6 @@
 			children = (
 				701E463E29A63D5D005511E6 /* Viewmodel */,
 				70D2EB7229A5F2F400795D96 /* SignInView.swift */,
-				70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */,
 				70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */,
 				70D4C3B129B1F01B001CAFAB /* OTPView.swift */,
 				702E33CA29B3406800932433 /* SocialMediaAuthenticationView.swift */,
@@ -405,6 +421,7 @@
 				70B0DABD29ADB56700676891 /* ViewModel */,
 				70D2EB7429A5F2FD00795D96 /* SignUpView.swift */,
 				70877EF129B061E000E6B6A0 /* MiddleSignUpView.swift */,
+				70782C1E29BB0E00007F1855 /* SignUpTextFiledView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -539,6 +556,7 @@
 				70877EF229B061E000E6B6A0 /* MiddleSignUpView.swift in Sources */,
 				70D2EB7329A5F2F400795D96 /* SignInView.swift in Sources */,
 				70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */,
+				70782C2129BB0E2B007F1855 /* OrangeBorderTextFiledView.swift in Sources */,
 				70E757F429B0C4D800E7E81C /* PhoneVerificationViewModel.swift in Sources */,
 				708A359829A7871A0076D539 /* YouFavArtistViewModel.swift in Sources */,
 				70EB267B29AF788F008A5656 /* TestingCoreData.swift in Sources */,
@@ -546,6 +564,7 @@
 				702E33C929B33DE600932433 /* AppDelegate.swift in Sources */,
 				70D2EB5B29A5EED700795D96 /* MusicTabbarView.swift in Sources */,
 				70AD850529A87EE900EF8851 /* TipsViewModel.swift in Sources */,
+				70782C1C29BB0D07007F1855 /* GFunction.swift in Sources */,
 				70B0DABB29ADB4E500676891 /* EmailAuthenticationViewModel.swift in Sources */,
 				70CC626F29AF1BF700366026 /* DataModelController.swift in Sources */,
 				708A359329A779680076D539 /* LastPlayViewModel.swift in Sources */,
@@ -560,6 +579,7 @@
 				708A359629A7798F0076D539 /* HomeModel.swift in Sources */,
 				708A359C29A78A120076D539 /* FavArtistsCircleView.swift in Sources */,
 				70D2EB6629A5EF5100795D96 /* LibraryView.swift in Sources */,
+				70782C1F29BB0E00007F1855 /* SignUpTextFiledView.swift in Sources */,
 				70D4C3AB29B1C8F2001CAFAB /* CustomPhoneNumberPad.swift in Sources */,
 				70D2EB9929A60EF900795D96 /* Font+Extenstion.swift in Sources */,
 				70047C5429A6269F00D567B4 /* GStructuer.swift in Sources */,

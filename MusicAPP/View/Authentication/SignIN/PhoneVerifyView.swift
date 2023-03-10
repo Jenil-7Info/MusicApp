@@ -22,7 +22,7 @@ struct PhoneVerifyView: View {
                 
                 //MARK: - Heading Of application
                 ApplicationTitle()
-                    .padding(.top, 50)
+                    .padding(.vertical, 30)
                 
                 VStack(alignment: .leading) {
                     
