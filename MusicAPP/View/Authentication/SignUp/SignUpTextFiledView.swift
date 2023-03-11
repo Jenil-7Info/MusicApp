@@ -33,6 +33,7 @@ struct SignUpTextFiledView: View {
         
         //MARK: - Phone Number
         OrangeBorderTextFiledView(textString: "Phone", text: $phone)
+            .disabled(phone.count == 10)
         
         //MARK: - Password: Hide And Show
         if isShowPass {
@@ -41,7 +42,7 @@ struct SignUpTextFiledView: View {
                     .padding()
                     .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
                     .textInputAutocapitalization(.never)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .textContentType(.password)
                     .keyboardType(.numbersAndPunctuation)
                     .autocorrectionDisabled(true)
@@ -65,7 +66,7 @@ struct SignUpTextFiledView: View {
                     .padding()
                     .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
                     .textInputAutocapitalization(.never)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .autocorrectionDisabled(true)
                     .textContentType(.password)
                     .keyboardType(.numbersAndPunctuation)
@@ -124,5 +125,6 @@ struct SignUpTextFiledView: View {
 struct SignUpTextFiledView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpTextFiledView()
+            .environmentObject(EmailAuthenticationViewModel())
     }
 }

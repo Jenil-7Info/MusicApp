@@ -10,175 +10,225 @@ import SwiftUI
 struct PhoneVerifyView: View {
     
     @StateObject var phoneVerifiyVM = PhoneVerificationViewModel()
-    @State private var phoneNumber: String = ""
+    @StateObject var googleAuthVM = GoogleAutheticationViewModel()
     @State private var isPresentOTPScreen: Bool = false
     @Environment(\.dismiss) var dismiss
+    @State private var isSocialMediaLogin: Bool = false
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .center) {
+            ZStack {
+                Image("phoneVerfication")
+                    .resizable()
+                    .ignoresSafeArea()
+              
+                //MARK: - Back Button
+                VStack {
+                    HStack {
+                        Button {
+                            dismiss.callAsFunction()
+                        } label: {
+                            Image(systemName: "arrow.left")
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(.white)
+                            Text("Back")
+                                .foregroundColor(.white)
+                                .font(.system(size: 18))
+                                .bold()
+                        }
+                        Spacer()
+                    }
+                    .padding(.horizontal, 20)
+                    Spacer()
+                }
                 
-                Spacer()
-                
-                //MARK: - Heading Of application
-                ApplicationTitle()
-                    .padding(.vertical, 30)
-                
-                VStack(alignment: .leading) {
+                VStack(alignment: .center) {
                     
-                    //phone number text
-                    Text("Enter your valid phone number")
-                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 16))
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 30)
+                    //MAORK: - Heading Of application
+                    ApplicationTitle()
+                        .padding(.top, isSocialMediaLogin ? 0 : 20)
+                        .padding(30)
+                    
+                    HStack {
+                        //phone number text
+                        Text("Enter your valid phone number")
+                            .font(.festerFont(customFontName: .FesterMedium, fontSize: 16))
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 30)
+                        Spacer()
+                    }
                     
                     HStack {
                         
                         //MARK: - Indian Flag
-                        if phoneNumber.count == 10 {
+                        if phoneVerifiyVM.phone.count == 10 {
                             Text("🇮🇳")
                                 .padding(.leading)
                         }
                         
                         //MARK: - Phone Number TextFiled
-                        TextField("Phone Number", text: $phoneNumber)
+                        TextField("Phone Number", text: $phoneVerifiyVM.phone)
                             .textContentType(.telephoneNumber)
                             .padding()
                             .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
                             .foregroundColor(.white)
                             .autocorrectionDisabled(true)
-                            .textContentType(.password)
                             .keyboardType(.numberPad)
                             .textInputAutocapitalization(.never)
-                            .disabled(phoneNumber.count == 10)
+                            .disabled(phoneVerifiyVM.phone.count == 10)
+                            
                         
                         Spacer()
                         
                         //MARK: - Closer Button
                         Button {
-                            phoneNumber = ""
+                            phoneVerifiyVM.phone = ""
                         } label: {
                             Image(systemName: "multiply.circle.fill")
                                 .resizable()
-                                .frame(width: phoneNumber.isEmpty ? 0 : 20, height: phoneNumber.isEmpty ? 0 : 20)
+                                .frame(width: phoneVerifiyVM.phone.isEmpty ? 0 : 20, height: phoneVerifiyVM.phone.isEmpty ? 0 : 20)
                                 .foregroundColor(.white)
                         }
-                        .disabled(phoneNumber.isEmpty)
+                        .disabled(phoneVerifiyVM.phone.isEmpty)
                         .padding()
                     }
                     .background {
-                        Capsule()
-                            .stroke(!phoneNumber.isEmpty ? phoneNumber.count == 10 ? .white.opacity(0.6) : .yellow : .clear, lineWidth: !phoneNumber.isEmpty ?  3 : 0)
-                        Capsule()
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(!phoneVerifiyVM.phone.isEmpty ? phoneVerifiyVM.phone.count == 10 ? .white.opacity(0.6) : .yellow : .clear, lineWidth: !phoneVerifiyVM.phone.isEmpty ?  3 : 0)
+                        RoundedRectangle(cornerRadius: 15)
                             .fill(.white.opacity(0.3))
                     }
                     .padding(.horizontal, 20)
                     .padding(.bottom)
-                }
-                
-                //MARK: - OTP button
-                Button {
-                    phoneVerifiyVM.sendOTP(phoneNumber: phoneNumber)
-                } label: {
-                    Text("Send OTP")
-                        .font(.festerFont(customFontName: .FesterBold, fontSize: 16))
-                        .foregroundColor(.white)
-                        .frame(width: dynamicWidth-(dynamicWidth*0.19), height: 25)
-                }
-                .padding()
-                .background {
-                    Capsule()
-                        .fill(phoneNumber.count != 10 ? GradientColors.grayGradient : GradientColors.orangeGradient)
-                }
-                .disabled(phoneNumber.count != 10)
-                .navigationDestination(isPresented: $phoneVerifiyVM.isVerifiy) {
-                    OTPView()
-                        .navigationBarBackButtonHidden(true)
-                }
-                .alert("Alert", isPresented: $phoneVerifiyVM.isAlert) {
-                    Button {
-                        dismiss.callAsFunction()
-                    } label: {
-                        Text("OK")
-                    }
-                } message: {
-                    Text(phoneVerifiyVM.errMessage)
-                }
-                
-                Text("Or")
-                    .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
-                    .padding(.vertical, 20)
-                
-                //MARK: - Social Media Buttons
-                VStack {
                     
+                    //MARK: - OTP button
                     Button {
-                        
+                        phoneVerifiyVM.sendOTP()
                     } label: {
-                        HStack(spacing: 0) {
-                            Image("google")
-                                .resizable()
-                                .frame(width: 25, height: 25)
-                            
-                            Text("Sign With Google")
-                                .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
-                                .foregroundColor(.black)
-                                .frame(width: dynamicWidth/1.38, height: 25)
-                        }
+                        Text("Send OTP")
+                            .font(.festerFont(customFontName: .FesterBold, fontSize: 16))
+                            .foregroundColor(.white)
+                            .frame(width: dynamicWidth-(dynamicWidth*0.19), height: 25)
                     }
                     .padding()
                     .background {
-                        Capsule()
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(phoneVerifiyVM.phone.count != 10 ? GradientColors.grayGradient : GradientColors.orangeGradient)
                     }
-                    .padding(.bottom ,5)
+                    .disabled(phoneVerifiyVM.phone.count != 10)
+                    .navigationDestination(isPresented: $phoneVerifiyVM.isVerifiy) {
+                        OTPView()
+                            .navigationBarBackButtonHidden(true)
+                    }
+                    .alert("Alert", isPresented: $phoneVerifiyVM.isAlert) {
+                        Button {
+                            dismiss.callAsFunction()
+                        } label: {
+                            Text("OK")
+                        }
+                    } message: {
+                        Text(phoneVerifiyVM.errMessage)
+                    }
                     
-                    Button {
+                    HStack {
+                        Spacer()
+                        Button {
+                            withAnimation(.easeIn(duration: 0.2)) {
+                                self.isSocialMediaLogin.toggle()
+                            }
+                        } label: {
+                            Text(isSocialMediaLogin ? "Login with Phone Number" : "Login with Social Media")
+                                .font(.system(size: 18))
+                                .bold()
+                                .foregroundColor(.white)
+                        }
+                        .padding(.top)
+                    }
+                    .padding(.horizontal, 20)
+                    
+                    if isSocialMediaLogin  {
                         
-                    } label: {
-                        HStack(spacing: 0) {
-                            Image("apple")
-                                .resizable()
-                                .frame(width: 25, height: 25)
+                        Text("Or")
+                            .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
+                            .padding(.vertical, 20)
+                        
+                        //MARK: - Social Media Buttons
+                        VStack {
                             
-                            Text("Sign With AppleID")
-                                .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
-                                .foregroundColor(.black)
-                                .frame(width: dynamicWidth/1.38, height: 25)
+                            Button {
+                                googleAuthVM.signIn()
+                            } label: {
+                                HStack(spacing: 0) {
+                                    Image("google")
+                                        .resizable()
+                                        .frame(width: 25, height: 25)
+                                    
+                                    Text("Sign With Google")
+                                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
+                                        .foregroundColor(.black)
+                                        .frame(width: dynamicWidth/1.38, height: 25)
+                                }
+                            }
+                            .padding()
+                            .background {
+                                Capsule()
+                            }
+                            .padding(.bottom ,5)
+                            .navigationDestination(isPresented: $googleAuthVM.isLoggedIn) {
+                                MusicTabbarView()
+                                    .navigationBarBackButtonHidden(true)
+                            }
+                            
+                            
+                            Button {
+                                
+                            } label: {
+                                HStack(spacing: 0) {
+                                    Image("apple")
+                                        .resizable()
+                                        .frame(width: 25, height: 25)
+                                    
+                                    Text("Sign With AppleID")
+                                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
+                                        .foregroundColor(.black)
+                                        .frame(width: dynamicWidth/1.38, height: 25)
+                                }
+                            }
+                            .padding()
+                            .background {
+                                Capsule()
+                            }
+                            .padding(5)
+                            
+                            Button {
+                                
+                            } label: {
+                                HStack(spacing: 0) {
+                                    Image("GitHub")
+                                        .resizable()
+                                        .frame(width: 25, height: 25)
+                                    
+                                    Text("Sign With GitHub")
+                                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
+                                        .foregroundColor(.black)
+                                        .frame(width: dynamicWidth/1.38, height: 25)
+                                }
+                            }
+                            .padding()
+                            .background {
+                                Capsule()
+                            }
+                            .padding(5)
+                            
+                            
                         }
                     }
-                    .padding()
-                    .background {
-                        Capsule()
-                    }
-                    .padding(5)
                     
-                    Button {
-                        
-                    } label: {
-                        HStack(spacing: 0) {
-                            Image("GitHub")
-                                .resizable()
-                                .frame(width: 25, height: 25)
-                            
-                            Text("Sign With GitHub")
-                                .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
-                                .foregroundColor(.black)
-                                .frame(width: dynamicWidth/1.38, height: 25)
-                        }
+                    if !isSocialMediaLogin {
+                        Spacer()
                     }
-                    .padding()
-                    .background {
-                        Capsule()
-                    }
-                    .padding(5)
-                    
-                    Spacer()
-                    
                 }
-                
-                //MARK: - Custom Phone Number Pad...
-                //          CustomPhoneNumberPad()
-                //                .padding(dynamicHeight/20)
             }
         }
     }

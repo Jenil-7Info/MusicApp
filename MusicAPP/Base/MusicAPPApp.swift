@@ -20,9 +20,7 @@ struct MusicAPPApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                //MusicRootView()
                 SignInView()
-               // MusicTabbarView()
             }
             .preferredColorScheme(.dark)
             .environmentObject(googleAuthVM) //use the all files GoogleAuthentication

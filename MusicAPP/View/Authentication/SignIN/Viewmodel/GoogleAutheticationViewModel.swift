@@ -13,7 +13,9 @@ import FirebaseCore
 //MARK: - Google Authentication View Model...
 class GoogleAutheticationViewModel: ObservableObject {
     
-    @Published var givenName: String = ""
+    @Published var firstName: String = ""
+    @Published var lastName: String = ""
+    @Published var email: String = ""
     @Published var profilePicUrl: String = ""
     @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = ""
@@ -31,14 +33,17 @@ class GoogleAutheticationViewModel: ObservableObject {
             let user = GIDSignIn.sharedInstance.currentUser
             guard let user = user else { return }
             
-            //get the userName in Email Address
-            let givenName = user.profile?.givenName
+            //store the firstName in Published var
+            self.firstName = user.profile?.givenName ?? ""
+            
+            //store the lastName in Published var
+            self.lastName = user.profile?.familyName ?? ""
+            
+            //store the email in Published var
+            self.email =  user.profile?.email ?? ""
             
             //Fetch the Profile URL
             let profilePicUrl = user.profile?.imageURL(withDimension: 100)?.absoluteString
-            
-            //store the name in Published var
-            self.givenName = givenName ?? ""
             
             //store the ProfileURL in Published var
             self.profilePicUrl = profilePicUrl ?? ""
@@ -51,10 +56,16 @@ class GoogleAutheticationViewModel: ObservableObject {
             //Apply Login And Logout Logic
             self.isLoggedIn = false
             
-            //If user Login unsucessfully then store this Emptyname
-            self.givenName = "Not Logged In"
+            //If user Login unsucessfully then store this default First Name
+            self.firstName = "Not Logged In"
             
-            //If user Login unsucessfully then store this Emptypic
+            //If user Login unsucessfully then store this default lastName
+            self.lastName = "Unkown"
+            
+            //If user Login unsucessfully then store this defaultEmail
+            self.email = "abc@xyz.com"
+            
+            //If user Login unsucessfully then store this Empty Picture
             self.profilePicUrl =  ""
         }
     }

@@ -14,9 +14,10 @@ struct MusicRootView: View {
     @StateObject var emailAuth = EmailAuthenticationViewModel()
     @StateObject var phoneAuth = PhoneVerificationViewModel()
     
+    //MARK: - Not Proper...
     var body: some View {
         Group {
-            if emailAuth.isLoggIN || phoneAuth.isLoggIN {
+            if emailAuth.isLoggIN || phoneAuth.isVerifiy {
                 MusicTabbarView()
             } else {
                 SignInView()

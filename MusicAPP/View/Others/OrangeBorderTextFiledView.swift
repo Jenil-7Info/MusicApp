@@ -15,7 +15,7 @@ struct OrangeBorderTextFiledView: View {
     var body: some View {
         TextField(textString, text: $text)
             .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
-            .foregroundColor(.black)
+            .foregroundColor(.white)
             .autocorrectionDisabled(true)
             .textInputAutocapitalization(.words)
             .textContentType(.givenName)

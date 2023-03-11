@@ -12,11 +12,38 @@ struct ProfileView: View {
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     
     var body: some View {
-        //NOTE: - check the which use login method
-        if emailAuthVM.verification == LoginVerification.EmailAndPassAuth.rawValue {
-            EmailAndPassLoginProfileView()
-        } else {
-            GoogleOrOtherLoginProfileView()
+        VStack {
+            AsyncImage(url: URL(string: googleAuthVM.profilePicUrl))
+                .frame(width: 100, height: 100)
+                .cornerRadius(radius: 20, corners: .allCorners)
+            
+            Text(googleAuthVM.firstName)
+                .font(.largeTitle)
+                .bold()
+                .padding(.bottom, 20)
+            
+            Text(googleAuthVM.lastName)
+                .font(.largeTitle)
+                .bold()
+                .padding(.bottom, 20)
+            
+            Text(googleAuthVM.email)
+                .font(.largeTitle)
+                .bold()
+                .padding(.bottom, 20)
+            
+            Button {
+                self.googleAuthVM.signOut()
+            } label: {
+                Text("Sign Out")
+                    .foregroundColor(.red)
+                    .bold()
+            }
+            .padding()
+            .background {
+                    Capsule()
+                    .fill(.red.opacity(0.15))
+            }
         }
     }
 }
@@ -30,6 +57,7 @@ struct ProfileView_Previews: PreviewProvider {
 }
 
 //MARK: - If User Email Authentication Login then this struct is Called...
+//MARK: - Pandding...
 struct EmailAndPassLoginProfileView: View {
     
     @State private var isPresentSignIN: Bool = false
@@ -79,38 +107,6 @@ struct EmailAndPassLoginProfileView: View {
                     SignInView()
                         .navigationBarBackButtonHidden(true)
                 }
-            }
-        }
-    }
-}
-
-//MARK: - If User Google Or Other PlatForm Use And Login the This Struct is Called...
-struct GoogleOrOtherLoginProfileView: View {
-    
-    @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
-    
-    var body: some View {
-        VStack {
-            AsyncImage(url: URL(string: googleAuthVM.profilePicUrl))
-                .frame(width: 100, height: 100)
-                .cornerRadius(radius: 20, corners: .allCorners)
-            
-            Text(googleAuthVM.givenName)
-                .font(.largeTitle)
-                .bold()
-                .padding(.bottom, 20)
-            
-            Button {
-                self.googleAuthVM.signOut()
-            } label: {
-                Text("Sign Out")
-                    .foregroundColor(.red)
-                    .bold()
-            }
-            .padding()
-            .background {
-                    Capsule()
-                    .fill(.red.opacity(0.15))
             }
         }
     }
