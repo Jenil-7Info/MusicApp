@@ -5,6 +5,7 @@
         <attribute name="familyName" optional="YES" attributeType="String"/>
         <attribute name="givenName" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="isLogIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="phone" optional="YES" attributeType="String"/>
     </entity>

@@ -122,7 +122,7 @@ class GoogleAutheticationViewModel: ObservableObject {
  
  1. Create this File...
  2. Write the Google Authentication Code
-    - If Any Esuue then Go to "https://firebase.google.com/docs/auth/ios/google-signin"
+    - If Any Essue then Go to "https://firebase.google.com/docs/auth/ios/google-signin"
     - this is also provide the Swift codes And Videos...
  3. also include the yourproject base swift file.
  4. Base file:-

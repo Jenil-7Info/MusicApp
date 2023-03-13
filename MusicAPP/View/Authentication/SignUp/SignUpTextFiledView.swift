@@ -24,16 +24,60 @@ struct SignUpTextFiledView: View {
         
         //MARK: - First Name
         OrangeBorderTextFiledView(textString: "First Name", text: $fName)
+            .keyboardType(.namePhonePad)
+            .textContentType(.familyName)
         
         //MARK: - Last Name
         OrangeBorderTextFiledView(textString: "Last Name", text: $lName)
+            .keyboardType(.namePhonePad)
+            .textContentType(.familyName)
         
         //MARK: - Email Address
         OrangeBorderTextFiledView(textString: "Email", text: $email)
+            .keyboardType(.emailAddress)
+            .textContentType(.emailAddress)
         
         //MARK: - Phone Number
-        OrangeBorderTextFiledView(textString: "Phone", text: $phone)
-            .disabled(phone.count == 10)
+        HStack {
+            
+            //MARK: - Indian Flag
+            if phone.count == 10 {
+                Text("🇮🇳")
+                    .padding(.leading)
+            }
+            
+            //MARK: - Phone Number TextFiled
+            TextField("Phone Number", text: $phone)
+                .textContentType(.telephoneNumber)
+                .padding()
+                .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
+                .foregroundColor(.white)
+                .autocorrectionDisabled(true)
+                .keyboardType(.numberPad)
+                .textInputAutocapitalization(.never)
+                .disabled(phone.count == 10)
+                
+            Spacer()
+            
+            //MARK: - Closer Button
+            Button {
+                phone = ""
+            } label: {
+                Image(systemName: "multiply.circle.fill")
+                    .resizable()
+                    .frame(width: phone.isEmpty ? 0 : 20, height: phone.isEmpty ? 0 : 20)
+                    .foregroundColor(.white)
+            }
+            .disabled(phone.isEmpty)
+            .padding()
+        }
+        .background {
+            RoundedRectangle(cornerRadius: 15)
+                .stroke(!phone.isEmpty ? phone.count == 10 ? .white.opacity(0.8) : .orange : .clear, lineWidth: !phone.isEmpty ?  3 : 0)
+            RoundedRectangle(cornerRadius: 15)
+                .fill(.white.opacity(0.48))
+        }
+        .padding(.horizontal, 20)
         
         //MARK: - Password: Hide And Show
         if isShowPass {
@@ -51,7 +95,9 @@ struct SignUpTextFiledView: View {
                     .frame(width: 23, height: 16)
                     .padding(.trailing)
                     .onTapGesture {
-                        isShowPass.toggle()
+                        withAnimation {
+                            self.isShowPass.toggle()
+                        }
                     }
             }
             .background {
@@ -75,7 +121,9 @@ struct SignUpTextFiledView: View {
                     .frame(width: 23, height: 16)
                     .padding(.trailing)
                     .onTapGesture {
-                        isShowPass.toggle()
+                        withAnimation {
+                            self.isShowPass.toggle()
+                        }
                     }
             }
             .background {
@@ -87,11 +135,12 @@ struct SignUpTextFiledView: View {
         
         //MARK: - EmailAuth && Coredata
         Button {
-            // add the userDetails in coreData
-            self.coreDataVM.addUsers("person.fill", fName, lName, email: email, phone: phone, pass: password)
             
             //add the Email Authentication
             emailAuthVM.signUp("person.fill", fName, lName, email: email, pass: password, phone: phone, verification: .EmailAndPassAuth)
+            
+            // add the userDetails in coreData
+            self.coreDataVM.addUsers("person.fill", fName, lName, email: email, phone: phone, pass: password, isLoggIn: emailAuthVM.isLoggIN)
             
             self.fName = ""
             self.lName = ""

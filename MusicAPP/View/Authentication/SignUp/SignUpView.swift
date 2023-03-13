@@ -32,8 +32,3 @@ struct SignUpView_Previews: PreviewProvider {
             .environmentObject(EmailAuthenticationViewModel())
     }
 }
-
-
-
-
-

@@ -72,6 +72,8 @@ class EmailAuthenticationViewModel: ObservableObject {
                 self.isLoggIN = true
                 self.isAlert = false
                 self.verification = verification.rawValue
+                
+                self.listenToAuthState()
             }
         }
     }
@@ -91,6 +93,8 @@ class EmailAuthenticationViewModel: ObservableObject {
                 self.isLoggIN = true
                 self.isAlert = false
                 self.verification = verification.rawValue
+                
+                self.listenToAuthState()
             }
         }
     }

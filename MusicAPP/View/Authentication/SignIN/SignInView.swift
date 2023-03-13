@@ -49,6 +49,8 @@ struct SignInView: View {
                 
                 //Email Address
                 OrangeBorderTextFiledView(textString: "Email", text: $email)
+                    .keyboardType(.emailAddress)
+                    .textContentType(.emailAddress)
                 
                 //Password : Hide snd Show
                 if isShowPass {
@@ -59,7 +61,7 @@ struct SignInView: View {
                             .foregroundColor(.white)
                             .autocorrectionDisabled(true)
                             .textContentType(.password)
-                            .keyboardType(.numbersAndPunctuation)
+                            .keyboardType(.namePhonePad)
                             .textInputAutocapitalization(.never)
                         Image(systemName: isShowPass ? "eye.slash" : "eye")
                             .resizable()
@@ -86,7 +88,7 @@ struct SignInView: View {
                             .foregroundColor(.white)
                             .autocorrectionDisabled(true)
                             .textContentType(.password)
-                            .keyboardType(.numbersAndPunctuation)
+                            .keyboardType(.namePhonePad)
                             .textInputAutocapitalization(.never)
                         Image(systemName: isShowPass ? "eye.slash" : "eye")
                             .resizable()
@@ -208,5 +210,3 @@ struct SignInView_Previews: PreviewProvider {
             .environmentObject(EmailAuthenticationViewModel())
     }
 }
-
-

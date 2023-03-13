@@ -39,7 +39,7 @@ class DataModelController: ObservableObject {
     }
 
     //MARK: - Add the New User
-    func addUsers(_ image: String ,_ fname: String, _ lName: String, email: String, phone: String, pass: String) {
+    func addUsers(_ image: String ,_ fname: String, _ lName: String, email: String, phone: String, pass: String, isLoggIn: Bool) {
         //this connect the entity attributes
         let context = contanier.viewContext
         
@@ -51,21 +51,24 @@ class DataModelController: ObservableObject {
         user.email = email
         user.phone = phone
         user.password = pass
+        user.isLogIn = isLoggIn
         
         //save user data...
         saveData()
     }
     
     //MARK: - update user detail...
-    func updateUserDetail(image: String? ,fname: String? , lname: String?, email: String?, phone : String, pass: String?) {
-        let newUserDetails = UserDetail()
-        newUserDetails.image = image
-        newUserDetails.givenName = fname
-        newUserDetails.familyName = lname
-        newUserDetails.email = email
-        newUserDetails.phone = phone
-        newUserDetails.password = pass
+    func updateUserDetail(image: String? ,fname: String? , lname: String?, email: String?, phone : String, pass: String?, isLogIn: Bool = true) {
+        let updateUserDetails = UserDetail()
+        updateUserDetails.image = image
+        updateUserDetails.givenName = fname
+        updateUserDetails.familyName = lname
+        updateUserDetails.email = email
+        updateUserDetails.phone = phone
+        updateUserDetails.password = pass
+        updateUserDetails.isLogIn = isLogIn // update by default is true
         
+        //save user data...
         saveData()
     }
     

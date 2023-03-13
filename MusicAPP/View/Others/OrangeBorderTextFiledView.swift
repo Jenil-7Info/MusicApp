@@ -17,9 +17,7 @@ struct OrangeBorderTextFiledView: View {
             .font(.festerFont(customFontName: .FesterMedium, fontSize: 18))
             .foregroundColor(.white)
             .autocorrectionDisabled(true)
-            .textInputAutocapitalization(.words)
-            .textContentType(.givenName)
-            .keyboardType(.numbersAndPunctuation)
+            .textInputAutocapitalization(textString == "Email" ? .never : .words)
             .padding()
             .background {
                 validationTextFiled(text, isEmail: textString == "Email", bgColorFloat: 0.48)

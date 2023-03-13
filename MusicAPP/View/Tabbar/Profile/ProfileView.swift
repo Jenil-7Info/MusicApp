@@ -12,28 +12,43 @@ struct ProfileView: View {
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     
     var body: some View {
+        
+        var isLogginEmail: Bool = LoginVerification.EmailAndPassAuth.rawValue == emailAuthVM.verification
+        
         VStack {
-            AsyncImage(url: URL(string: googleAuthVM.profilePicUrl))
-                .frame(width: 100, height: 100)
-                .cornerRadius(radius: 20, corners: .allCorners)
             
-            Text(googleAuthVM.firstName)
+            if isLogginEmail {
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .cornerRadius(radius: 20, corners: .allCorners)
+            } else {
+                AsyncImage(url: URL(string: googleAuthVM.profilePicUrl))
+                    .frame(width: 100, height: 100)
+                    .cornerRadius(radius: 20, corners: .allCorners)
+            }
+            
+            Text(isLogginEmail ? emailAuthVM.firstName : googleAuthVM.firstName)
                 .font(.largeTitle)
                 .bold()
                 .padding(.bottom, 20)
             
-            Text(googleAuthVM.lastName)
-                .font(.largeTitle)
+            Text(isLogginEmail ? emailAuthVM.lastName : googleAuthVM.lastName)
+                .font(.title)
                 .bold()
                 .padding(.bottom, 20)
             
-            Text(googleAuthVM.email)
-                .font(.largeTitle)
+            Text(isLogginEmail ? emailAuthVM.email : googleAuthVM.email)
+                .font(.title2)
                 .bold()
                 .padding(.bottom, 20)
             
             Button {
-                self.googleAuthVM.signOut()
+                if isLogginEmail {
+                    self.emailAuthVM.signOut()
+                } else {
+                    self.googleAuthVM.signOut()
+                }
             } label: {
                 Text("Sign Out")
                     .foregroundColor(.red)
@@ -43,6 +58,10 @@ struct ProfileView: View {
             .background {
                     Capsule()
                     .fill(.red.opacity(0.15))
+            }
+            .navigationDestination(isPresented: $emailAuthVM.isLoggOut) {
+                SignInView()
+                    .navigationBarBackButtonHidden(true)
             }
         }
     }
