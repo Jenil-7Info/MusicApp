@@ -20,8 +20,8 @@ struct PlayView: View {
                 VStack {
                     Spacer()
                     RoundedRectangle(cornerRadius: 10)
-                        .frame(height: dynamicHeight/10)
-                        .foregroundColor(.red)
+                        .frame(height: dynamicHeight/11)
+                        .foregroundColor(.gray.opacity(0.44))
                         .overlay {
                             HStack {
                                 Image("pop")
@@ -33,7 +33,7 @@ struct PlayView: View {
                                 Spacer()
                                 
                                 //NOTE: - Backward Button
-                                PlayViewButton(systemImage: "backward.fill", imgWidth: dynamicWidth/15, imgHeight: dynamicHeight/32, color: .white) {
+                                PlayViewButton(systemImage: "backward.fill", imgWidth: dynamicWidth/14, imgHeight: dynamicHeight/33, color: .white) {
                                     //Play button Action
                                 }
                                 
@@ -44,7 +44,7 @@ struct PlayView: View {
                                 .padding(.horizontal)
                                 
                                 //NOTE: - Backward Button
-                                PlayViewButton(systemImage: "forward.fill", imgWidth: dynamicWidth/15, imgHeight: dynamicHeight/32, color: .white) {
+                                PlayViewButton(systemImage: "forward.fill", imgWidth: dynamicWidth/14, imgHeight: dynamicHeight/33, color: .white) {
                                     //Play button Action
                                 }
                             }
@@ -96,14 +96,35 @@ struct FullViewMusic: View {
     
     var body: some View {
         VStack {
-            RoundedRectangle(cornerRadius: 0)
+            Image("pop")
+                .resizable()
+                .frame(width: dynamicWidth)
+                .scaledToFill()
+                .blur(radius: 40, opaque: true)
                 .ignoresSafeArea()
-                .foregroundColor(.red)
                 .overlay {
                     VStack {
-                        
-                        Text("Playlist with Pop Songs")
-                            .padding()
+                        HStack {
+                            Button {
+                                withAnimation(.spring()) {
+                                    self.fullMusicView.toggle()
+                                }
+                            } label: {
+                                Image(systemName: "chevron.down")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }
+                            
+                            Spacer()
+                            
+                            Text("Playlist with Pop Songs")
+                                .padding()
+                                .foregroundColor(.white)
+                                .bold()
+                            
+                            Spacer()
+                        }
                         
                         Spacer()
                         
@@ -118,10 +139,12 @@ struct FullViewMusic: View {
                                     .font(.title2)
                                     .bold()
                                     .padding(.vertical, 2)
+                                    .foregroundColor(.white)
                                 
                                 Text("Hanny sing, Mikka Sing")
                                     .font(.body)
                                     .padding(.vertical, 2)
+                                    .foregroundColor(.white)
                             }
                             .padding(.vertical)
                             Spacer()
@@ -139,7 +162,6 @@ struct FullViewMusic: View {
                         
                         //MARK: -Slider and play buttons..
                         HStack {
-                            
                             //NOTE: - Loop Button
                             PlayViewButton(systemImage: "repeat", imgWidth: dynamicWidth/15, imgHeight: dynamicHeight/35, color: .white) {
                                 //Play button Action
@@ -179,11 +201,6 @@ struct FullViewMusic: View {
                         Spacer()
                     }
                     .padding(.horizontal)
-                }
-                .onTapGesture {
-                    withAnimation(.spring()) {
-                        self.fullMusicView.toggle()
-                    }
                 }
         }
     }
