@@ -19,6 +19,7 @@ struct HomeView: View {
     @StateObject var tipsViewModel = TipsViewModel()
     @StateObject var discoverVM = DiscoverViewModel()
     @StateObject var audioManger = AudioManger()
+    @State var isPreview: Bool = false
     
     //MARK: - Header view...
     var header: some View {
@@ -93,6 +94,9 @@ struct HomeView: View {
                             self.isSelectMusic = true
                         }
                     }
+//                    .onAppear {
+//                        audioManger.startPlayer(track: "THE LOVE MASHUP 2023", isPreview: isPreview)
+//                    }
                     
                     //MARK: - Your Favourit artits
                     HStack {
@@ -188,6 +192,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(isPreview: true)
     }
 }

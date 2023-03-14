@@ -10,9 +10,8 @@ import SwiftUI
 import AVKit
 
 class AudioManger: ObservableObject {
-    @Published var isPlaying: Bool = false
     var player : AVAudioPlayer?
-    
+    @Published private(set) var isLooping: Bool = false
     func startPlayer(track: String, isPreview: Bool = false) {
         guard let url = Bundle.main.url(forResource: track, withExtension: "mp3") else {
             debugPrint("Error:- URL IS MISSING!!!")
@@ -36,8 +35,22 @@ class AudioManger: ObservableObject {
         }
     }
     
+    func playPlayer() {
+        player?.play()
+    }
+    
+    func pausePlayer() {
+        player?.pause()
+    }
     
     func stopPlayer() {
         player?.stop()
+    }
+    
+    func toggleLoop() {
+        guard let player = player else { return }
+        
+        player.numberOfLoops = player.numberOfLoops == 0 ? -1 : 0
+        isLooping = player.numberOfLoops != 0
     }
 }
