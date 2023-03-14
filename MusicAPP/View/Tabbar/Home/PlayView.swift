@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct PlayView: View {
-    
+
     @State private var fullMusicView: Bool = false
-    @State private var isPlay: Bool = false
+    @AppStorage("isPlayMusic") var isPlay: Bool = false
+    @State private var isPreview: Bool = false
+    @StateObject var audioManger = AudioManger()
     
     var body: some View {
         ZStack {
@@ -21,14 +23,23 @@ struct PlayView: View {
                     Spacer()
                     RoundedRectangle(cornerRadius: 10)
                         .frame(height: dynamicHeight/11)
-                        .foregroundColor(.gray.opacity(0.44))
+                        .foregroundColor(Color(UIColor.systemGray3))
                         .overlay {
                             HStack {
-                                Image("pop")
+                                Image("Love Mashup")
                                     .resizable()
-                                    .aspectRatio(1, contentMode: .fit)
-                                    .frame(width: dynamicWidth/6.5, height: dynamicHeight/12)
-                                    .cornerRadius(10)
+                                    .aspectRatio(1.4, contentMode: .fit)
+                                    .frame(width: dynamicWidth/6.5, height: dynamicHeight/15)
+                                
+                                VStack(alignment: .leading) {
+                                    Text("Love Mashup")
+                                        .foregroundColor(.white)
+                                        .font(.festerFont(customFontName: .FesterBold, fontSize: 15))
+                                    Text("Arjit shigh")
+                                        .foregroundColor(.white)
+                                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 15))
+                                }
+                                .padding(.leading, 5)
                                 
                                 Spacer()
                                 
@@ -40,6 +51,13 @@ struct PlayView: View {
                                 //NOTE: - Play Button
                                 PlayViewButton(systemImage: isPlay ? "pause.fill" : "play.fill", imgWidth: dynamicWidth/22, imgHeight: dynamicHeight/32, color: .white) {
                                     self.isPlay.toggle()
+                                    
+                                    if isPlay {
+                                        audioManger.startPlayer(track: "THE LOVE MASHUP 2023", isPreview: isPreview)
+                                    } else {
+                                        //Stop Methode...
+                                        audioManger.stopPlayer()
+                                    }
                                 }
                                 .padding(.horizontal)
                                 
@@ -67,7 +85,6 @@ struct PlayView_Previews: PreviewProvider {
     }
 }
 
-
 struct PlayViewButton: View {
     var systemImage: String
     var imgWidth: CGFloat
@@ -91,12 +108,18 @@ struct PlayViewButton: View {
 struct FullViewMusic: View {
     
     @Binding var fullMusicView: Bool
-    @State private var isPlay: Bool = false
+    @AppStorage("isPlayMusic") var isPlay: Bool = false
     @State private var value : CGFloat = 0
+    @State private var isEditing: Bool = false
+    @StateObject var audioManger = AudioManger()
+    
+    var timer = Timer
+        .TimerPublisher(interval: 1, runLoop: .main, mode: .common)
+        .autoconnect()
     
     var body: some View {
         VStack {
-            Image("pop")
+            Image("Love Mashup")
                 .resizable()
                 .frame(width: dynamicWidth)
                 .scaledToFill()
@@ -128,20 +151,21 @@ struct FullViewMusic: View {
                         
                         Spacer()
                         
-                        Image("pop")
+                        Image("Love Mashup")
                             .resizable()
-                            .aspectRatio(1.3, contentMode: .fit)
+                            .scaledToFill()
+                            .frame(height: dynamicHeight/3.5)
                         
                         //MARK: -  Music Title
                         HStack {
                             VStack(alignment: .leading) {
-                                Text("Pop songs")
+                                Text("Love Mashup 2023")
                                     .font(.title2)
                                     .bold()
                                     .padding(.vertical, 2)
                                     .foregroundColor(.white)
                                 
-                                Text("Hanny sing, Mikka Sing")
+                                Text("Arjit shigh")
                                     .font(.body)
                                     .padding(.vertical, 2)
                                     .foregroundColor(.white)
@@ -149,15 +173,30 @@ struct FullViewMusic: View {
                             .padding(.vertical)
                             Spacer()
                         }
-                        
-                        Slider(value: $value)
+                      
+                        if let player = audioManger.player {
+                            Slider(value: $value, in: 0...CGFloat(player.duration)){ editing in
+                                
+                                //this Bool use the song backward or forward in silder throw..
+                                self.isEditing = editing
+                                
+                                if !editing {
+                                    player.currentTime = value
+                                }
+                            }
                             .tint(.white)
-                        
-                        //MARK: - Timer...
-                        HStack {
-                            Text("0:01")
-                            Spacer()
-                            Text("3:44")
+                            
+                            
+                            //MARK: - Timer...
+                            HStack {
+                                Text(DateComponentsFormatter.position.string(from: player.currentTime)!)
+                                    .foregroundColor(.white)
+                                
+                                Spacer()
+                                
+                                Text(DateComponentsFormatter.position.string(from: player.duration)!)
+                                    .foregroundColor(.white)
+                            }
                         }
                         
                         //MARK: -Slider and play buttons..
@@ -179,22 +218,31 @@ struct FullViewMusic: View {
                             //NOTE: - Play Button
                             PlayViewButton(systemImage: isPlay ? "pause.circle.fill" : "play.circle.fill", imgWidth: dynamicWidth/7, imgHeight: dynamicHeight/15, color: .white) {
                                 self.isPlay.toggle()
+                                if isPlay {
+                                    audioManger.startPlayer(track: "THE LOVE MASHUP 2023")
+                                } else {
+                                    //Stop Methode...
+                                    audioManger.stopPlayer()
+                                }
                             }
                             
                             Spacer()
                             
                             //NOTE: - Backward Button
                             PlayViewButton(systemImage: "forward.fill", imgWidth: dynamicWidth/15, imgHeight: dynamicHeight/35, color: .white) {
-                                //Play button Action
+                                //Backward button Action
                             }
                             
                             Spacer()
                             
-                            //NOTE: - Backward Button
+                            //NOTE: - Stop Button
                             PlayViewButton(systemImage: "square.fill", imgWidth: dynamicWidth/16, imgHeight: dynamicHeight/35, color: .white) {
                                 //Stop Button Action
-                                
-                                self.isPlay.toggle()
+                                self.isPlay = false
+                                withAnimation {
+                                    self.fullMusicView.toggle()
+                                }
+                                audioManger.stopPlayer()
                             }
                         }
                         
@@ -202,6 +250,10 @@ struct FullViewMusic: View {
                     }
                     .padding(.horizontal)
                 }
+        }
+        .onReceive(timer) { _ in
+            guard let player = audioManger.player, !isEditing else {return}
+            value = player.currentTime
         }
     }
 }

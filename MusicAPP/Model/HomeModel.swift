@@ -7,25 +7,31 @@
 
 import Foundation
 import SwiftUI
+import AVKit
 
 //MARK: - LastPlay Model
 struct LastPlayCollectionModel: Hashable, Identifiable {
-    var id: UUID = UUID()
-    var img: String
-    var name: String
-    var des: String
     
-    init(img: String, name: String, des: String) {
+    let id: UUID = UUID()
+    let title: String
+    let duration: TimeInterval
+    let track: String
+    let img: String
+    let des: String
+    
+    init(title: String, duration: TimeInterval, track: String, img: String, des: String) {
+        self.title = title
+        self.duration = duration
+        self.track = track
         self.img = img
-        self.name = name
         self.des = des
     }
 }
 
 //MARK: - Artits Model
 struct ArtistsCollectionModel: Hashable, Identifiable {
-    var id: UUID = UUID()
-    var img: String
+    let id: UUID = UUID()
+    let img: String
     
     init(img: String) {
         self.img = img
@@ -34,13 +40,13 @@ struct ArtistsCollectionModel: Hashable, Identifiable {
 
 //MARK: - Made For You PlayList Model...
 struct MadeForYouPlayListModel: Hashable, Identifiable {
-    var id: UUID = UUID()
-    var img1: String
-    var img2: String
-    var img3: String
-    var img4: String
-    var title: String
-    var totalSong: String
+    let id: UUID = UUID()
+    let img1: String
+    let img2: String
+    let img3: String
+    let img4: String
+    let title: String
+    let totalSong: String
     
     init(img1: String, img2: String, img3: String, img4: String, title: String, totalSong: String) {
         self.img1 = img1
@@ -54,12 +60,12 @@ struct MadeForYouPlayListModel: Hashable, Identifiable {
 
 //MARK: - Tips Display Model...
 struct TipsDisplayModel: Identifiable {
-    var id: UUID = UUID()
-    var color: LinearGradient
-    var systemImg: String
-    var title: String
-    var description: String
-    var width: CGFloat
+    let id: UUID = UUID()
+    let color: LinearGradient
+    let systemImg: String
+    let title: String
+    let description: String
+    let width: CGFloat
     
     init(color: LinearGradient ,systemImg: String, title: String, description: String, width: CGFloat) {
         self.color = color
@@ -71,11 +77,11 @@ struct TipsDisplayModel: Identifiable {
 }
 
 struct DiscoverCollectionModel: Hashable, Identifiable {
-    var id: UUID = UUID()
-    var image: String
-    var title: String
-    var subTitle: String
-    var timingSong: String
+    let id: UUID = UUID()
+    let image: String
+    let title: String
+    let subTitle: String
+    let timingSong: String
     
     init(image: String, title: String, subTitle: String, timingSong: String) {
         self.image = image

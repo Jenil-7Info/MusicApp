@@ -13,7 +13,7 @@ struct ProfileView: View {
     
     var body: some View {
         
-        var isLogginEmail: Bool = LoginVerification.EmailAndPassAuth.rawValue == emailAuthVM.verification
+        let isLogginEmail: Bool = LoginVerification.EmailAndPassAuth.rawValue == emailAuthVM.verification
         
         VStack {
             

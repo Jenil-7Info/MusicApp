@@ -12,12 +12,13 @@ struct HomeView: View {
     //MARK: - Varibles..
     @State private var isNotifivation: Bool = false
     @State private var isSetting: Bool = false
-    @State private var isSelecteMusic: Bool = false
+    @State private var isSelectMusic: Bool = false
     @StateObject var lastPlayCollectionVM = LastPlayCollectionViewModel()
     @StateObject var favArtitsImgVM = YourFavArtitsCollectionViewModel()
     @StateObject var madePlayListVM = MadeForYouCollectionViewModel()
     @StateObject var tipsViewModel = TipsViewModel()
     @StateObject var discoverVM = DiscoverViewModel()
+    @StateObject var audioManger = AudioManger()
     
     //MARK: - Header view...
     var header: some View {
@@ -81,12 +82,17 @@ struct HomeView: View {
                     ScrollView(.horizontal) {
                         HStack {
                             ForEach(lastPlayCollectionVM.LastPlayCollectionManger) { collection in
-                                LastPlaycollectionView(img: collection.img, title: collection.name, des: collection.des)
+                                LastPlaycollectionView(title: collection.title, duration: collection.duration, track: collection.track, img: collection.img, des: collection.des)
                             }
                         }
                     }
                     .scrollIndicators(.never)
                     .padding(.leading)
+                    .onTapGesture {
+                        withAnimation(.spring()) {
+                            self.isSelectMusic = true
+                        }
+                    }
                     
                     //MARK: - Your Favourit artits
                     HStack {
@@ -161,7 +167,7 @@ struct HomeView: View {
                                 DiscoverView(img: discover.image, title: discover.title, subTitle: discover.subTitle, timimg: discover.timingSong)
                             }
                             .onTapGesture {
-                                self.isSelecteMusic.toggle()
+                                self.isSelectMusic.toggle()
                             }
                         }
                     }
@@ -172,7 +178,7 @@ struct HomeView: View {
             }
             VStack {
                 Spacer()
-                if isSelecteMusic {
+                if isSelectMusic {
                     PlayView()
                 }
             }

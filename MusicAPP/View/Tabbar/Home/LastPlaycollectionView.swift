@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct LastPlaycollectionView: View {
-    
-    @State var img: String
+
     @State var title: String
+    @State var duration: TimeInterval
+    @State var track: String
+    @State var img: String
     @State var des: String
     
     var body: some View {
@@ -23,7 +25,7 @@ struct LastPlaycollectionView: View {
                     Image(img)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: dynamicWidth/2.3, height: dynamicHeight/5.6)
+                        .frame(width: dynamicWidth/2.3, height: dynamicHeight/5.3)
                         .cornerRadius(radius: 20, corners: [.topLeft, .topRight])
                         .offset(y: -10)
                         
@@ -44,7 +46,7 @@ struct LastPlaycollectionView: View {
 
 struct LastPlaycollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        LastPlaycollectionView(img: "pop", title: "Jenil", des: "Marshel Songs")
+        LastPlaycollectionView(title: "Jenil", duration: 60, track: "Play List", img: "pop", des: "ajkdfjbsdfjbasjdfjhdsb")
           //  .preferredColorScheme(.dark)
     }
 }

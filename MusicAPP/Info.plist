@@ -42,5 +42,9 @@
 		<string>Fester_Trial-Thin.otf</string>
 		<string>Fester_Trial-ThinItalic.otf</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 </dict>
 </plist>
