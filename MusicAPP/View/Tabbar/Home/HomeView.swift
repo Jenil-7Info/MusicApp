@@ -183,7 +183,7 @@ struct HomeView: View {
             VStack {
                 Spacer()
                 if isSelectMusic {
-                    PlayView()
+                    PlayView(fullMusicView: false)
                 }
             }
         }

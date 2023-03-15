@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MusicTabbarView: View {
+    @StateObject var audioManger = AudioManger()
     
     var body: some View {
         NavigationStack {
@@ -24,12 +25,16 @@ struct MusicTabbarView: View {
                         Text("Search")
                     }
                     .clipped()
+                    .navigationTitle("Search")
                 LibraryView()
                     .tabItem {
                         Image(systemName: "text.book.closed.fill")
                         Text("Library")
                     }
                     .clipped()
+                    .onAppear {
+                        audioManger.stopPlayer()
+                    }
                 ProfileView()
                     .tabItem {
                         Image(systemName: "person.fill")

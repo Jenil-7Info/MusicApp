@@ -23,6 +23,11 @@
 	</array>
 	<key>GIDClientID</key>
 	<string>666912208148-r3vfoivimuuu69i1vsho0lbonaldr2kg.apps.googleusercontent.com</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fester_Trial-Bold.otf</string>

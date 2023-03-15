@@ -9,8 +9,7 @@ import SwiftUI
 
 struct PlayView: View {
     
-//    @Binding var collection: LastPlayCollectionModel
-    @State private var fullMusicView: Bool = false
+    @State var fullMusicView: Bool
     @AppStorage("isPlayMusic") var isPlay: Bool = false
     @State private var isPreview: Bool = false
     @StateObject var audioManger = AudioManger()
@@ -36,6 +35,8 @@ struct PlayView: View {
                         .overlay {
                             VStack {
                                 HStack {
+                                    
+                                    //MARK: - Close Button
                                     Button {
                                         withAnimation(.spring()) {
                                             self.fullMusicView.toggle()
@@ -234,7 +235,7 @@ struct PlayView: View {
 
 struct PlayView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayView()
+        PlayView(fullMusicView: true)
     }
 }
 
