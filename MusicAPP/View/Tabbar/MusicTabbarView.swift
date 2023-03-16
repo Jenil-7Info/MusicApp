@@ -32,9 +32,6 @@ struct MusicTabbarView: View {
                         Text("Library")
                     }
                     .clipped()
-                    .onAppear {
-                        audioManger.stopPlayer()
-                    }
                 ProfileView()
                     .tabItem {
                         Image(systemName: "person.fill")

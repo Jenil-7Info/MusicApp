@@ -51,7 +51,6 @@ struct AdsView: View {
                             .foregroundColor(.white)
                     }
                 }
-            
             Spacer()
         }
     }

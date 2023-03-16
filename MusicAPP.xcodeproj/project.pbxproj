@@ -44,10 +44,7 @@
 		70AD851729A8CDD500EF8851 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 70AD851629A8CDD500EF8851 /* GoogleSignInSwift */; };
 		70B0DABB29ADB4E500676891 /* EmailAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */; };
 		70B6D39329C178DB00ED6250 /* AdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D39229C178DB00ED6250 /* AdsView.swift */; };
-		70B6D39729C18E1700ED6250 /* demo2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 70B6D39529C18E1600ED6250 /* demo2.mp4 */; };
 		70B6D39829C18E1700ED6250 /* demo1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 70B6D39629C18E1700ED6250 /* demo1.mp4 */; };
-		70CC626D29AF1AB200366026 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70CC626B29AF1AB200366026 /* DataModel.xcdatamodeld */; };
-		70CC626F29AF1BF700366026 /* DataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC626E29AF1BF700366026 /* DataModelController.swift */; };
 		70D2EB5629A5EE4A00795D96 /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */; };
 		70D2EB5B29A5EED700795D96 /* MusicTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5A29A5EED700795D96 /* MusicTabbarView.swift */; };
 		70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5D29A5EEF000795D96 /* HomeView.swift */; };
@@ -78,7 +75,6 @@
 		70D4C3B229B1F01B001CAFAB /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D4C3B129B1F01B001CAFAB /* OTPView.swift */; };
 		70E757F429B0C4D800E7E81C /* PhoneVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */; };
 		70E757F629B0CB3600E7E81C /* PhoneVerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */; };
-		70EB267B29AF788F008A5656 /* TestingCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EB267A29AF788F008A5656 /* TestingCoreData.swift */; };
 		70ECA1FB29B98F71005E0097 /* MusicRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECA1FA29B98F71005E0097 /* MusicRootView.swift */; };
 		70FBFC9829B9F005008165C4 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBFC9729B9F005008165C4 /* PlayView.swift */; };
 /* End PBXBuildFile section */
@@ -119,10 +115,7 @@
 		70AD850A29A8BEBB00EF8851 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		70B6D39229C178DB00ED6250 /* AdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsView.swift; sourceTree = "<group>"; };
-		70B6D39529C18E1600ED6250 /* demo2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo2.mp4; sourceTree = "<group>"; };
 		70B6D39629C18E1700ED6250 /* demo1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo1.mp4; sourceTree = "<group>"; };
-		70CC626C29AF1AB200366026 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		70CC626E29AF1BF700366026 /* DataModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelController.swift; sourceTree = "<group>"; };
 		70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
 		70D2EB5A29A5EED700795D96 /* MusicTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTabbarView.swift; sourceTree = "<group>"; };
 		70D2EB5D29A5EEF000795D96 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -153,7 +146,6 @@
 		70D4C3B129B1F01B001CAFAB /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationViewModel.swift; sourceTree = "<group>"; };
 		70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerifyView.swift; sourceTree = "<group>"; };
-		70EB267A29AF788F008A5656 /* TestingCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingCoreData.swift; sourceTree = "<group>"; };
 		70ECA1FA29B98F71005E0097 /* MusicRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRootView.swift; sourceTree = "<group>"; };
 		70FBFC9729B9F005008165C4 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				70D2EB5329A5EE2D00795D96 /* Base */,
-				70CC626029AF101C00366026 /* CoreData */,
 				70D2EB5229A5EE2700795D96 /* Resorces */,
 				70D2EB5129A5EE2000795D96 /* Utility */,
 				70D2EB5029A5EE1B00795D96 /* Model */,
@@ -226,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				70B6D39129C178C700ED6250 /* ADS */,
-				70EB267A29AF788F008A5656 /* TestingCoreData.swift */,
 				70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */,
 				70782C2029BB0E2B007F1855 /* OrangeBorderTextFiledView.swift */,
 			);
@@ -237,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				708672E729C033A900F4795A /* THE LOVE MASHUP 2023.mp3 */,
+				708672E929C0380600F4795A /* AudioManger.swift */,
 			);
 			path = Songs.mp3;
 			sourceTree = "<group>";
@@ -260,18 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				70B6D39629C18E1700ED6250 /* demo1.mp4 */,
-				70B6D39529C18E1600ED6250 /* demo2.mp4 */,
 			);
 			path = Video.mp4;
-			sourceTree = "<group>";
-		};
-		70CC626029AF101C00366026 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				70CC626B29AF1AB200366026 /* DataModel.xcdatamodeld */,
-				70CC626E29AF1BF700366026 /* DataModelController.swift */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		70D2EB4F29A5EE1500795D96 /* View */ = {
@@ -304,7 +285,6 @@
 				708A359029A778D00076D539 /* CornerRadiusShap.swift */,
 				70689D9F29ACAB110036FE12 /* GEnumration.swift */,
 				70782C1B29BB0D07007F1855 /* GFunction.swift */,
-				708672E929C0380600F4795A /* AudioManger.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -563,7 +543,6 @@
 				70748A0929A5EDA800682178 /* Preview Assets.xcassets in Resources */,
 				70D2EB8B29A5F6C100795D96 /* Fester_Trial-ExtraLightItalic.otf in Resources */,
 				70D2EB9329A5F6C100795D96 /* Fester_Trial-Regular.otf in Resources */,
-				70B6D39729C18E1700ED6250 /* demo2.mp4 in Resources */,
 				70D2EB8929A5F6C100795D96 /* Fester_Trial-HeavyItalic.otf in Resources */,
 				70D2EB9529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf in Resources */,
 				70D2EB8829A5F6C100795D96 /* Fester_Trial-RegularItalic.otf in Resources */,
@@ -595,7 +574,6 @@
 			files = (
 				708A359A29A789F80076D539 /* LastPlaycollectionView.swift in Sources */,
 				70877EF029B05EB500E6B6A0 /* ApplicationTitle.swift in Sources */,
-				70CC626D29AF1AB200366026 /* DataModel.xcdatamodeld in Sources */,
 				70D2EB6229A5EF2A00795D96 /* SearchView.swift in Sources */,
 				70AD850929A88E6F00EF8851 /* DiscoverViewmodel.swift in Sources */,
 				70877EF229B061E000E6B6A0 /* MiddleSignUpView.swift in Sources */,
@@ -604,14 +582,12 @@
 				70782C2129BB0E2B007F1855 /* OrangeBorderTextFiledView.swift in Sources */,
 				70E757F429B0C4D800E7E81C /* PhoneVerificationViewModel.swift in Sources */,
 				708A359829A7871A0076D539 /* YouFavArtistViewModel.swift in Sources */,
-				70EB267B29AF788F008A5656 /* TestingCoreData.swift in Sources */,
 				708A359E29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift in Sources */,
 				702E33C929B33DE600932433 /* AppDelegate.swift in Sources */,
 				70D2EB5B29A5EED700795D96 /* MusicTabbarView.swift in Sources */,
 				70AD850529A87EE900EF8851 /* TipsViewModel.swift in Sources */,
 				70782C1C29BB0D07007F1855 /* GFunction.swift in Sources */,
 				70B0DABB29ADB4E500676891 /* EmailAuthenticationViewModel.swift in Sources */,
-				70CC626F29AF1BF700366026 /* DataModelController.swift in Sources */,
 				708A359329A779680076D539 /* LastPlayViewModel.swift in Sources */,
 				709FC32F29A9C2510038A8C3 /* GoogleAutheticationViewModel.swift in Sources */,
 				702E33CB29B3406800932433 /* SocialMediaAuthenticationView.swift in Sources */,
@@ -890,19 +866,6 @@
 			productName = iPhoneNumberField;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		70CC626B29AF1AB200366026 /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				70CC626C29AF1AB200366026 /* DataModel.xcdatamodel */,
-			);
-			currentVersion = 70CC626C29AF1AB200366026 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 707489F629A5EDA600682178 /* Project object */;
 }

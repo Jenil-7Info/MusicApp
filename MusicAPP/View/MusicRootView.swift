@@ -17,13 +17,11 @@ struct MusicRootView: View {
     //MARK: - Not Proper...
     var body: some View {
         Group {
-            if emailAuth.isLoggIN || phoneAuth.isVerifiy {
+            if phoneAuth.isVerifiy {
                 MusicTabbarView()
             } else {
                 SignInView()
             }
-        }.onAppear {
-            emailAuth.listenToAuthState()
         }
     }
 }

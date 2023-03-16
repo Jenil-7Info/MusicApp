@@ -17,7 +17,6 @@ struct SignUpTextFiledView: View {
     @State private var isShowPass: Bool = false
     @State private var bgColorFloat: CGFloat = 0.48
     @State private var isTestingCoreData: Bool = false
-    @StateObject var coreDataVM = DataModelController()
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     
     var body: some View {
@@ -138,9 +137,6 @@ struct SignUpTextFiledView: View {
             
             //add the Email Authentication
             emailAuthVM.signUp("person.fill", fName, lName, email: email, pass: password, phone: phone, verification: .EmailAndPassAuth)
-            
-            // add the userDetails in coreData
-            self.coreDataVM.addUsers("person.fill", fName, lName, email: email, phone: phone, pass: password, isLoggIn: emailAuthVM.isLoggIN)
             
             self.fName = ""
             self.lName = ""

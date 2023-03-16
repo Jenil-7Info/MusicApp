@@ -49,7 +49,6 @@ class AudioManger: ObservableObject {
     
     func toggleLoop() {
         guard let player = player else { return }
-        
         player.numberOfLoops = player.numberOfLoops == 0 ? -1 : 0
         isLooping = player.numberOfLoops != 0
     }

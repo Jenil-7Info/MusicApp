@@ -21,6 +21,7 @@ struct SocialMediaAuthenticationView: View {
             
             HStack(spacing: 40) {
                 
+                //MARK: - Facebook Authentication
                 Button {
                     
                 } label: {
@@ -34,7 +35,7 @@ struct SocialMediaAuthenticationView: View {
                         }
                 }
                 
-                
+                //MARK: - Google Authentication
                 Button {
                     googleAuthVM.signIn()
                 } label: {
@@ -52,6 +53,7 @@ struct SocialMediaAuthenticationView: View {
                         .navigationBarBackButtonHidden(true)
                 }
                 
+                //MARK: - Github Authentication
                 Button {
                     
                 } label: {
