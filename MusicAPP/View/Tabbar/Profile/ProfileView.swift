@@ -13,10 +13,10 @@ struct ProfileView: View {
     @State private var email: String = "jenil@gmail.com"
     @State private var value : CGFloat = 0.8
     @State private var isPresentChangeProfile: Bool = false
-  //  @State private var isSetLowAudioQuality: Bool = false
     @State private var isSetRandom: Bool = false
     @State private var isClearData: Bool = false
-    @State private var isLogOut: Bool = false
+    @AppStorage("login_Status") var isLogin: Bool = false
+    @StateObject var googleVM = GoogleAutheticationViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -388,7 +388,8 @@ struct ProfileView: View {
                     
                     //MARK: - Logout
                     Button {
-                        self.isLogOut.toggle()
+                        self.googleVM.signOut()
+                        self.isLogin = false
                     } label: {
                         HStack {
                             VStack(alignment: .leading, spacing: 5) {
@@ -402,10 +403,10 @@ struct ProfileView: View {
                             Spacer()
                         }
                     }
-                    .navigationDestination(isPresented: $isLogOut) {
-                        SignInView()
-                            .navigationBarBackButtonHidden(true)
-                    }
+//                    .navigationDestination(isPresented: $isLogOut) {
+//                        SignInView()
+//                            .navigationBarBackButtonHidden(true)
+//                    }
                 }
                 Spacer()
             }
@@ -415,66 +416,6 @@ struct ProfileView: View {
         .padding(.horizontal, 20)
     }
 }
-
-//struct ProfileView: View {
-//    @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
-//    @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
-//
-//    var body: some View {
-//
-//        let isLogginEmail: Bool = LoginVerification.EmailAndPassAuth.rawValue == emailAuthVM.verification
-//
-//        VStack {
-//
-//            if isLogginEmail {
-//                Image(systemName: "person.fill")
-//                    .resizable()
-//                    .frame(width: 100, height: 100)
-//                    .cornerRadius(radius: 20, corners: .allCorners)
-//            } else {
-//                AsyncImage(url: URL(string: googleAuthVM.profilePicUrl))
-//                    .frame(width: 100, height: 100)
-//                    .cornerRadius(radius: 20, corners: .allCorners)
-//            }
-//
-//            Text(isLogginEmail ? emailAuthVM.firstName : googleAuthVM.firstName)
-//                .font(.largeTitle)
-//                .bold()
-//                .padding(.bottom, 20)
-//
-//            Text(isLogginEmail ? emailAuthVM.lastName : googleAuthVM.lastName)
-//                .font(.title)
-//                .bold()
-//                .padding(.bottom, 20)
-//
-//            Text(isLogginEmail ? emailAuthVM.email : googleAuthVM.email)
-//                .font(.title2)
-//                .bold()
-//                .padding(.bottom, 20)
-//
-//            Button {
-//                if isLogginEmail {
-//                    self.emailAuthVM.signOut()
-//                } else {
-//                    self.googleAuthVM.signOut()
-//                }
-//            } label: {
-//                Text("Sign Out")
-//                    .foregroundColor(.red)
-//                    .bold()
-//            }
-//            .padding()
-//            .background {
-//                    Capsule()
-//                    .fill(.red.opacity(0.15))
-//            }
-//            .navigationDestination(isPresented: $emailAuthVM.isLoggOut) {
-//                SignInView()
-//                    .navigationBarBackButtonHidden(true)
-//            }
-//        }
-//    }
-//}
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
@@ -486,55 +427,55 @@ struct ProfileView_Previews: PreviewProvider {
 
 //MARK: - If User Email Authentication Login then this struct is Called...
 //MARK: - Pandding...
-struct EmailAndPassLoginProfileView: View {
-    
-    @State private var isPresentSignIN: Bool = false
-    @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
-    
-    var body: some View {
-        VStack {
-            Image(systemName: emailAuthVM.image)
-                .resizable()
-                .frame(width: 80, height: 80)
-            
-            Text(emailAuthVM.firstName)
-                .font(.largeTitle)
-                .bold()
-                .padding(.bottom, 20)
-            
-            Text(emailAuthVM.lastName)
-                .font(.title2)
-                .bold()
-                .padding(.bottom, 20)
-            
-            Text(emailAuthVM.email)
-                .font(.title3)
-                .bold()
-                .padding(.bottom, 20)
-            
-            Text(emailAuthVM.phone)
-                .font(.body)
-                .bold()
-                .padding(.bottom, 20)
-            
-            Button {
-                emailAuthVM.signOut()
-            } label: {
-                Text("Sign Out")
-                    .foregroundColor(.red)
-                    .bold()
-            }
-            .padding()
-            .background {
-                    Capsule()
-                    .fill(.red.opacity(0.15))
-            }
-            .navigationDestination(isPresented: $emailAuthVM.isLoggOut) {
-                withAnimation(.spring()) {
-                    SignInView()
-                        .navigationBarBackButtonHidden(true)
-                }
-            }
-        }
-    }
-}
+//struct EmailAndPassLoginProfileView: View {
+//
+//    @State private var isPresentSignIN: Bool = false
+//    @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
+//
+//    var body: some View {
+//        VStack {
+//            Image(systemName: emailAuthVM.image)
+//                .resizable()
+//                .frame(width: 80, height: 80)
+//
+//            Text(emailAuthVM.firstName)
+//                .font(.largeTitle)
+//                .bold()
+//                .padding(.bottom, 20)
+//
+//            Text(emailAuthVM.lastName)
+//                .font(.title2)
+//                .bold()
+//                .padding(.bottom, 20)
+//
+//            Text(emailAuthVM.email)
+//                .font(.title3)
+//                .bold()
+//                .padding(.bottom, 20)
+//
+//            Text(emailAuthVM.phone)
+//                .font(.body)
+//                .bold()
+//                .padding(.bottom, 20)
+//
+//            Button {
+//                emailAuthVM.signOut()
+//            } label: {
+//                Text("Sign Out")
+//                    .foregroundColor(.red)
+//                    .bold()
+//            }
+//            .padding()
+//            .background {
+//                    Capsule()
+//                    .fill(.red.opacity(0.15))
+//            }
+//            .navigationDestination(isPresented: $emailAuthVM.isLoggOut) {
+//                withAnimation(.spring()) {
+//                    SignInView()
+//                        .navigationBarBackButtonHidden(true)
+//                }
+//            }
+//        }
+//    }
+//}

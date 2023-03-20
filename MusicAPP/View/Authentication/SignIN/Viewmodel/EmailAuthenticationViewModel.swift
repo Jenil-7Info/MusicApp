@@ -7,14 +7,15 @@
 
 import Foundation
 import FirebaseAuth
+import SwiftUI
 
 //MARK: - Email And Password Authentication
 class EmailAuthenticationViewModel: ObservableObject {
     
     let auth = Auth.auth()
     
-    @Published var isLoggIN: Bool = false
-    @Published var isLoggOut: Bool = false
+ //   @Published var isLoggIN: Bool = false
+   // @Published var isLoggOut: Bool = false
     @Published var verification: String = ""
     @Published var firstName: String = "unkown Name"
     @Published var lastName: String = "unkown Surname"
@@ -23,6 +24,7 @@ class EmailAuthenticationViewModel: ObservableObject {
     @Published var image: String = "plus"
     @Published var isAlert: Bool = false
     @Published var errMessage: String = ""
+    @AppStorage("login_Status") var isLogin: Bool = false
     
     //Get the User ID
     var user: User? {
@@ -63,13 +65,15 @@ class EmailAuthenticationViewModel: ObservableObject {
             
             guard result != nil, err == nil else {
                 self.isAlert = true
+                self.isLogin = false
                 self.errMessage = err?.localizedDescription ?? "Sign In Failed!!"
                 debugPrint("ERROR:- \(err!.localizedDescription)")
                 return
             }
             
             DispatchQueue.main.async {
-                self.isLoggIN = true
+              //  self.isLoggIN = true
+                self.isLogin = true
                 self.isAlert = false
                 self.verification = verification.rawValue
                 
@@ -90,10 +94,10 @@ class EmailAuthenticationViewModel: ObservableObject {
                 self.lastName = lName
                 self.email = email
                 self.phone = phone
-                self.isLoggIN = true
+             //   self.isLoggIN = true
                 self.isAlert = false
                 self.verification = verification.rawValue
-                
+                self.isLogin = true
                 self.listenToAuthState()
             }
         }
@@ -102,14 +106,14 @@ class EmailAuthenticationViewModel: ObservableObject {
     //logout the user...
     func signOut() {
         do {
-            self.isLoggIN = false
-            self.isLoggOut = true
+//            self.isLoggIN = false
+//            self.isLoggOut = true
             self.isAlert = false
             try auth.signOut()
         } catch {
-            self.isLoggIN = false
+            //self.isLoggIN = false
             self.isAlert = true
-            self.isLoggOut = false
+            //self.isLoggOut = false
             self.errMessage = error.localizedDescription
             debugPrint("PROMBLEM SETMENT:- SIGNOUT FAILED!! \(String(describing: error.localizedDescription))")
         }

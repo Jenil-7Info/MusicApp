@@ -49,5 +49,6 @@ struct MusicTabbarView_Previews: PreviewProvider {
             .environmentObject(GoogleAutheticationViewModel())
             .environmentObject(EmailAuthenticationViewModel())
             .environmentObject(PhoneVerificationViewModel())
+            .environmentObject(AppleAutheniticationViewModel())
     }
 }

@@ -21,7 +21,7 @@ struct SignInView: View {
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     @Environment(\.dismiss) var dismiss
     @State private var isOpenPhoneNoSheet: Bool = false
-
+    @AppStorage("login_Status") var isLogin: Bool = false
     
     var body: some View {
         ZStack {
@@ -138,6 +138,8 @@ struct SignInView: View {
                     
                     emailAuthVM.signIn(email: email, pass: password, verification: .EmailAndPassAuth)
                     
+                    self.isLogin = true
+                    
                     email = ""
                     password = ""
                     
@@ -152,10 +154,10 @@ struct SignInView: View {
                                 .frame(width: dynamicWidth-40)
                         }
                 }
-                .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
-                    MusicTabbarView()
-                        .navigationBarBackButtonHidden(true)
-                })
+//                .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
+//                    MusicTabbarView()
+//                        .navigationBarBackButtonHidden(true)
+//                })
                 .disabled(email.isEmpty || password.isEmpty)
                 .alert("Alert", isPresented: $emailAuthVM.isAlert, actions: {
                     Button {
@@ -208,5 +210,6 @@ struct SignInView_Previews: PreviewProvider {
         SignInView()
             .environmentObject(GoogleAutheticationViewModel())
             .environmentObject(EmailAuthenticationViewModel())
+            .environmentObject(AppleAutheniticationViewModel())
     }
 }

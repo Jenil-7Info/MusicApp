@@ -9,6 +9,7 @@ import Foundation
 import GoogleSignIn
 import FirebaseAuth
 import FirebaseCore
+import SwiftUI
 
 //MARK: - Google Authentication View Model...
 class GoogleAutheticationViewModel: ObservableObject {
@@ -19,6 +20,8 @@ class GoogleAutheticationViewModel: ObservableObject {
     @Published var profilePicUrl: String = ""
     @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = ""
+    
+    @AppStorage("login_Status") var isLogin: Bool = false
     
     init() {
         self.check()
@@ -51,10 +54,14 @@ class GoogleAutheticationViewModel: ObservableObject {
             //Apply Logic Login And Logout
             self.isLoggedIn = true
             
+            self.isLogin = true
+            
         }else{
             
             //Apply Login And Logout Logic
             self.isLoggedIn = false
+            
+            self.isLogin = false
             
             //If user Login unsucessfully then store this default First Name
             self.firstName = "Not Logged In"
@@ -108,7 +115,7 @@ class GoogleAutheticationViewModel: ObservableObject {
     //Logout process
     func signOut() {
         GIDSignIn.sharedInstance.signOut()
-        self.checkStatus()
+        self.checkStatus() 
     }
 }
 

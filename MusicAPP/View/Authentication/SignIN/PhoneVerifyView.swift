@@ -6,14 +6,18 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct PhoneVerifyView: View {
     
     @StateObject var phoneVerifiyVM = PhoneVerificationViewModel()
     @StateObject var googleAuthVM = GoogleAutheticationViewModel()
+    @StateObject var appleAuthVM = AppleAutheniticationViewModel()
     @State private var isPresentOTPScreen: Bool = false
     @Environment(\.dismiss) var dismiss
     @State private var isSocialMediaLogin: Bool = false
+    
+    @AppStorage("login_Status") var isLogin: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -173,7 +177,8 @@ struct PhoneVerifyView: View {
                             }
                             .padding()
                             .background {
-                                Capsule()
+                                RoundedRectangle(cornerRadius: 15)
+                                   
                             }
                             .padding(.bottom ,5)
                             .navigationDestination(isPresented: $googleAuthVM.isLoggedIn) {
@@ -182,25 +187,25 @@ struct PhoneVerifyView: View {
                             }
                             
                             
-                            Button {
+                            SignInWithAppleButton(SignInWithAppleButton.Label.continue) { request in
+                                self.appleAuthVM.handleSigInWithApple(request)
+                            } onCompletion: { result in
                                 
-                            } label: {
-                                HStack(spacing: 0) {
-                                    Image("apple")
-                                        .resizable()
-                                        .frame(width: 25, height: 25)
-                                    
-                                    Text("Sign With AppleID")
-                                        .font(.festerFont(customFontName: .FesterMedium, fontSize: 20))
-                                        .foregroundColor(.black)
-                                        .frame(width: dynamicWidth/1.38, height: 25)
+                                appleAuthVM.handleSigInWithAppleComplation(result)
+                                
+                                //Handle the Complitions
+                                switch result {
+                                case .success(let sucess):
+                                    debugPrint("Sucess: \(sucess)")
+                                case .failure(let err):
+                                    debugPrint(err.localizedDescription)
                                 }
                             }
-                            .padding()
+                            .frame(height: 50)
                             .background {
-                                Capsule()
+                                RoundedRectangle(cornerRadius: 15)
                             }
-                            .padding(5)
+                            .padding(.horizontal)
                             
                             Button {
                                 
@@ -218,7 +223,8 @@ struct PhoneVerifyView: View {
                             }
                             .padding()
                             .background {
-                                Capsule()
+                                RoundedRectangle(cornerRadius: 15)
+                                    
                             }
                             .padding(5)
                             

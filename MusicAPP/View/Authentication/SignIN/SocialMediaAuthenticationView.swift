@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
-
+import AuthenticationServices
 
 struct SocialMediaAuthenticationView: View {
     
     @State private var bgColorFloat: CGFloat = 0.5
     @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
+    @EnvironmentObject var appleAuthVM : AppleAutheniticationViewModel
     
     var body: some View {
         VStack {
@@ -20,20 +21,37 @@ struct SocialMediaAuthenticationView: View {
                 .foregroundColor(.white)
             
             HStack(spacing: 40) {
-                
-                //MARK: - Facebook Authentication
-                Button {
+                //MARK: - Apple ID Authentication
+                SignInWithAppleButton(SignInWithAppleButton.Label.continue) { request in
+                    self.appleAuthVM.handleSigInWithApple(request)
+                } onCompletion: { result in
                     
-                } label: {
-                    Image("facebook")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .padding()
-                        .background {
-                            Circle()
-                                .fill(.white.opacity(bgColorFloat))
-                        }
+                    appleAuthVM.handleSigInWithAppleComplation(result)
+                    
+                    //Handle the Complitions
+                    switch result {
+                    case .success(let sucess):
+                        debugPrint("Sucess: \(sucess)")
+                    case .failure(let err):
+                        debugPrint(err.localizedDescription)
+                    }
                 }
+                .frame(width: 30, height: 30)
+                .padding()
+
+                
+//                Button {
+//
+//                } label: {
+//                    Image("apple")
+//                        .resizable()
+//                        .frame(width: 30, height: 30)
+//                        .padding()
+//                        .background {
+//                            Circle()
+//                                .fill(.white.opacity(bgColorFloat))
+//                        }
+//                }
                 
                 //MARK: - Google Authentication
                 Button {
@@ -78,5 +96,6 @@ struct SocialMediaAuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
         SocialMediaAuthenticationView()
             .environmentObject(GoogleAutheticationViewModel())
+            .environmentObject(AppleAutheniticationViewModel())
     }
 }

@@ -16,6 +16,7 @@ class PhoneVerificationViewModel: ObservableObject {
     @Published var isAlert: Bool = false
     @Published var isVerifiy: Bool = false
     @AppStorage("ID") var ID: String = ""
+    @AppStorage("login_Status") var isLogin: Bool = false
     
     //MARK: - Send OTP Code...
     func sendOTP() {
@@ -60,6 +61,7 @@ class PhoneVerificationViewModel: ObservableObject {
                     withAnimation {
                         self.isAlert = true
                         self.isVerifiy = false
+                        self.isLogin  = false
                     }
                     self.errMessage = error.localizedDescription
                     debugPrint(self.errMessage)
@@ -69,6 +71,7 @@ class PhoneVerificationViewModel: ObservableObject {
                     withAnimation {
                         self.isVerifiy = true
                         self.isAlert = false
+                        self.isLogin = true
                     }
                 }
             }

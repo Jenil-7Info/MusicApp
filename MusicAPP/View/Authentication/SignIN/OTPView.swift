@@ -12,6 +12,7 @@ struct OTPView: View {
     
     @StateObject var phoneVerifiyVM = PhoneVerificationViewModel()
     @Environment(\.dismiss) var dismiss
+    @AppStorage("login_Status") var isLogin: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -124,6 +125,7 @@ struct OTPView: View {
                     //MARK: - Submit button
                     Button {
                         phoneVerifiyVM.otpVerification()
+                        self.isLogin = true
                     } label: {
                         Text("Submit")
                             .font(.festerFont(customFontName: .FesterBold, fontSize: 16))
@@ -135,10 +137,10 @@ struct OTPView: View {
                         RoundedRectangle(cornerRadius: 15)
                             .fill(GradientColors.orangeGradient)
                     }
-                    .navigationDestination(isPresented: $phoneVerifiyVM.isVerifiy) {
-                        MusicTabbarView()
-                            .navigationBarBackButtonHidden(true)
-                    }
+//                    .navigationDestination(isPresented: $phoneVerifiyVM.isVerifiy) {
+//                        MusicTabbarView()
+//                            .navigationBarBackButtonHidden(true)
+//                    }
                     .alert("Alert", isPresented: $phoneVerifiyVM.isAlert) {
                         Button {
                             dismiss.callAsFunction()

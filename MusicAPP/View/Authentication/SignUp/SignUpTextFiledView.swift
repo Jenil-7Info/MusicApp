@@ -18,6 +18,8 @@ struct SignUpTextFiledView: View {
     @State private var bgColorFloat: CGFloat = 0.48
     @State private var isTestingCoreData: Bool = false
     @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
+
+    @AppStorage("login_Status") var isLogin: Bool = false
     
     var body: some View {
         
@@ -138,6 +140,8 @@ struct SignUpTextFiledView: View {
             //add the Email Authentication
             emailAuthVM.signUp("person.fill", fName, lName, email: email, pass: password, phone: phone, verification: .EmailAndPassAuth)
             
+            self.isLogin = true
+            
             self.fName = ""
             self.lName = ""
             self.email = ""
@@ -156,10 +160,10 @@ struct SignUpTextFiledView: View {
                         .frame(width: dynamicWidth-40)
                 }
         }
-        .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
-            MusicTabbarView()
-                .navigationBarBackButtonHidden(true)
-        })
+//        .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
+//            MusicTabbarView()
+//                .navigationBarBackButtonHidden(true)
+//        })
         .disabled(fName.isEmpty || lName.isEmpty || email.isEmpty || password.isEmpty || phone.isEmpty)
         .padding(.bottom)
     }

@@ -10,6 +10,8 @@ import FirebaseAuth
 
 struct MusicRootView: View {
     
+    @AppStorage("login_Status") var isLogin: Bool = false
+    
     @StateObject var googleAuth = GoogleAutheticationViewModel()
     @StateObject var emailAuth = EmailAuthenticationViewModel()
     @StateObject var phoneAuth = PhoneVerificationViewModel()
@@ -17,7 +19,7 @@ struct MusicRootView: View {
     //MARK: - Not Proper...
     var body: some View {
         Group {
-            if phoneAuth.isVerifiy {
+            if isLogin {
                 MusicTabbarView()
             } else {
                 SignInView()
@@ -32,5 +34,6 @@ struct MusicRootView_Previews: PreviewProvider {
             .environmentObject(GoogleAutheticationViewModel())
             .environmentObject(EmailAuthenticationViewModel())
             .environmentObject(PhoneVerificationViewModel())
+            .environmentObject(AppleAutheniticationViewModel())
     }
 }
