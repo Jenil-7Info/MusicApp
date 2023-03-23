@@ -35,7 +35,6 @@ struct PlayView: View {
                         .overlay {
                             VStack {
                                 HStack {
-                                    
                                     //MARK: - Close Button
                                     Button {
                                         withAnimation(.spring()) {

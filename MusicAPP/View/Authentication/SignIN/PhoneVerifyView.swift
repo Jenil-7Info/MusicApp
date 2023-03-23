@@ -201,11 +201,12 @@ struct PhoneVerifyView: View {
                                     debugPrint(err.localizedDescription)
                                 }
                             }
-                            .frame(height: 50)
+                            .signInWithAppleButtonStyle(.white)
+                            .frame(height: 55)
                             .background {
                                 RoundedRectangle(cornerRadius: 15)
                             }
-                            .padding(.horizontal)
+                            .padding(.horizontal, 25)
                             
                             Button {
                                 

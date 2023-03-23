@@ -24,7 +24,6 @@ struct HomeView: View {
     //MARK: - Header view...
     var header: some View {
         HStack {
-            
             Text("Music")
                 .font(.festerFont(customFontName: .FesterBold, fontSize: 36))
                 .overlay {

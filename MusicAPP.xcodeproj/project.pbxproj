@@ -223,7 +223,6 @@
 			children = (
 				70B6D39129C178C700ED6250 /* ADS */,
 				70877EEF29B05EB500E6B6A0 /* ApplicationTitle.swift */,
-				70782C2029BB0E2B007F1855 /* OrangeBorderTextFiledView.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -285,6 +284,7 @@
 				70B6D39429C18DE400ED6250 /* Video.mp4 */,
 				708672E629C0339800F4795A /* Songs.mp3 */,
 				70D2EB5729A5EE8E00795D96 /* Extenstion */,
+				70782C2029BB0E2B007F1855 /* OrangeBorderTextFiledView.swift */,
 				70047C5329A6269F00D567B4 /* GStructuer.swift */,
 				70047C5529A626B300D567B4 /* GVaribles.swift */,
 				708A359029A778D00076D539 /* CornerRadiusShap.swift */,
