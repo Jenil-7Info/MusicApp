@@ -16,11 +16,10 @@ class GoogleAutheticationViewModel: ObservableObject {
     
     @Published var firstName: String = ""
     @Published var lastName: String = ""
-    @Published var email: String = ""
     @Published var profilePicUrl: String = ""
-    @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = ""
     
+    @AppStorage("email") var email: String = ""
     @AppStorage("login_Status") var isLogin: Bool = false
     
     init() {
@@ -29,7 +28,7 @@ class GoogleAutheticationViewModel: ObservableObject {
     
     func checkStatus() {
         
-        //Current User is not available...
+        //Current User is available...
         if GIDSignIn.sharedInstance.currentUser != nil{
             
             //Create user instance
@@ -51,16 +50,12 @@ class GoogleAutheticationViewModel: ObservableObject {
             //store the ProfileURL in Published var
             self.profilePicUrl = profilePicUrl ?? ""
             
-            //Apply Logic Login And Logout
-            self.isLoggedIn = true
-            
+            //Check the Login and Logout using AppStorage
             self.isLogin = true
             
         }else{
             
-            //Apply Login And Logout Logic
-            self.isLoggedIn = false
-            
+            //Check the Login and Logout using AppStorage
             self.isLogin = false
             
             //If user Login unsucessfully then store this default First Name
@@ -114,8 +109,9 @@ class GoogleAutheticationViewModel: ObservableObject {
     
     //Logout process
     func signOut() {
+        self.isLogin = false ////Check the Login and Logout using AppStorage
         GIDSignIn.sharedInstance.signOut()
-        self.checkStatus() 
+      //  self.checkStatus()
     }
 }
 

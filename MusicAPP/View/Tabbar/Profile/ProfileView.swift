@@ -10,12 +10,12 @@ import SwiftUI
 struct ProfileView: View {
     
     @State private var name: String = "Jenil Rughani"
-    @State private var email: String = "jenil@gmail.com"
     @State private var value : CGFloat = 0.8
     @State private var isPresentChangeProfile: Bool = false
     @State private var isSetRandom: Bool = false
     @State private var isClearData: Bool = false
-    @AppStorage("login_Status") var isLogin: Bool = false
+    @State private var isAlertLogout: Bool = false
+    @AppStorage("email") var email: String = ""
     @StateObject var googleVM = GoogleAutheticationViewModel()
     
     var body: some View {
@@ -388,8 +388,7 @@ struct ProfileView: View {
                     
                     //MARK: - Logout
                     Button {
-                        self.googleVM.signOut()
-                        self.isLogin = false
+                        self.isAlertLogout = true
                     } label: {
                         HStack {
                             VStack(alignment: .leading, spacing: 5) {
@@ -403,10 +402,16 @@ struct ProfileView: View {
                             Spacer()
                         }
                     }
-//                    .navigationDestination(isPresented: $isLogOut) {
-//                        SignInView()
-//                            .navigationBarBackButtonHidden(true)
-//                    }
+                    .alert("Alert", isPresented: $isAlertLogout) {
+                        Button("Cancle", role: .cancel) {
+                            
+                        }
+                        Button("Logout", role: .destructive) {
+                            self.googleVM.signOut()
+                        }
+                    } message: {
+                        Text("Are you sure you want logout?")
+                    }
                 }
                 Spacer()
             }
@@ -424,58 +429,3 @@ struct ProfileView_Previews: PreviewProvider {
             .environmentObject(EmailAuthenticationViewModel())
     }
 }
-
-//MARK: - If User Email Authentication Login then this struct is Called...
-//MARK: - Pandding...
-//struct EmailAndPassLoginProfileView: View {
-//
-//    @State private var isPresentSignIN: Bool = false
-//    @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
-//
-//    var body: some View {
-//        VStack {
-//            Image(systemName: emailAuthVM.image)
-//                .resizable()
-//                .frame(width: 80, height: 80)
-//
-//            Text(emailAuthVM.firstName)
-//                .font(.largeTitle)
-//                .bold()
-//                .padding(.bottom, 20)
-//
-//            Text(emailAuthVM.lastName)
-//                .font(.title2)
-//                .bold()
-//                .padding(.bottom, 20)
-//
-//            Text(emailAuthVM.email)
-//                .font(.title3)
-//                .bold()
-//                .padding(.bottom, 20)
-//
-//            Text(emailAuthVM.phone)
-//                .font(.body)
-//                .bold()
-//                .padding(.bottom, 20)
-//
-//            Button {
-//                emailAuthVM.signOut()
-//            } label: {
-//                Text("Sign Out")
-//                    .foregroundColor(.red)
-//                    .bold()
-//            }
-//            .padding()
-//            .background {
-//                    Capsule()
-//                    .fill(.red.opacity(0.15))
-//            }
-//            .navigationDestination(isPresented: $emailAuthVM.isLoggOut) {
-//                withAnimation(.spring()) {
-//                    SignInView()
-//                        .navigationBarBackButtonHidden(true)
-//                }
-//            }
-//        }
-//    }
-//}

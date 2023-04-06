@@ -21,37 +21,25 @@ struct SocialMediaAuthenticationView: View {
                 .foregroundColor(.white)
             
             HStack(spacing: 40) {
-                //MARK: - Apple ID Authentication
-                SignInWithAppleButton(SignInWithAppleButton.Label.continue) { request in
-                    self.appleAuthVM.handleSigInWithApple(request)
-                } onCompletion: { result in
-                    
-                    appleAuthVM.handleSigInWithAppleComplation(result)
-                    
-                    //Handle the Complitions
-                    switch result {
-                    case .success(let sucess):
-                        debugPrint("Sucess: \(sucess)")
-                    case .failure(let err):
-                        debugPrint(err.localizedDescription)
-                    }
-                }
-                .frame(width: 30, height: 30)
-                .padding()
-
                 
-//                Button {
+            //MARK: - Apple ID Authentication -> [this btn Not perfect]
+//                SignInWithAppleButton(SignInWithAppleButton.Label.continue) { request in
+//                    self.appleAuthVM.handleSigInWithApple(request)
+//                } onCompletion: { result in
 //
-//                } label: {
-//                    Image("apple")
-//                        .resizable()
-//                        .frame(width: 30, height: 30)
-//                        .padding()
-//                        .background {
-//                            Circle()
-//                                .fill(.white.opacity(bgColorFloat))
-//                        }
+//                    appleAuthVM.handleSigInWithAppleComplation(result)
+//
+//                    //Handle the Complitions
+//                    switch result {
+//                    case .success(let sucess):
+//                        debugPrint("Sucess: \(sucess)")
+//                    case .failure(let err):
+//                        debugPrint(err.localizedDescription)
+//                    }
 //                }
+//                .frame(width: 30, height: 30)
+//                .padding()
+
                 
                 //MARK: - Google Authentication
                 Button {
@@ -66,9 +54,37 @@ struct SocialMediaAuthenticationView: View {
                                 .fill(.white.opacity(bgColorFloat))
                         }
                 }
-                .navigationDestination(isPresented: $googleAuthVM.isLoggedIn) {
-                    MusicTabbarView()
-                        .navigationBarBackButtonHidden(true)
+//                .navigationDestination(isPresented: $googleAuthVM.isLoggedIn) {
+//                    MusicTabbarView()
+//                        .navigationBarBackButtonHidden(true)
+//                }
+                
+                //MARK: - Facebook Authentication
+                Button {
+
+                } label: {
+                    Image("facebook")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding()
+                        .background {
+                            Circle()
+                                .fill(.white.opacity(bgColorFloat))
+                        }
+                }
+                
+                //MARK: - Apple Authentication
+                Button {
+
+                } label: {
+                    Image("apple")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding()
+                        .background {
+                            Circle()
+                                .fill(.white.opacity(bgColorFloat))
+                        }
                 }
                 
                 //MARK: - Github Authentication

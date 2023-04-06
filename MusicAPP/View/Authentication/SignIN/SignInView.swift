@@ -108,7 +108,7 @@ struct SignInView: View {
                     .padding(.bottom)
                 }
                 
-                //MARK: - Change Password
+                //MARK: - PhoneNumber
                 HStack {
                     
                     Button {
@@ -121,6 +121,8 @@ struct SignInView: View {
                     
                     
                     Spacer()
+                    
+                    //MARK: -  Change Password
                     Button {
                         DispatchQueue.main.async {
                             emailAuthVM.resetPassEmailVerification(emailAdd: email)
@@ -133,6 +135,7 @@ struct SignInView: View {
                 }
                 .padding(EdgeInsets(top: 0, leading: 22, bottom: 20, trailing: 22))
                 
+                //MARK: - SignIn Button
                 Button {
                     guard !email.isEmpty || !password.isEmpty else { return }
                     
@@ -154,10 +157,6 @@ struct SignInView: View {
                                 .frame(width: dynamicWidth-40)
                         }
                 }
-//                .navigationDestination(isPresented: $emailAuthVM.isLoggIN, destination: {
-//                    MusicTabbarView()
-//                        .navigationBarBackButtonHidden(true)
-//                })
                 .disabled(email.isEmpty || password.isEmpty)
                 .alert("Alert", isPresented: $emailAuthVM.isAlert, actions: {
                     Button {

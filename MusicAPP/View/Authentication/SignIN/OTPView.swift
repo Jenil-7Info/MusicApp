@@ -12,7 +12,7 @@ struct OTPView: View {
     
     @StateObject var phoneVerifiyVM = PhoneVerificationViewModel()
     @Environment(\.dismiss) var dismiss
-    @AppStorage("login_Status") var isLogin: Bool = false
+    //@AppStorage("login_Status") var isLogin: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -125,7 +125,6 @@ struct OTPView: View {
                     //MARK: - Submit button
                     Button {
                         phoneVerifiyVM.otpVerification()
-                        self.isLogin = true
                     } label: {
                         Text("Submit")
                             .font(.festerFont(customFontName: .FesterBold, fontSize: 16))

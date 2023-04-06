@@ -181,10 +181,10 @@ struct PhoneVerifyView: View {
                                    
                             }
                             .padding(.bottom ,5)
-                            .navigationDestination(isPresented: $googleAuthVM.isLoggedIn) {
-                                MusicTabbarView()
-                                    .navigationBarBackButtonHidden(true)
-                            }
+//                            .navigationDestination(isPresented: $googleAuthVM.isLoggedIn) {
+//                                MusicTabbarView()
+//                                    .navigationBarBackButtonHidden(true)
+//                            }
                             
                             
                             SignInWithAppleButton(SignInWithAppleButton.Label.continue) { request in

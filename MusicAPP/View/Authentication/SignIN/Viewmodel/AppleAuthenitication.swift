@@ -81,6 +81,7 @@ class AppleAutheniticationViewModel: ObservableObject {
                 Task {
                     do {
                         let result = try await Auth.auth().signIn(with: credential)
+                        debugPrint("Result:- \(result)")
                         self.isError = false
                     } catch {
                         self.isError = true
