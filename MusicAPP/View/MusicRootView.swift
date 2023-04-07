@@ -7,16 +7,12 @@
 
 import SwiftUI
 import FirebaseAuth
+import FirebaseCore
 
 struct MusicRootView: View {
     
     @AppStorage("login_Status") var isLogin: Bool = false
     
-    @StateObject var googleAuth = GoogleAutheticationViewModel()
-    @StateObject var emailAuth = EmailAuthenticationViewModel()
-    @StateObject var phoneAuth = PhoneVerificationViewModel()
-    
-    //MARK: - Not Proper...
     var body: some View {
         Group {
             if isLogin {
@@ -35,5 +31,6 @@ struct MusicRootView_Previews: PreviewProvider {
             .environmentObject(EmailAuthenticationViewModel())
             .environmentObject(PhoneVerificationViewModel())
             .environmentObject(AppleAutheniticationViewModel())
+            .environmentObject(FacebookAuthenticationViewModel())
     }
 }

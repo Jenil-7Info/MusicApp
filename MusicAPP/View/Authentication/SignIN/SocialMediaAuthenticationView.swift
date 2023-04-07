@@ -13,6 +13,7 @@ struct SocialMediaAuthenticationView: View {
     @State private var bgColorFloat: CGFloat = 0.5
     @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
     @EnvironmentObject var appleAuthVM : AppleAutheniticationViewModel
+    @EnvironmentObject var facebookVM : FacebookAuthenticationViewModel
     
     var body: some View {
         VStack {
@@ -54,14 +55,10 @@ struct SocialMediaAuthenticationView: View {
                                 .fill(.white.opacity(bgColorFloat))
                         }
                 }
-//                .navigationDestination(isPresented: $googleAuthVM.isLoggedIn) {
-//                    MusicTabbarView()
-//                        .navigationBarBackButtonHidden(true)
-//                }
                 
                 //MARK: - Facebook Authentication
                 Button {
-
+                    facebookVM.facebookLogin()
                 } label: {
                     Image("facebook")
                         .resizable()
@@ -75,7 +72,7 @@ struct SocialMediaAuthenticationView: View {
                 
                 //MARK: - Apple Authentication
                 Button {
-
+                    appleAuthVM.startSignInWithAppleFlow()
                 } label: {
                     Image("apple")
                         .resizable()
@@ -100,18 +97,17 @@ struct SocialMediaAuthenticationView: View {
                                 .fill(.white.opacity(bgColorFloat))
                         }
                 }
-                
             }
             .padding(.horizontal, 20)
         }
     }
 }
 
-
 struct SocialMediaAuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
         SocialMediaAuthenticationView()
             .environmentObject(GoogleAutheticationViewModel())
             .environmentObject(AppleAutheniticationViewModel())
+            .environmentObject(FacebookAuthenticationViewModel())
     }
 }

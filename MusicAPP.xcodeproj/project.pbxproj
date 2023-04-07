@@ -45,6 +45,8 @@
 		70B0DABB29ADB4E500676891 /* EmailAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */; };
 		70B6D39329C178DB00ED6250 /* AdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B6D39229C178DB00ED6250 /* AdsView.swift */; };
 		70B6D39829C18E1700ED6250 /* demo1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 70B6D39629C18E1700ED6250 /* demo1.mp4 */; };
+		70CD7D1E29E02346001C3869 /* FacebookAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD7D1D29E02346001C3869 /* FacebookAuthenticationViewModel.swift */; };
+		70CD7D2129E038BF001C3869 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 70CD7D2029E038BF001C3869 /* FacebookLogin */; };
 		70D2EB5629A5EE4A00795D96 /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */; };
 		70D2EB5B29A5EED700795D96 /* MusicTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5A29A5EED700795D96 /* MusicTabbarView.swift */; };
 		70D2EB5E29A5EEF000795D96 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2EB5D29A5EEF000795D96 /* HomeView.swift */; };
@@ -117,6 +119,7 @@
 		70B0DABA29ADB4E500676891 /* EmailAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		70B6D39229C178DB00ED6250 /* AdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsView.swift; sourceTree = "<group>"; };
 		70B6D39629C18E1700ED6250 /* demo1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo1.mp4; sourceTree = "<group>"; };
+		70CD7D1D29E02346001C3869 /* FacebookAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		70D2EB5529A5EE4A00795D96 /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
 		70D2EB5A29A5EED700795D96 /* MusicTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTabbarView.swift; sourceTree = "<group>"; };
 		70D2EB5D29A5EEF000795D96 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70CD7D2129E038BF001C3869 /* FacebookLogin in Frameworks */,
 				70AD851729A8CDD500EF8851 /* GoogleSignInSwift in Frameworks */,
 				70D4C3A929B1B213001CAFAB /* iPhoneNumberField in Frameworks */,
 				70AD851229A8CD8E00EF8851 /* FirebaseAuth in Frameworks */,
@@ -176,6 +180,7 @@
 				70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */,
 				7071A20629B5B29B00172873 /* OTPViewModel.swift */,
 				70FDA71E29C87484007D454C /* AppleAuthenitication.swift */,
+				70CD7D1D29E02346001C3869 /* FacebookAuthenticationViewModel.swift */,
 			);
 			path = Viewmodel;
 			sourceTree = "<group>";
@@ -497,6 +502,7 @@
 				70AD851429A8CDD500EF8851 /* GoogleSignIn */,
 				70AD851629A8CDD500EF8851 /* GoogleSignInSwift */,
 				70D4C3A829B1B213001CAFAB /* iPhoneNumberField */,
+				70CD7D2029E038BF001C3869 /* FacebookLogin */,
 			);
 			productName = MusicAPP;
 			productReference = 707489FE29A5EDA600682178 /* MusicAPP.app */;
@@ -530,6 +536,7 @@
 				70AD851029A8CD8E00EF8851 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				70AD851329A8CDD400EF8851 /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */,
 				70D4C3A729B1B213001CAFAB /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+				70CD7D1F29E038BF001C3869 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 707489FF29A5EDA600682178 /* Products */;
 			projectDirPath = "";
@@ -609,6 +616,7 @@
 				70782C1F29BB0E00007F1855 /* SignUpTextFiledView.swift in Sources */,
 				70D4C3AB29B1C8F2001CAFAB /* CustomPhoneNumberPad.swift in Sources */,
 				70D2EB9929A60EF900795D96 /* Font+Extenstion.swift in Sources */,
+				70CD7D1E29E02346001C3869 /* FacebookAuthenticationViewModel.swift in Sources */,
 				70047C5429A6269F00D567B4 /* GStructuer.swift in Sources */,
 				70B6D39329C178DB00ED6250 /* AdsView.swift in Sources */,
 				70D2EB6A29A5EF6B00795D96 /* ProfileView.swift in Sources */,
@@ -758,6 +766,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicAPP/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Music App";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -795,6 +804,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicAPP/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Music App";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -856,6 +866,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		70CD7D1F29E038BF001C3869 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		70D4C3A729B1B213001CAFAB /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
@@ -881,6 +899,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70AD851329A8CDD400EF8851 /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		70CD7D2029E038BF001C3869 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70CD7D1F29E038BF001C3869 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
 		};
 		70D4C3A829B1B213001CAFAB /* iPhoneNumberField */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -12,11 +12,28 @@ import CryptoKit
 import AuthenticationServices
 
 
-class AppleAutheniticationViewModel: ObservableObject {
+class AppleAutheniticationViewModel: NSObject ,ObservableObject, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
         
     @Published var isError: Bool = false
     @Published var errMessage: String = ""
     private var currentNouce: String?
+    // Unhashed nonce.
+    fileprivate var currentNonce: String?
+
+    @available(iOS 13, *)
+    func startSignInWithAppleFlow() {
+      let nonce = randomNonceString()
+      currentNonce = nonce
+      let appleIDProvider = ASAuthorizationAppleIDProvider()
+      let request = appleIDProvider.createRequest()
+      request.requestedScopes = [.fullName, .email]
+      request.nonce = sha256(nonce)
+
+      let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+      authorizationController.delegate = self
+      authorizationController.presentationContextProvider = self
+      authorizationController.performRequests()
+    }
     
     //MARK: - Handle the appleId Data
     func handleSigInWithApple(_ request: ASAuthorizationAppleIDRequest) {
@@ -127,13 +144,17 @@ class AppleAutheniticationViewModel: ObservableObject {
             return result
         }
 
-        private func sha256(_ input: String) -> String {
-            let inputData = Data(input.utf8)
-            let hashedData = SHA256.hash(data: inputData)
-            let hashString = hashedData.compactMap {
-                String(format: "%02x", $0)
-            }.joined()
+    private func sha256(_ input: String) -> String {
+        let inputData = Data(input.utf8)
+        let hashedData = SHA256.hash(data: inputData)
+        let hashString = hashedData.compactMap {
+            String(format: "%02x", $0)
+        }.joined()
 
-            return hashString
-        }
+        return hashString
+    }
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        ASPresentationAnchor()
+    }
 }

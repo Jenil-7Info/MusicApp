@@ -167,22 +167,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AB5C0930-EB27-43AC-9AE9-9164347E665C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MusicAPP/View/MusicRootView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "FA587168-F57F-4734-9AD9-1083D16793C3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -190,8 +174,8 @@
             filePath = "MusicAPP/View/MusicRootView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -286,8 +270,8 @@
             filePath = "MusicAPP/View/Authentication/SignIN/Viewmodel/AppleAuthenitication.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "handleSigInWithApple(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +286,8 @@
             filePath = "MusicAPP/View/Authentication/SignIN/Viewmodel/AppleAuthenitication.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "handleSigInWithAppleComplation(_:)"
             landmarkType = "7">
          </BreakpointContent>

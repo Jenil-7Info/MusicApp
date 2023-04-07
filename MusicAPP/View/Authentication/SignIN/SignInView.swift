@@ -18,10 +18,10 @@ struct SignInView: View {
     @State private var bgColorFloat: CGFloat = 0.5
     @State private var isPresentSignUp: Bool = false
     @State private var isGoogleVerification: Bool = false
-    @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     @Environment(\.dismiss) var dismiss
     @State private var isOpenPhoneNoSheet: Bool = false
     @AppStorage("login_Status") var isLogin: Bool = false
+    @EnvironmentObject var emailAuthVM : EmailAuthenticationViewModel
     
     var body: some View {
         ZStack {
@@ -210,5 +210,6 @@ struct SignInView_Previews: PreviewProvider {
             .environmentObject(GoogleAutheticationViewModel())
             .environmentObject(EmailAuthenticationViewModel())
             .environmentObject(AppleAutheniticationViewModel())
+            .environmentObject(FacebookAuthenticationViewModel())
     }
 }
