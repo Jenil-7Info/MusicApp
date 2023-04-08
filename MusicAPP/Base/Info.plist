@@ -9,16 +9,16 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1228744671114302</string>
+				<string>fb931575244654810</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string>1228744671114302</string>
+	<string>931575244654810</string>
 	<key>FacebookClientToken</key>
 	<string>7dd1c4890f267e138b7b5959fea36ad8</string>
 	<key>FacebookDisplayName</key>
-	<string>SwiftUIPractice</string>
+	<string>MusicApp</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

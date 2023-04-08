@@ -187,26 +187,26 @@ struct PhoneVerifyView: View {
 //                            }
                             
                             
-                            SignInWithAppleButton(SignInWithAppleButton.Label.continue) { request in
-                                self.appleAuthVM.handleSigInWithApple(request)
-                            } onCompletion: { result in
-                                
-                                appleAuthVM.handleSigInWithAppleComplation(result)
-                                
-                                //Handle the Complitions
-                                switch result {
-                                case .success(let sucess):
-                                    debugPrint("Sucess: \(sucess)")
-                                case .failure(let err):
-                                    debugPrint(err.localizedDescription)
-                                }
-                            }
-                            .signInWithAppleButtonStyle(.white)
-                            .frame(height: 55)
-                            .background {
-                                RoundedRectangle(cornerRadius: 15)
-                            }
-                            .padding(.horizontal, 25)
+//                            SignInWithAppleButton(SignInWithAppleButton.Label.continue) { request in
+//                                self.appleAuthVM.handleSigInWithApple(request)
+//                            } onCompletion: { result in
+//                                
+//                                appleAuthVM.handleSigInWithAppleComplation(result)
+//                                
+//                                //Handle the Complitions
+//                                switch result {
+//                                case .success(let sucess):
+//                                    debugPrint("Sucess: \(sucess)")
+//                                case .failure(let err):
+//                                    debugPrint(err.localizedDescription)
+//                                }
+//                            }
+//                            .signInWithAppleButtonStyle(.white)
+//                            .frame(height: 55)
+//                            .background {
+//                                RoundedRectangle(cornerRadius: 15)
+//                            }
+//                            .padding(.horizontal, 25)
                             
                             Button {
                                 

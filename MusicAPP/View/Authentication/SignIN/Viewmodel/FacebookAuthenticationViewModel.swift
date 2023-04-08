@@ -14,7 +14,7 @@ import FirebaseAuth
 
 class FacebookAuthenticationViewModel: ObservableObject {
     
-    @AppStorage("isLogin") var isLogin : Bool = false
+    @AppStorage("login_Status") var isLogin: Bool = false
     
     func facebookLogin() {
         let premission = ["public_profile", "email"]
@@ -66,49 +66,3 @@ class FacebookAuthenticationViewModel: ObservableObject {
         }
     }
 }
-
-//struct FacebookAuthenticationViewModel : UIViewRepresentable {
-//    func makeCoordinator() -> Coordinator {
-//        return Coordinator()
-//    }
-//
-//    func makeUIView(context: UIViewRepresentableContext<FacebookAuthenticationViewModel>) -> FBLoginButton {
-//        let button = FBLoginButton()
-//        button.permissions = ["email", "public_profile"]
-//        button.delegate = context.coordinator
-//        return button
-//    }
-//
-//
-//    func updateUIView(_ uiView: FBLoginButton, context: UIViewRepresentableContext<FacebookAuthenticationViewModel>) {}
-//
-//    class Coordinator : NSObject, ObservableObject,LoginButtonDelegate{
-//
-//        func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
-//            try! Auth.auth().signOut()
-//            print("Did logout")
-//        }
-//
-//        func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
-//
-//            if error != nil  {
-//                print((error?.localizedDescription)!)
-//                return
-//            }
-//
-//            if AccessToken.current != nil {
-//
-//                let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-//                Auth.auth().signIn(with: credential) {(res ,  er) in
-//
-//                    if er != nil{
-//                        print((er?.localizedDescription)!)
-//                        return
-//                    }
-//
-//                    print("SUCCES! ")
-//                }
-//            }
-//        }
-//    }
-//}

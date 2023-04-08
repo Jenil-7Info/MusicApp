@@ -34,7 +34,7 @@ struct MusicAPPApp: App {
             .environmentObject(googleAuthVM) //use the all files GoogleAuthentication
             .environmentObject(emailAuthVM) //use the all files EmailAuthentication
             .environmentObject(appleAuthVM) //use the all files EmailAuthentication
-            .environmentObject(facebookauthVM)//use the ll files facebookAuthentication
+            .environmentObject(facebookauthVM)//use the all files facebookAuthentication
         }
     }
 }

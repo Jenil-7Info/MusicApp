@@ -13,26 +13,29 @@ import AuthenticationServices
 
 
 class AppleAutheniticationViewModel: NSObject ,ObservableObject, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
-        
+    
     @Published var isError: Bool = false
     @Published var errMessage: String = ""
     private var currentNouce: String?
     // Unhashed nonce.
     fileprivate var currentNonce: String?
-
+    
+    @AppStorage("login_Status") var isLogin: Bool = false
+    
     @available(iOS 13, *)
     func startSignInWithAppleFlow() {
-      let nonce = randomNonceString()
-      currentNonce = nonce
-      let appleIDProvider = ASAuthorizationAppleIDProvider()
-      let request = appleIDProvider.createRequest()
-      request.requestedScopes = [.fullName, .email]
-      request.nonce = sha256(nonce)
-
-      let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-      authorizationController.delegate = self
-      authorizationController.presentationContextProvider = self
-      authorizationController.performRequests()
+        let nonce = randomNonceString()
+        currentNonce = nonce
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        request.nonce = sha256(nonce)
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+        
     }
     
     //MARK: - Handle the appleId Data
@@ -100,6 +103,9 @@ class AppleAutheniticationViewModel: NSObject ,ObservableObject, ASAuthorization
                         let result = try await Auth.auth().signIn(with: credential)
                         debugPrint("Result:- \(result)")
                         self.isError = false
+                        
+                        self.isLogin = true
+                        
                     } catch {
                         self.isError = true
                         self.errMessage = errMessage.lowercased()
@@ -111,50 +117,60 @@ class AppleAutheniticationViewModel: NSObject ,ObservableObject, ASAuthorization
     }
     
     private func randomNonceString(length: Int = 32) -> String {
-            precondition(length > 0)
-            let charset: [Character] =
-                Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
-            var result = ""
-            var remainingLength = length
-
-            while remainingLength > 0 {
-                let randoms: [UInt8] = (0 ..< 16).map { _ in
-                    var random: UInt8 = 0
-                    let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
-                    if errorCode != errSecSuccess {
-                        fatalError(
-                            "Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)"
-                        )
-                    }
-                    return random
+        precondition(length > 0)
+        let charset: [Character] =
+        Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+        var result = ""
+        var remainingLength = length
+        
+        while remainingLength > 0 {
+            let randoms: [UInt8] = (0 ..< 16).map { _ in
+                var random: UInt8 = 0
+                let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
+                if errorCode != errSecSuccess {
+                    fatalError(
+                        "Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)"
+                    )
                 }
-
-                randoms.forEach { random in
-                    if remainingLength == 0 {
-                        return
-                    }
-
-                    if random < charset.count {
+                return random
+            }
+            
+            randoms.forEach { random in
+                if remainingLength == 0 {
+                    return
+                }
+                
+                if random < charset.count {
                     result.append(charset[Int(random)])
                     remainingLength -= 1
-                    }
                 }
             }
-
-            return result
         }
-
+        
+        return result
+    }
+    
     private func sha256(_ input: String) -> String {
         let inputData = Data(input.utf8)
         let hashedData = SHA256.hash(data: inputData)
         let hashString = hashedData.compactMap {
             String(format: "%02x", $0)
         }.joined()
-
+        
         return hashString
     }
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         ASPresentationAnchor()
+    }
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            self.isLogin = false
+        } catch(let err) {
+            errMessage = err.localizedDescription
+            debugPrint("ERROR:- Firebase Auth Problem. \(err.localizedDescription)")
+        }
     }
 }

@@ -52,7 +52,6 @@ class GoogleAutheticationViewModel: ObservableObject {
             
             //Check the Login and Logout using AppStorage
             self.isLogin = true
-            
         }
     }
     
