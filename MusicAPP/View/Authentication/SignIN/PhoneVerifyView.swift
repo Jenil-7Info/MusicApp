@@ -20,7 +20,7 @@ struct PhoneVerifyView: View {
     @AppStorage("login_Status") var isLogin: Bool = false
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
                 Image("phoneVerfication")
                     .resizable()

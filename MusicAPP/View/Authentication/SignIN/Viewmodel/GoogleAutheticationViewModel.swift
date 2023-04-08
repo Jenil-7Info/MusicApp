@@ -53,22 +53,6 @@ class GoogleAutheticationViewModel: ObservableObject {
             //Check the Login and Logout using AppStorage
             self.isLogin = true
             
-        }else{
-            
-            //Check the Login and Logout using AppStorage
-            self.isLogin = false
-            
-            //If user Login unsucessfully then store this default First Name
-            self.firstName = "Not Logged In"
-            
-            //If user Login unsucessfully then store this default lastName
-            self.lastName = "Unkown"
-            
-            //If user Login unsucessfully then store this defaultEmail
-            self.email = "abc@xyz.com"
-            
-            //If user Login unsucessfully then store this Empty Picture
-            self.profilePicUrl =  ""
         }
     }
     

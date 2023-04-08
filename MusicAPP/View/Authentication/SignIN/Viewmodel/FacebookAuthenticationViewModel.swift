@@ -41,7 +41,6 @@ class FacebookAuthenticationViewModel: ObservableObject {
             
             let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
             
-            
             Auth.auth().signIn(with: credential, completion: { (user, error) in
                 if let error = error {
                     print("Login error: \(error.localizedDescription)")
@@ -53,9 +52,7 @@ class FacebookAuthenticationViewModel: ObservableObject {
                 }
                 
                 self.isLogin = true
-                
                 return
-                
             })
         }
     }

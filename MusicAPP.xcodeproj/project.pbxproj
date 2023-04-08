@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		70047C5429A6269F00D567B4 /* GStructuer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70047C5329A6269F00D567B4 /* GStructuer.swift */; };
 		70047C5629A626B300D567B4 /* GVaribles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70047C5529A626B300D567B4 /* GVaribles.swift */; };
-		702E33C929B33DE600932433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702E33C829B33DE600932433 /* AppDelegate.swift */; };
 		702E33CB29B3406800932433 /* SocialMediaAuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702E33CA29B3406800932433 /* SocialMediaAuthenticationView.swift */; };
 		70549D0E29C05A0300554610 /* DateComponentsformater+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70549D0D29C05A0300554610 /* DateComponentsformater+extension.swift */; };
 		70689D9E29AC8B0E0036FE12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70689D9D29AC8B0E0036FE12 /* GoogleService-Info.plist */; };
@@ -85,7 +84,6 @@
 /* Begin PBXFileReference section */
 		70047C5329A6269F00D567B4 /* GStructuer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GStructuer.swift; sourceTree = "<group>"; };
 		70047C5529A626B300D567B4 /* GVaribles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GVaribles.swift; sourceTree = "<group>"; };
-		702E33C829B33DE600932433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		702E33CA29B3406800932433 /* SocialMediaAuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaAuthenticationView.swift; sourceTree = "<group>"; };
 		70549D0D29C05A0300554610 /* DateComponentsformater+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsformater+extension.swift"; sourceTree = "<group>"; };
 		70689D9D29AC8B0E0036FE12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -312,7 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				70748A0129A5EDA600682178 /* MusicAPPApp.swift */,
-				702E33C829B33DE600932433 /* AppDelegate.swift */,
 				70689D9D29AC8B0E0036FE12 /* GoogleService-Info.plist */,
 				70D2EB9729A60B7100795D96 /* Info.plist */,
 			);
@@ -595,7 +592,6 @@
 				70E757F429B0C4D800E7E81C /* PhoneVerificationViewModel.swift in Sources */,
 				708A359829A7871A0076D539 /* YouFavArtistViewModel.swift in Sources */,
 				708A359E29A78DDB0076D539 /* MadeForYouCollectionViewModel.swift in Sources */,
-				702E33C929B33DE600932433 /* AppDelegate.swift in Sources */,
 				70D2EB5B29A5EED700795D96 /* MusicTabbarView.swift in Sources */,
 				70AD850529A87EE900EF8851 /* TipsViewModel.swift in Sources */,
 				70782C1C29BB0D07007F1855 /* GFunction.swift in Sources */,
