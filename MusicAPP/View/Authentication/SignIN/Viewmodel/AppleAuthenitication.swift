@@ -62,7 +62,7 @@ class AppleAutheniticationViewModel: NSObject ,ObservableObject, ASAuthorization
             
             //Store the Error data in Publised var
             self.isError = true
-            self.errMessage = failure.localizedDescription
+            self.errMessage = "ERROR: \(failure.localizedDescription)"
             debugPrint("ERROR:- \(failure.localizedDescription)")
         }
         else if case .success(let success) = result {
@@ -169,7 +169,8 @@ class AppleAutheniticationViewModel: NSObject ,ObservableObject, ASAuthorization
             try Auth.auth().signOut()
             self.isLogin = false
         } catch(let err) {
-            errMessage = err.localizedDescription
+            isError = true
+            errMessage = "ERROR:- \(err.localizedDescription)"
             debugPrint("ERROR:- Firebase Auth Problem. \(err.localizedDescription)")
         }
     }

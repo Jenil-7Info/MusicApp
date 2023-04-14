@@ -17,6 +17,7 @@ class GoogleAutheticationViewModel: ObservableObject {
     @Published var firstName: String = ""
     @Published var lastName: String = ""
     @Published var profilePicUrl: String = ""
+    @Published var isAlert: Bool = false
     @Published var errorMessage: String = ""
     
     @AppStorage("email") var email: String = ""
@@ -53,6 +54,10 @@ class GoogleAutheticationViewModel: ObservableObject {
             //Check the Login and Logout using AppStorage
             self.isLogin = true
         }
+        else {
+            isAlert = true
+            errorMessage = "USER Details is Missing!"
+        }
     }
     
     func check() {
@@ -60,7 +65,9 @@ class GoogleAutheticationViewModel: ObservableObject {
         //Call GIDSignIn restorePreviousSignIn
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             if let error = error {
+             //   self.isAlert = true
                 self.errorMessage = error.localizedDescription
+                debugPrint("ERROR: \(error.localizedDescription)")
             }
             
             //Call this function
@@ -84,6 +91,8 @@ class GoogleAutheticationViewModel: ObservableObject {
         //login process...
         GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController) { result, error in
             if let error = error {
+                self.isAlert = true
+                self.errorMessage = error.localizedDescription
                 debugPrint(error.localizedDescription)
             }
             self.checkStatus()
@@ -92,9 +101,8 @@ class GoogleAutheticationViewModel: ObservableObject {
     
     //Logout process
     func signOut() {
-        self.isLogin = false ////Check the Login and Logout using AppStorage
+        self.isLogin = false ////Mange the Login and Logout using AppStorage
         GIDSignIn.sharedInstance.signOut()
-      //  self.checkStatus()
     }
 }
 

@@ -142,7 +142,6 @@
 		70D2EB8429A5F6C100795D96 /* Fester_Trial-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-BookItalic.otf"; sourceTree = "<group>"; };
 		70D2EB8529A5F6C100795D96 /* Fester_Trial-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-ThinItalic.otf"; sourceTree = "<group>"; };
 		70D2EB8629A5F6C100795D96 /* Fester_Trial-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fester_Trial-SemiBold.otf"; sourceTree = "<group>"; };
-		70D2EB9729A60B7100795D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70D2EB9829A60EF900795D96 /* Font+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extenstion.swift"; sourceTree = "<group>"; };
 		70D4C3AA29B1C8F2001CAFAB /* CustomPhoneNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhoneNumberPad.swift; sourceTree = "<group>"; };
 		70D4C3B129B1F01B001CAFAB /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
@@ -150,6 +149,7 @@
 		70E757F329B0C4D800E7E81C /* PhoneVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationViewModel.swift; sourceTree = "<group>"; };
 		70E757F529B0CB3600E7E81C /* PhoneVerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerifyView.swift; sourceTree = "<group>"; };
 		70ECA1FA29B98F71005E0097 /* MusicRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRootView.swift; sourceTree = "<group>"; };
+		70F6599129E3C961001AE502 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70FBFC9729B9F005008165C4 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		70FDA71E29C87484007D454C /* AppleAuthenitication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthenitication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				70E09D6329C8806100EC7823 /* MusicAPP.entitlements */,
+				70F6599129E3C961001AE502 /* Info.plist */,
 				70D2EB5329A5EE2D00795D96 /* Base */,
 				70D2EB5229A5EE2700795D96 /* Resorces */,
 				70D2EB5129A5EE2000795D96 /* Utility */,
@@ -311,7 +312,6 @@
 			children = (
 				70748A0129A5EDA600682178 /* MusicAPPApp.swift */,
 				70689D9D29AC8B0E0036FE12 /* GoogleService-Info.plist */,
-				70D2EB9729A60B7100795D96 /* Info.plist */,
 			);
 			path = Base;
 			sourceTree = "<group>";

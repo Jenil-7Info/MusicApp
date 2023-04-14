@@ -90,3 +90,27 @@ struct DiscoverCollectionModel: Hashable, Identifiable {
         self.timingSong = timingSong
     }
 }
+
+//MARK: -  User Model Struc
+struct UserDetail: Identifiable {
+    var id          : UUID = UUID()
+    var firstName   : String?
+    var lastName    : String?
+    var email       : String?
+    var phoneNumber : String?
+    
+    init() {
+        firstName      = "First Name"
+        lastName       = "Last Name"
+        email          = "Email"
+        phoneNumber    = "Phone Number"
+    }
+    
+    init(firstName: String, lastName: String, email: String, phoneNumber: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.phoneNumber = phoneNumber
+    }
+    
+}

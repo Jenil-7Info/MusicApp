@@ -26,7 +26,7 @@ struct MusicAPPApp: App {
         WindowGroup {
             NavigationStack {
                 MusicRootView()
-                    .onAppear(){
+                    .onAppear {
                         ApplicationDelegate.shared.application(UIApplication.shared, didFinishLaunchingWithOptions: nil)
                     }
             }

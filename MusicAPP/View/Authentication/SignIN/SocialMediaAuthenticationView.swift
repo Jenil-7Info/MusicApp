@@ -14,6 +14,7 @@ struct SocialMediaAuthenticationView: View {
     @EnvironmentObject var googleAuthVM : GoogleAutheticationViewModel
     @EnvironmentObject var appleAuthVM : AppleAutheniticationViewModel
     @EnvironmentObject var facebookVM : FacebookAuthenticationViewModel
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
@@ -55,6 +56,13 @@ struct SocialMediaAuthenticationView: View {
                                 .fill(.white.opacity(bgColorFloat))
                         }
                 }
+                .alert("Alert", isPresented: $googleAuthVM.isAlert) {
+                    Button("OK", role: .cancel) {
+                        dismiss.callAsFunction()
+                    }
+                } message: {
+                    Text(googleAuthVM.errorMessage)
+                }
                 
                 //MARK: - Facebook Authentication
                 Button {
@@ -69,6 +77,14 @@ struct SocialMediaAuthenticationView: View {
                                 .fill(.white.opacity(bgColorFloat))
                         }
                 }
+                .alert("Alert", isPresented: $facebookVM.isAlert) {
+                    Button("OK", role: .cancel) {
+                        dismiss.callAsFunction()
+                    }
+                } message: {
+                    Text(facebookVM.errMessage)
+                }
+
                 
                 //MARK: - Apple Authentication
                 Button {
@@ -82,6 +98,13 @@ struct SocialMediaAuthenticationView: View {
                             Circle()
                                 .fill(.white.opacity(bgColorFloat))
                         }
+                }
+                .alert("Alert", isPresented: $appleAuthVM.isError) {
+                    Button("OK", role: .cancel) {
+                        dismiss.callAsFunction()
+                    }
+                } message: {
+                    Text(appleAuthVM.errMessage)
                 }
                 
                 //MARK: - Github Authentication

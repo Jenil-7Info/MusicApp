@@ -12,14 +12,6 @@
 				<string>com.googleusercontent.apps.666912208148-r3vfoivimuuu69i1vsho0lbonaldr2kg</string>
 			</array>
 		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.666912208148-r3vfoivimuuu69i1vsho0lbonaldr2kg</string>
-			</array>
-		</dict>
 	</array>
 	<key>GIDClientID</key>
 	<string>666912208148-r3vfoivimuuu69i1vsho0lbonaldr2kg.apps.googleusercontent.com</string>
@@ -51,5 +43,23 @@
 	<array>
 		<string>audio</string>
 	</array>
+    
+    
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>fb3778843709029557</string>
+      </array>
+      </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>3778843709029557</string>
+    <key>FacebookDisplayName</key>
+    <string>MusicApp</string>
+    
+    
 </dict>
 </plist>
